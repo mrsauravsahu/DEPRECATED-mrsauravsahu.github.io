@@ -1,0 +1,12 @@
+{
+  "name": "saurav-sahu",
+  "version": "1.0.0",
+  "description": "A little site that tells the world about Saurav Sahu",
+  "main": "dist/index.js",
+  "repository": "git@github.com:mrsauravsahu/portfolio.git",
+  "author": "Saurav Sahu <sauravsahu.12@live.com>",
+  "private": true,
+  "devDependencies": {
+    "gatsby-cli": "^2.8.5"
+  }
+}
