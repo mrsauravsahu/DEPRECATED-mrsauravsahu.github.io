@@ -1,8 +1,8 @@
 name: CD
-on: 
-  push:
-    branches: 
-      - 'main/**'
+on: push 
+#  push:
+#    branches: 
+#      - 'main/**'
 
 jobs:
   buld_and_deploy:
@@ -21,9 +21,12 @@ jobs:
     - name: install dependencies
       run: yarn
 
-    - name: build project
-      run: yarn build
-
     - name: deploy site to GitHub pages
-      run: yarn deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.GITHUB_GH_PAGES_SECRET }}
+        BASE_BRANCH: main/develop
+        BRANCH: gh-pages
+        FOLDER: public
+        BUILD_SCRIPT: yarn build
 
