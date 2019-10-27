@@ -5,7 +5,7 @@ jobs:
   # TODO: add lint job
   test:
     name: Run tests
-    runs-on: node-18.04
+    runs-on: ubuntu-18.04
 
     steps:
     - uses: actions/checkout@v1
