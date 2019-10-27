@@ -5,28 +5,8 @@ on:
       - 'main/**'
 
 jobs:
-  build:
-    name: Build
-    needs: [lint, test]
-    runs-on: ubuntu-18.04
-
-    steps:
-    - name: checkout to branch
-      uses: actions/checkout@v1
-    
-    - name: setup node
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-
-    - name: install dependencies
-      run: yarn
-
-    - name: run tests
-      run: yarn build
-
-  deploy:
-    name: Deploy to GitHub pages
+  buld_and_deploy:
+    name: Build and Deploy to GitHub pages
     needs: build
     runs-on: ubuntu-18.04
 
@@ -41,6 +21,9 @@ jobs:
 
     - name: install dependencies
       run: yarn
+
+    - name: build project
+      run: yarn build
 
     - name: deploy site to GitHub pages
       run: yarn deploy
