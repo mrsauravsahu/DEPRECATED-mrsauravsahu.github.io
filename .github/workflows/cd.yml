@@ -7,7 +7,6 @@ on:
 jobs:
   buld_and_deploy:
     name: Build and Deploy to GitHub pages
-    needs: build
     runs-on: ubuntu-18.04
 
     steps:
