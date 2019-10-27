@@ -21,6 +21,9 @@ jobs:
     - name: install dependencies
       run: yarn
 
+    - name: build project
+      run: yarn build
+
     - name: deploy site to GitHub pages
       uses: JamesIves/github-pages-deploy-action@master
       env:
@@ -28,5 +31,3 @@ jobs:
         BASE_BRANCH: main/develop
         BRANCH: gh-pages
         FOLDER: public
-        BUILD_SCRIPT: yarn build
-
