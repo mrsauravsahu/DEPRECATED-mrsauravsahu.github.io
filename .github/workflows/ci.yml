@@ -8,13 +8,13 @@ jobs:
     runs-on: node-18.04
 
     steps:
+      - name: checkout to branch
+        uses: actions/checkout@master
+        
       - name: setup node env
         uses: actions/setup-node@v1
         with:
-          node-version: '12.13.0'
-
-      - name: checkout to branch
-        uses: actions/checkout@master
+          node-version: '12.x'
 
       - name: install dependencies
         run: yarn
