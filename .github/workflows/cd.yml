@@ -1,48 +1,12 @@
-name: CI
-on: push
+name: CD
+on: 
+  push:
+    branches: 
+      - 'main/**'
 
 jobs:
-  lint:
-    name: Check linting issues
-    runs-on: ubuntu-18.04
-
-    steps:
-    - name: checkout to branch
-      uses: actions/checkout@v1
-    
-    - name: setup node
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-
-    - name: install dependencies
-      run: yarn
-
-    - name: run linter task
-      run: yarn lint
-
-  test:
-    name: Run tests
-    needs: lint
-    runs-on: ubuntu-18.04
-
-    steps:
-    - name: checkout to branch
-      uses: actions/checkout@v1
-    
-    - name: setup node
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-
-    - name: install dependencies
-      run: yarn
-
-    - name: run tests
-      run: yarn test
-
   build:
-    name: Create build
+    name: Build
     needs: [lint, test]
     runs-on: ubuntu-18.04
 
@@ -58,6 +22,26 @@ jobs:
     - name: install dependencies
       run: yarn
 
-    - name: build project
+    - name: run tests
       run: yarn build
+
+  deploy:
+    name: Deploy to GitHub pages
+    needs: build
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: checkout to branch
+      uses: actions/checkout@v1
+    
+    - name: setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+    - name: install dependencies
+      run: yarn
+
+    - name: deploy site to GitHub pages
+      run: yarn deploy
 
