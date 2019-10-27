@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: setup node env
-        uses: actions/setup-node
+        uses: actions/setup-node@v1
         with:
           node-version: '12.13.0'
 
