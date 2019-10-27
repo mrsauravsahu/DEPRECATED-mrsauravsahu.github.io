@@ -1,8 +1,8 @@
 name: CD
-on: push 
-#  push:
-#    branches: 
-#      - 'main/**'
+on:
+  push:
+    branches: 
+      - 'main/**'
 
 jobs:
   buld_and_deploy:
