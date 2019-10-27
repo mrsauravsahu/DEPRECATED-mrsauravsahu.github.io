@@ -8,14 +8,14 @@ jobs:
     runs-on: node-18.04
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
 
-      - name: install dependencies
-        run: yarn
+    - name: install dependencies
+      run: yarn
 
-      - name: run tests
-        run: yarn test
+    - name: run tests
+      run: yarn test
 
