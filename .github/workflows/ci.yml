@@ -1,12 +1,9 @@
 name: CI
-on: 
-  push:
-    branches-ignore:
-      - 'main/**' 
+on: push
 
 jobs:
-  lint:
-    name: Check linting issues
+  lint_test_build:
+    name: Lint, Test and Build the project
     runs-on: ubuntu-18.04
 
     steps:
@@ -24,43 +21,8 @@ jobs:
     - name: run linter task
       run: yarn lint
 
-  test:
-    name: Run tests
-    needs: lint
-    runs-on: ubuntu-18.04
-
-    steps:
-    - name: checkout to branch
-      uses: actions/checkout@v1
-    
-    - name: setup node
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-
-    - name: install dependencies
-      run: yarn
-
     - name: run tests
       run: yarn test
 
-  build:
-    name: Create build
-    needs: [lint, test]
-    runs-on: ubuntu-18.04
-
-    steps:
-    - name: checkout to branch
-      uses: actions/checkout@v1
-    
-    - name: setup node
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-
-    - name: install dependencies
-      run: yarn
-
     - name: build project
       run: yarn build
-
