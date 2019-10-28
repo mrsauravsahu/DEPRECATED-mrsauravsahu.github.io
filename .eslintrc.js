@@ -25,6 +25,8 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': 'off',
     semi: ['error', 'never'],
+    'import/prefer-default-export': 'off',
+    'react/prop-types': 'off',
   },
   settings: {
     'import/resolver': {
