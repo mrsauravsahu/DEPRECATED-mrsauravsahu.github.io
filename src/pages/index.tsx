@@ -1,31 +1,16 @@
 import React from 'react'
-import { Link } from 'gatsby'
-
 import Layout from '../components/layout'
-import Image from '../components/image'
 import SEO from '../components/seo'
-
-import projects from '../data/projects.json'
-import { Tile } from '../components/tile'
+import { Projects } from '../containers/projects'
+import { About } from '../containers/about'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Portfolio</h1>
-    <p>Welcome to Saurav&apos;s portfolio.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <h2>Welcome to Saurav&apos;s portfolio.</h2>
 
-    <h2>Projects</h2>
-    {projects.map((project) => (
-      <Tile
-        title={project.title}
-        description={project.description}
-      />
-    ))}
+    <Projects />
+    <About />
   </Layout>
 )
 
