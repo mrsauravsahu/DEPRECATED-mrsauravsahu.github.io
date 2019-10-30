@@ -1,12 +1,43 @@
-import React from 'react'
-import classnames from 'classnames'
+import React, { useEffect, useState } from 'react'
+import PoseText from 'react-pose-text'
 
 import main from '../../data/main.json'
 import styles from './index.module.css'
 
-export const Main = () => (
-  <div className={styles.container}>
-    <h1 className={styles.command}>{`./${main.name}`}</h1>
-    <h1 className={classnames(styles.command, styles.option)}>--ls</h1>
-  </div>
-)
+const charPoses = {
+  exit: { opacity: 0, y: 20 },
+  enter: {
+    opacity: 0.4,
+    y: 0,
+    delay: ({ charIndex }) => charIndex * 30,
+  },
+}
+
+export const Main = () => {
+  const [currentCommandIndex, setCommandIndex] = useState(0)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const nextCommandIndex = (currentCommandIndex + 1) % main.sections.length
+      setCommandIndex(nextCommandIndex)
+    }, 1500)
+
+    return () => clearTimeout(timer)
+  }, [currentCommandIndex])
+
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.command}>{`./${main.name}`}</h1>
+
+      <div className={styles.optionContainer}>
+        <PoseText
+          initialPose="exit"
+          pose="enter"
+          charPoses={charPoses}
+        >
+          {`--${main.sections[currentCommandIndex].command}`}
+        </PoseText>
+      </div>
+    </div>
+  )
+}

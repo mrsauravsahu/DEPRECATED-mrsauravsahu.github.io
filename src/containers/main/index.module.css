@@ -16,6 +16,8 @@
     color: rgb(21,84,101);
 }
 
-.option {
-    opacity: 0.4;
+.option-container > div > div {
+    font-size: 10vw;
+    font-weight: 900;
+    color: rgb(21,84,101);
 }
