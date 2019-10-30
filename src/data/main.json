@@ -4,6 +4,14 @@
         {
             "name": "Projects",
             "command": "ls"
+        },
+        {
+            "name": "About",
+            "command": "about"
+        },
+        {
+            "name": "Help",
+            "command": "help"
         }
     ]
 }
