@@ -17,12 +17,10 @@ export const Main = () => {
   const [currentCommandIndex, setCommandIndex] = useState(0)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       const nextCommandIndex = (currentCommandIndex + 1) % main.sections.length
       setCommandIndex(nextCommandIndex)
     }, 1500)
-
-    return () => clearTimeout(timer)
   }, [currentCommandIndex])
 
   return (

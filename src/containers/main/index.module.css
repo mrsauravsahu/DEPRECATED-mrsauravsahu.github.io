@@ -1,8 +1,9 @@
+@import '../../styles/globals.css';
+
 .container {
     height: 100vh;
-    min-height: 40rem;
     width: 100%;
-    background-color: #e8eddf;
+    background-color: var(--primary-bg);
 
     display: flex;
     flex-direction: column;
@@ -19,5 +20,5 @@
 .option-container > div > div {
     font-size: 10vw;
     font-weight: 900;
-    color: rgb(21,84,101);
+    color: var(--primary-text);
 }
