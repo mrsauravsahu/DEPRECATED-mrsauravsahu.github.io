@@ -10,7 +10,7 @@ export const Projects = () => (
   <div className={globals.pageContainer}>
     <h2 className={classnames(
       globals.pageTitle,
-      styles.pageTitle,
+      globals.pageTitleOption,
     )}
     >
         Projects

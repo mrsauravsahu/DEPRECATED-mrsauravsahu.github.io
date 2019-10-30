@@ -9,6 +9,11 @@
     flex-direction: column;
 }
 
+.page-title-option:before {
+    content: '--';
+    font-weight: 900;
+}
+
 .page-title {
     font-size: 3rem;
     text-transform: lowercase;
