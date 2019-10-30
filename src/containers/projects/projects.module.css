@@ -1,0 +1,10 @@
+.page-title:before {
+    content: '--';
+    font-weight: 900;
+}
+
+.projects-container {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+}

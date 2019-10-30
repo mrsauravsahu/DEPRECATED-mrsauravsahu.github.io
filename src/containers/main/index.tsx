@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PoseText from 'react-pose-text'
 
 import main from '../../data/main.json'
-import styles from './index.module.css'
+import styles from './main.module.css'
 
 const charPoses = {
   exit: { opacity: 0, y: 20 },

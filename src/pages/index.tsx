@@ -9,7 +9,7 @@ import { Main } from '../containers/main'
 const IndexPage = () => (
   <>
     <SEO title="Home" />
-    <FullPage>
+    <FullPage initialSlide={1}>
       <Slide>
         <Main />
       </Slide>

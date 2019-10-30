@@ -1,0 +1,29 @@
+@import '../../styles/variables.css';
+
+.root-container {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    margin: 2rem 0;
+}
+
+.tile-spine  {
+    background-color: var(--highlight-color);
+    padding: 2rem;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+}
+
+.hero {
+    font-size: 15rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 2rem;
+}
