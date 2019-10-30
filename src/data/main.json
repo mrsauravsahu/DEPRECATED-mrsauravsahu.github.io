@@ -3,7 +3,7 @@
     "sections": [
         {
             "name": "Projects",
-            "command": "ls"
+            "command": "projects"
         },
         {
             "name": "About",
