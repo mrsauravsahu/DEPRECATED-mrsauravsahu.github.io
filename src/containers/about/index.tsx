@@ -32,7 +32,7 @@ export const About = () => (
         />
 
         <div className={styles.interestsSection}>
-          <h3>Things I like</h3>
+          <h3 className={globals.pageSubHeader}>Things I like</h3>
           <div className={styles.interestsContainer}>
             {about.thingsILike.map((thingie) => (
               <div
