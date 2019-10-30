@@ -20,6 +20,7 @@ export const Projects = () => (
         <Tile
           title={project.title}
           description={project.description}
+          className={{ container: styles.tile }}
         />
       ))}
     </div>

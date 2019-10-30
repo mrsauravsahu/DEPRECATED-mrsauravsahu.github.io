@@ -3,7 +3,6 @@
 .root-container {
     display: flex;
     flex-direction: row;
-    width: 30%;
     margin: 2rem 0;
 }
 
