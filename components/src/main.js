@@ -1,11 +1,3 @@
-import Main from './main.svelte';
-import packageData from '../package.json';
+import Button from "./components/button/button.svelte";
 
-const app = new Main({
-	target: document.body,
-	props: {
-		name: packageData.name
-	}
-});
-
-export default app;
+export default { Button };

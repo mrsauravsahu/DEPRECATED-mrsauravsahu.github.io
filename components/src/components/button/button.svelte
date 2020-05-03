@@ -1,3 +1,5 @@
+<svelte:options tag="ss-button" />
+
 <button class="button" on:click={onClick}>
     {text}
 </button>
@@ -11,6 +13,7 @@
       font-size: 15px;
       padding: 3px 10px;
       margin: 10px;
+      font-weight: 900;
     }
 </style>
 

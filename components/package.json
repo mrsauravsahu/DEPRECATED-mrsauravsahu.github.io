@@ -8,6 +8,7 @@
     "sb": "start-storybook -p 6006",
     "sb:build": "build-storybook"
   },
+  "main": "public/bundle.js",
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@rollup/plugin-commonjs": "11.0.2",

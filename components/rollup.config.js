@@ -12,7 +12,8 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/build/bundle.js'
+		file: 'public/build/bundle.js',
+		exports: 'named'
 	},
 	plugins: [
 		json(),
@@ -24,7 +25,8 @@ export default {
 			// a separate file - better for performance
 			css: css => {
 				css.write('public/build/bundle.css');
-			}
+			},
+			customElement: true,
 		}),
 
 		// If you have external dependencies installed from
