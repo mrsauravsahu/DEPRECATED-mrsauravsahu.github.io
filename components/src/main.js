@@ -1,7 +1,7 @@
-import App from './App.svelte';
+import Main from './main.svelte';
 import packageData from '../package.json';
 
-const app = new App({
+const app = new Main({
 	target: document.body,
 	props: {
 		name: packageData.name
