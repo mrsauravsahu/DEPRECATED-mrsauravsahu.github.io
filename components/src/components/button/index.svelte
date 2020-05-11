@@ -16,7 +16,7 @@
     border: var(--ss-border-width) solid rgb(var(--ss-bg));
     cursor: pointer;
     font-size: 1rem;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     font-weight: 800;
     border-radius: 2rem;
     color: rgb(var(--ss-bg));
