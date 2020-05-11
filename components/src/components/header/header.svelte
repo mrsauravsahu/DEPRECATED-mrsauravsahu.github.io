@@ -4,7 +4,8 @@
 
 <style>
 h1 {
-    font-weight: 900;
+    font-size: 2rem;
+    font-weight: 800;
     font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 </style>
