@@ -19,15 +19,20 @@
     padding: 1rem;
     font-weight: 800;
     border-radius: 2rem;
-
     color: rgb(var(--ss-bg));
     background-color: transparent;
+    transition: 0.1s linear;
   }
 
-  button:focus,button:active{
-    color: rgb(var(--ss-accent));   
+  button:focus,
+  button:active {
+    color: rgb(var(--ss-accent));
     border: var(--ss-border-width) solid rgba(var(--ss-bg), 0.5);
     background-color: rgb(var(--ss-bg));
+  }
+
+  button:active {
+    transform: translateY(0.25rem);
   }
 </style>
 
