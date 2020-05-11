@@ -3,7 +3,7 @@
 </script>
 
 <style>
-  .root {
+  div {
     font-weight: 800;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -11,10 +11,12 @@
     display: inline-block;
     border-radius: 2rem;
 
-    color: var(--ss-accent);
-    background-color: var(--ss-bg);
+    color: rgb(var(--ss-bg));
+    background-color: rgb(var(--ss-accent));
   }
+
+  
 </style>
 
 <svelte:options tag="ss-bubble" />
-<div class={`root`}>{text}</div>
+<div>{text}</div>
