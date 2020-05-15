@@ -4,7 +4,6 @@
   export let title, content;
 </script>
 
-<Card>
-  <div slot="title">{title}</div>
-  <div slot="content">{content}</div>
+<Card {title}>
+  <div>{content}</div>
 </Card>
