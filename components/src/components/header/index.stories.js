@@ -1,4 +1,4 @@
-import HeaderWrapper from './header.wrapper.svelte';
+import HeaderWrapper from './index.wrapper.svelte';
 
 export default {
     title: 'Title',

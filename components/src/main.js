@@ -1,9 +1,11 @@
-import Button from "./components/button/button.svelte";
-import Header from "./components/header/header.svelte";
-import Capsule from "./components/capsule/capsule.svelte";
+import Button from "./components/button/index.svelte";
+import Header from "./components/header/index.svelte";
+import Capsule from "./components/capsule/index.svelte";
+import Card from "./components/card/index.svelte";
 
 export default {
     Button,
     Capsule,
+    Card,
     Header
 };

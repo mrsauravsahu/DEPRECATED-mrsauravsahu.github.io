@@ -25,7 +25,8 @@
   }
 
   button:focus,
-  button:active {
+  button:active,
+  button:hover {
     color: rgb(var(--ss-accent));
     border: var(--ss-border-width) solid rgba(var(--ss-bg), 0.5);
     background-color: rgb(var(--ss-bg));

@@ -1,5 +1,5 @@
 <script>
-  import Header from "./header.svelte";
+  import Header from "./index.svelte";
 
   export let text;
 </script>
