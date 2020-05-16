@@ -1,19 +1,28 @@
 <style>
+  @media only screen and (min-width: 48rem) {
+    .about-container {
+      display: flex;
+      flex-direction: row;
+      padding: 2rem 0;
+      align-items: center;
+    }
+  }
+
   .tech-container {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: safe;
+    flex-wrap: wrap;
   }
 
-  .about-container {
-    display: flex;
-    flex-direction: row;
-    padding: 2rem 0;
-    align-items: center;
+  .tech-container > * {
+    margin: 0.25rem;
   }
 
   .about-photo-container > img {
     width: 100%;
+    max-width: 20rem;
+    margin: 2rem 0;
     border-radius: 50%;
   }
 
@@ -22,7 +31,7 @@
   }
 </style>
 
-<div class="main-container">
+<div class="container">
   <ss-title>--saurav-sahu</ss-title>
   <div class="tech-container">
     <ss-bubble text=".net core" />
