@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>Sapper project template</title>
+  <title>Saurav Sahu</title>
 </svelte:head>
 
 <About />
