@@ -35,7 +35,7 @@
   </div>
   <div>
     <button on:click={() => goto('https://github.com/mrsauravsahu/mrsauravsahu.github.io')}>
-    <ss-card title="mrsauravsahu.github.io">
+    <ss-card title="portfolio">
       <p>A little site that tells the world who I am.</p>
     </ss-card>
     </button>
