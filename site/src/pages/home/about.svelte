@@ -6,6 +6,15 @@
       padding: 2rem 0;
       align-items: center;
     }
+
+    .about-me {
+      margin: 0 4rem;
+    }
+  }
+
+  .about-container {
+    flex-direction: column;
+    justify-content: center;
   }
 
   .tech-container {
@@ -19,15 +28,17 @@
     margin: 0.25rem;
   }
 
+  .about-photo-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   .about-photo-container > img {
     width: 100%;
     max-width: 20rem;
     margin: 2rem 0;
     border-radius: 50%;
-  }
-
-  .about-me {
-    margin: 0 4rem;
+    place-self: center;
   }
 </style>
 
