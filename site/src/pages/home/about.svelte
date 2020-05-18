@@ -55,7 +55,7 @@
 
 <div class="container">
   <div class="title-container">
-    <ss-title>--saurav-sahu</ss-title>
+    <ss-title>./saurav-sahu</ss-title>
     <Theme />
   </div>
   <div class="tech-container">
