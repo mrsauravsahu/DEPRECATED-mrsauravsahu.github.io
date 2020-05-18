@@ -35,3 +35,14 @@ export const setThemeVariables = (theme) => {
         setThemeFromResourceDictionary(theme, rootElement);
     }
 }
+
+export const getThemeLabelForTheme = (theme) => {
+    const themeLabelMapper = {
+        [THEMES.LIGHT]: '🔆',
+        [THEMES.DARK]: '🌙'
+    }
+
+    return themeLabelMapper[theme];
+}
+
+export const getNextTheme = (theme) => theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;

@@ -31,8 +31,6 @@
   <title>Saurav Sahu</title>
 </svelte:head>
 
-<ss-button on:click={toggleTheme} text="toggle theme" />
-
 <About />
 <Projects />
 <Socials />

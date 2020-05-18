@@ -1,3 +1,7 @@
+<script>
+  import Theme from "../../components/theme.svelte";
+</script>
+
 <style>
   @media only screen and (min-width: 48rem) {
     .about-container {
@@ -40,10 +44,20 @@
     border-radius: 50%;
     place-self: center;
   }
+
+  .title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 </style>
 
 <div class="container">
-  <ss-title>--saurav-sahu</ss-title>
+  <div class="title-container">
+    <ss-title>--saurav-sahu</ss-title>
+    <Theme />
+  </div>
   <div class="tech-container">
     <ss-bubble text=".net core" />
     <ss-bubble text="svelte" />
