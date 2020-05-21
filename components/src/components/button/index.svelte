@@ -14,6 +14,7 @@
 
 <style>
   button {
+    font-family: var(--ss-font-family);
     outline: none;
     border: var(--ss-border-width) solid rgb(var(--ss-accent));
     cursor: pointer;
