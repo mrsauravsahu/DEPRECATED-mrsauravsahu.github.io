@@ -7,8 +7,9 @@
     margin: 0 auto;
     padding: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: stretch;
+    flex-wrap: wrap;
   }
 
   [aria-current] {
@@ -29,8 +30,10 @@
   a {
     text-decoration: none;
     padding: 1em 0.5em;
-    /* line-height: 100%;
-	height: 100%; */
+  }
+
+  a:first {
+    width: 100%;
   }
 </style>
 
