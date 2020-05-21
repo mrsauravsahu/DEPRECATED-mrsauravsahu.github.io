@@ -11,8 +11,9 @@
       align-items: center;
     }
 
-    .about-me {
+    .content {
       margin: 0 4rem;
+      padding: 2rem 0;
     }
   }
 
@@ -28,7 +29,12 @@
     flex-wrap: wrap;
   }
 
-  .tech-container > * {
+  .tech-bubbles {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tech-bubbles > * {
     margin: 0.25rem;
   }
 
@@ -44,31 +50,14 @@
     border-radius: 50%;
     place-self: center;
   }
-
-  .title-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
 </style>
 
 <div class="container">
-  <div class="tech-container">
-    <ss-bubble text=".net core" />
-    <ss-bubble text="svelte" />
-    <ss-bubble text="typescript" />
-    <ss-bubble text="docker" />
-    <ss-bubble text="node" />
-    <ss-bubble text="azure" />
-    <ss-bubble text="react native" />
-    <ss-bubble text="react" />
-  </div>
   <div class="about-container">
     <div class="about-photo-container">
       <img src="me.jpg" alt="Saurav Sahu" />
     </div>
-    <div class="about-me">
+    <div class="content">
       <p>Digital consultant and full stack engineer at Digital McKinsey.</p>
       <p>
         Fascinated about how things work, learning algorithms and how they’re
@@ -85,6 +74,26 @@
         increase my frontend skills and delving into the Cloud with Microsoft
         Azure.
       </p>
+    </div>
+  </div>
+  <div class="tech-container">
+    <ss-title>--tech-experiments</ss-title>
+    <div class="content">
+      <p>
+        With so many options to choose from, sometimes it gets difficult to find
+        something that just works. These are a few of the frameworks and tools
+        I've dabbled with.
+      </p>
+      <div class="tech-bubbles">
+        <ss-bubble text=".net core" />
+        <ss-bubble text="svelte" />
+        <ss-bubble text="typescript" />
+        <ss-bubble text="docker" />
+        <ss-bubble text="node" />
+        <ss-bubble text="azure" />
+        <ss-bubble text="react native" />
+        <ss-bubble text="react" />
+      </div>
     </div>
   </div>
 </div>
