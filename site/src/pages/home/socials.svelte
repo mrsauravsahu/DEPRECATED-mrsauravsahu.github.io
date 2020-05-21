@@ -2,8 +2,8 @@
   import { goto } from "@sapper/app";
 </script>
 
-<div class="social-container">
-  <ss-title>--socials</ss-title>
+<ss-title>--socials</ss-title>
+<div class="social-container content">
   <ss-button
     text="github"
     on:click={() => goto('https://github.com/mrsauravsahu')} />

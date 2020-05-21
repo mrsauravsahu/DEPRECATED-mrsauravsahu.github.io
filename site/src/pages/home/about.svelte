@@ -10,11 +10,6 @@
       padding: 2rem 0;
       align-items: center;
     }
-
-    .content {
-      margin: 0 4rem;
-      padding: 2rem 0;
-    }
   }
 
   .about-container {
