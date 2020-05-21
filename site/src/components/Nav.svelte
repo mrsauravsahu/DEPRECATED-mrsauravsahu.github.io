@@ -1,4 +1,5 @@
 <script>
+  import Theme from "./theme.svelte";
   export let segment;
 </script>
 
@@ -39,11 +40,21 @@
   ss-title {
     display: inline;
   }
+
+  .root-nav-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 </style>
 
 <nav>
   <a aria-current={segment === undefined ? 'page' : undefined} href=".">
-    <ss-title>./saurav-sahu</ss-title>
+    <div class="root-nav-item">
+      <ss-title>./saurav-sahu</ss-title>
+      <Theme />
+    </div>
   </a>
 
   <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
@@ -52,6 +63,6 @@
     rel="prefetch"
     aria-current={segment === 'blog' ? 'page' : undefined}
     href="blog">
-    blog
+    <ss-button text="blog" />
   </a>
 </nav>
