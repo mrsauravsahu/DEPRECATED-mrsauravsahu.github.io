@@ -1,4 +1,5 @@
-import posts from './_posts.js';
+// import posts from './_posts.js';
+const posts = [];
 
 const lookup = new Map();
 posts.forEach(post => {

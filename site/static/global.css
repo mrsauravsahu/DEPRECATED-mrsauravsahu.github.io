@@ -16,6 +16,12 @@ html, body, #root {
 	transition: 0.2s linear;
 }
 
+main, nav {
+	max-width: 56em;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
 ss-title {
 	font-weight: 900;
 	font-size: 2rem;
