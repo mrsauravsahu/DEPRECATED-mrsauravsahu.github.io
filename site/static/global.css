@@ -29,6 +29,8 @@ main, nav {
 ss-title {
 	font-weight: 900;
 	font-size: 2rem;
+	display: block;
+	margin: 0.5rem 0;
 }
 
 img {

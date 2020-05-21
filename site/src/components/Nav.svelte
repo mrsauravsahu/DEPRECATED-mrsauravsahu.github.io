@@ -35,6 +35,10 @@
   a:first {
     width: 100%;
   }
+
+  ss-title {
+    display: inline;
+  }
 </style>
 
 <nav>
