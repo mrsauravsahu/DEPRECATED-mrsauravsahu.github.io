@@ -2,7 +2,9 @@
     "posts": [
         {
             "title": "First!",
-            "slug": "first"
+            "slugSuffix": "first",
+            "createdOn": "2020-05-21",
+            "line": "My first ever post?"
         }
     ]
 }

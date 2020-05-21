@@ -1,4 +1,6 @@
 <script context="module">
+  import { blogSlugGenerator } from "../../utils/blog";
+
   export async function preload({ params, query }) {
     const res = await this.fetch(`/data/blogs.json`);
     const data = await res.json();
@@ -6,7 +8,7 @@
 
     const { slug } = params;
 
-    var post = posts.filter(p => p.slug == slug)[0];
+    var post = posts.filter(p => slug == blogSlugGenerator(p))[0];
 
     if (post) {
       return { post };
@@ -26,4 +28,4 @@
 
 <h1>{post.title}</h1>
 
-<wc-markdown src={`/data/blog-posts/${post.slug}.md`} />
+<wc-markdown src={`/data/blog-posts/${blogSlugGenerator(post)}.md`} />

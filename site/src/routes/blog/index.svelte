@@ -1,4 +1,6 @@
 <script context="module">
+  import { blogSlugGenerator } from "../../utils/blog";
+
   export function preload({ params, query }) {
     return this.fetch("/data/blogs.json")
       .then(r => r.json())
@@ -14,16 +16,23 @@
 
 <style>
   ul {
-    margin: 0 0 1em 0;
-    line-height: 1.5;
+    margin: 0;
+    padding: 0.5rem;
+  }
+  li {
+    list-style-type: none;
+    text-decoration: none;
+  }
+
+  a {
+    all: unset;
+    cursor: pointer;
   }
 </style>
 
 <svelte:head>
   <title>Blog</title>
 </svelte:head>
-
-<h1>Recent posts</h1>
 
 <ul>
   {#each posts as post}
@@ -32,7 +41,9 @@
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
     <li>
-      <a rel="prefetch" href="blog/{post.slug}">{post.title}</a>
+      <a rel="prefetch" href="blog/{blogSlugGenerator(post)}">
+        <ss-card title={post.title}>{post.line}</ss-card>
+      </a>
     </li>
   {/each}
 </ul>
