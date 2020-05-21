@@ -54,19 +54,15 @@
 </style>
 
 <div class="container">
-  <!-- <div class="title-container">
-    <ss-title>./saurav-sahu</ss-title>
-    <Theme />
-  </div> -->
   <div class="tech-container">
-    <!-- <ss-bubble text=".net core" />
+    <ss-bubble text=".net core" />
     <ss-bubble text="svelte" />
     <ss-bubble text="typescript" />
     <ss-bubble text="docker" />
     <ss-bubble text="node" />
     <ss-bubble text="azure" />
     <ss-bubble text="react native" />
-    <ss-bubble text="react" /> -->
+    <ss-bubble text="react" />
   </div>
   <div class="about-container">
     <div class="about-photo-container">
