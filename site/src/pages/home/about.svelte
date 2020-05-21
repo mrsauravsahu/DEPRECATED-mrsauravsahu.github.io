@@ -7,7 +7,6 @@
     .about-container {
       display: flex;
       flex-direction: row;
-      padding: 2rem 0;
       align-items: center;
     }
   }
