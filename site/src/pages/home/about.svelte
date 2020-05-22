@@ -76,8 +76,8 @@
       </p>
     </div>
   </div>
-  <div class="tech-container" id="tech">
-    <ss-title>--tech-experiments</ss-title>
+  <div class="tech-container">
+    <ss-title id="tech">--tech-experiments</ss-title>
     <div class="content">
       <p>
         With so many options to choose from, sometimes it gets difficult to find

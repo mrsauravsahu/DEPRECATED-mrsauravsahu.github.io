@@ -2,7 +2,7 @@
   import { goto } from "@sapper/app";
 </script>
 
-<ss-title>--socials</ss-title>
+<ss-title id="socials">--socials</ss-title>
 <div class="social-container content">
   <ss-button
     text="github"

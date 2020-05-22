@@ -14,7 +14,7 @@
   }
 </style>
 
-<ss-title>--projects</ss-title>
+<ss-title id="projects">--projects</ss-title>
 <div class="projects-container content">
   <div>
     <button
