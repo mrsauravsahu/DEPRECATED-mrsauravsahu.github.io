@@ -47,6 +47,12 @@
 </style>
 
 <div class="container">
+  <div class="content">
+    <em>
+      "My journey and experiences will always remain a work in progress... like
+      this website will never be complete."
+    </em>
+  </div>
   <div class="about-container">
     <div class="about-photo-container">
       <img src="me.jpg" alt="Saurav Sahu" />
@@ -70,7 +76,7 @@
       </p>
     </div>
   </div>
-  <div class="tech-container">
+  <div class="tech-container" id="tech">
     <ss-title>--tech-experiments</ss-title>
     <div class="content">
       <p>

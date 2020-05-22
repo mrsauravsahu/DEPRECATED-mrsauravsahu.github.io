@@ -1,3 +1,11 @@
+<script context="module">
+  export function preload() {
+    return this.fetch("/data/_layout.json")
+      .then(r => r.json())
+      .then(data => ({ layoutContent: data }));
+  }
+</script>
+
 <script>
   import { onDestroy, onMount } from "svelte";
   import Nav from "../components/nav.svelte";
@@ -23,9 +31,10 @@
   });
 
   export let segment;
+  export let layoutContent;
 </script>
 
-<Nav {segment} />
+<Nav {segment} content={layoutContent.nav} />
 <main>
   <slot />
 </main>
