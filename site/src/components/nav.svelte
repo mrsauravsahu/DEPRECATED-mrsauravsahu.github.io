@@ -15,6 +15,7 @@
 
   a {
     text-decoration: none;
+    font-weight: 900;
     padding: 0.5rem;
     color: rgb(var(--ss-accent));
   }
@@ -37,6 +38,12 @@
   .nav-secondary-container {
     display: flex;
     flex-direction: column;
+  }
+
+  @media only screen and (min-width: 48rem) {
+    .nav-secondary-container {
+      flex-direction: row;
+    }
   }
 </style>
 
