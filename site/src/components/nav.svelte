@@ -11,20 +11,26 @@
     flex-direction: column;
     align-items: stretch;
     flex-wrap: wrap;
+
+    margin-bottom: 1rem;
+    background-color: rgb(var(--ss-accent));
+    margin: -0.5rem;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+    padding-bottom: 0px;
+    padding-bottom: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
   }
 
   a {
     text-decoration: none;
     font-weight: 900;
-    padding: 0.5rem;
-    color: rgb(var(--ss-accent));
+    padding: 0.25rem;
+    color: rgb(var(--ss-bg));
   }
-
-  a:first {
-    width: 100%;
-  }
-
   ss-title {
+    --ss-accent: var(--ss-bg);
     display: inline;
   }
 
