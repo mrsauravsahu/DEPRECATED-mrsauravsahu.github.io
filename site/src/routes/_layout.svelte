@@ -29,12 +29,11 @@
 
     onDestroy(themeSubscription);
   });
-
-  export let segment;
+  
   export let layoutContent;
 </script>
 
-<Nav {segment} content={layoutContent.nav} />
+<Nav content={layoutContent.nav} />
 <main>
   <slot />
 </main>

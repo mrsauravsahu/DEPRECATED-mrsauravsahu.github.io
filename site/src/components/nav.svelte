@@ -1,6 +1,5 @@
 <script>
   import Theme from "./theme.svelte";
-  export let segment;
   export let content;
 </script>
 
@@ -12,10 +11,6 @@
     flex-direction: column;
     align-items: stretch;
     flex-wrap: wrap;
-  }
-
-  [aria-current] {
-    font-weight: 900;
   }
 
   a {
