@@ -39,7 +39,7 @@
 
   .about-photo-container > img {
     width: 100%;
-    max-width: 20rem;
+    max-width: 14rem;
     margin: 2rem 0;
     border-radius: 50%;
     place-self: center;
