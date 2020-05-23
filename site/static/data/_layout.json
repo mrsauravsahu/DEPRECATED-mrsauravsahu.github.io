@@ -7,21 +7,6 @@
         },
         "secondary": [
             {
-                "label": "tech",
-                "path": "/#tech",
-                "preFetch": false
-            },
-            {
-                "label": "projects",
-                "path": "/#projects",
-                "preFetch": false
-            },
-            {
-                "label": "socials",
-                "path": "/#socials",
-                "preFetch": false
-            },
-            {
                 "label": "blog",
                 "path": "/blog",
                 "preFetch": false
