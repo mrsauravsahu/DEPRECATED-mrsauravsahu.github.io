@@ -5,22 +5,16 @@
 
 <style>
   nav {
+    width: 100%;
     margin: 0 auto;
-    padding: 0 auto;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     flex-wrap: wrap;
-
-    margin-bottom: 1rem;
     background-color: rgb(var(--ss-accent));
-    margin: -0.5rem;
-    margin-bottom: 1rem;
-    padding: 0 0.5rem;
-    padding-bottom: 0px;
-    padding-bottom: 1rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    margin-bottom: 1rem;;
+    border-radius: 0 0 1rem 1rem;
   }
 
   a {
