@@ -29,9 +29,15 @@
 
     onDestroy(themeSubscription);
   });
-  
+
   export let layoutContent;
 </script>
+
+<style>
+  main {
+    padding: 1rem;
+  }
+</style>
 
 <Nav content={layoutContent.nav} />
 <main>

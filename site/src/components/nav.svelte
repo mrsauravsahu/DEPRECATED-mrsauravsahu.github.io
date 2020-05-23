@@ -13,7 +13,6 @@
     align-items: stretch;
     flex-wrap: wrap;
     background-color: rgb(var(--ss-accent));
-    margin-bottom: 1rem;;
     border-radius: 0 0 1rem 1rem;
   }
 
