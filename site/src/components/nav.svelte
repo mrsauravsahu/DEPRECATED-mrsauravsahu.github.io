@@ -5,7 +5,7 @@
 
 <style>
   nav {
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     display: flex;
     width: 100%;
     padding: 1rem;
