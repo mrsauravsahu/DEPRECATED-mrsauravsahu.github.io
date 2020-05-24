@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;900&display=swap');
 
 :root {
+	--ss-root-background: 255, 255, 255;
+
 	--ss-border-width: 0.25rem;
 	--ss-border-radius: 1rem;
 	--ss-base-font-size: 0.75rem;
@@ -10,22 +12,31 @@
 html, body {
 	margin: 0;
 	height: 100%;
-	background-color: rgb(var(--ss-bg));
 	color: rgb(var(--ss-accent));
 	font-family: var(--ss-font-family);
 	transition: 0.2s linear;
 }
 
+body {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
 #sapper {
+	max-width: 64rem;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	background-color: rgb(var(--ss-bg));
+	box-sizing: border-box;
 }
 
-main, nav {
-	max-width: 56em;
+main {
 	margin: 0 auto;
+	background-color: rgb(var(--ss-bg));
+	flex-grow: 1;
 	box-sizing: border-box;
 }
 
