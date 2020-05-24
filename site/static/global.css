@@ -40,6 +40,10 @@ main {
 	box-sizing: border-box;
 }
 
+nav {
+	box-sizing: border-box;
+}
+
 ss-title {
 	font-weight: 900;
 	font-size: 2rem;

@@ -39,6 +39,10 @@
   }
 
   @media only screen and (min-width: 48rem) {
+    nav {
+      /* margin: 1rem; */
+    }
+
     .nav-secondary-container {
       flex-direction: row;
     }
