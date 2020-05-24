@@ -24,6 +24,7 @@ body {
 }
 
 #sapper {
+	width: 100%;
 	max-width: 64rem;
 	height: 100%;
 	display: flex;
@@ -31,10 +32,6 @@ body {
 	align-items: center;
 	background-color: rgb(var(--ss-bg));
 	box-sizing: border-box;
-}
-
-body * {
-	transition: 0.2s linear;
 }
 
 main {
