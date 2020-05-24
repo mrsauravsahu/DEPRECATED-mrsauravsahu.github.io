@@ -37,8 +37,8 @@ export const setThemeVariables = (theme) => {
 
 export const getThemeLabelForTheme = (theme) => {
     const themeLabelMapper = {
-        [THEMES.LIGHT]: '🔆',
-        [THEMES.DARK]: '🌙'
+        [THEMES.LIGHT]: 'lumos',
+        [THEMES.DARK]: 'nox'
     }
 
     return themeLabelMapper[theme];
