@@ -41,7 +41,16 @@
 
 <div class="container">
   <div class="content">
-    <p>Here a few thoughts that I thought should be written down...</p>
+    <p>
+      Here are a few thoughts that I thought should be written down... Don't
+      worry, the old blogs will get imported here.
+    </p>
+    <p>
+      Currently at:
+      <a href="https://mrsauravsahu.wordpress.com">
+        mrsauravsahu.wordpress.com
+      </a>
+    </p>
     <ul>
       {#each posts as post}
         <!-- we're using the non-standard `rel=prefetch` attribute to
