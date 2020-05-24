@@ -5,9 +5,10 @@
 
 <style>
   nav {
+    flex: 1 0 auto;
+    display: flex;
     width: 100%;
     padding: 1rem;
-    display: flex;
     flex-direction: column;
     align-items: stretch;
     flex-wrap: wrap;
