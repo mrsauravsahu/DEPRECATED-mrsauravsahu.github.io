@@ -8,11 +8,13 @@ const setThemeFromResourceDictionary = (theme, element) => {
         [THEMES.LIGHT]: {
             '--ss-accent': '33, 42, 61',
             '--ss-bg': '243, 248, 248',
+            '--ss-bg1': '255, 255, 255',
             '--site-image-filter': 'none',
         },
         [THEMES.DARK]: {
             '--ss-accent': '160, 160, 160',
             '--ss-bg': '30, 30, 30',
+            '--ss-bg1': '30, 30, 30',
             '--site-image-filter': 'grayscale()',
         }
     }
