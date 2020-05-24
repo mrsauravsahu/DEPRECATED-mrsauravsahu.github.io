@@ -13,8 +13,10 @@
 
 <style>
   span {
+    color: rgb(var(--ss-bg));
     cursor: pointer;
-    font-size: 1.5rem;
+    font-weight: 900;
+    font-size: calc(1 * var(--ss-base-font-size));
     filter: grayscale();
   }
 </style>
