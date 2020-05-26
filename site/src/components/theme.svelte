@@ -1,6 +1,11 @@
 <script>
   import { theme } from "../stores/theme";
-  import { THEMES, getThemeLabelForTheme, getNextTheme } from "../utils/theme";
+  import {
+    THEMES,
+    getThemeLabelForTheme,
+    getNextTheme,
+    getCSSVariableForTheme
+  } from "../utils/theme";
 
   let nextThemeLabel = getThemeLabelForTheme(getNextTheme($theme));
 
@@ -12,6 +17,13 @@
 </script>
 
 <style>
+  .container {
+    width: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
   span {
     color: rgb(var(--ss-bg));
     cursor: pointer;
@@ -19,6 +31,31 @@
     font-size: calc(1 * var(--ss-base-font-size));
     filter: grayscale();
   }
+  svg {
+    transition: height 0.2s var(--transition-fn);
+    height: 0;
+    position: absolute;
+  }
+
+  @media (hover: hover) {
+    .container:hover > svg {
+      height: 3rem;
+    }
+
+    .container:active > svg,
+    .container:focus > svg {
+      height: 4rem;
+    }
+  }
 </style>
 
-<span on:click={handleThemeChange}>{nextThemeLabel}</span>
+<div class="container">
+  <svg
+    viewBox="0 0 100 100"
+    style={`fill: rgb(${getCSSVariableForTheme(getNextTheme($theme), '--ss-bg')})`}>
+    <circle cx="50" cy="50" r="50" />
+  </svg>
+  <span on:click={handleThemeChange} data-label={nextThemeLabel}>
+    {nextThemeLabel}
+  </span>
+</div>
