@@ -16,6 +16,7 @@
 
 <ss-title id="projects">--projects</ss-title>
 <div class="projects-container content">
+  <p>Here are a few of the projects I'm working on. Find out more on Github...</p>
   <div>
     <button
       on:click={() => goto('https://github.com/mrsauravsahu/gitremotetourl')}>
