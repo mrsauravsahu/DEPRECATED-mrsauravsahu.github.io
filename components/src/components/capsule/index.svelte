@@ -5,8 +5,7 @@
 <style>
   div {
     font-weight: 800;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--ss-font-family);
     padding: 1rem;
     display: inline-block;
     border-radius: 2rem;
