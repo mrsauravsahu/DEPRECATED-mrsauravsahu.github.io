@@ -13,7 +13,7 @@ const setThemeFromResourceDictionary = (theme, element) => {
         },
         [THEMES.DARK]: {
             '--ss-accent': '160, 160, 160',
-            '--ss-bg': '30, 30, 30',
+            '--ss-bg': '20, 20, 20',
             '--ss-bg1': '30, 30, 30',
             '--site-image-filter': 'grayscale()',
         }
