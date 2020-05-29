@@ -1,16 +1,18 @@
-describe('Sapper template app', () => {
+describe('mrsauravsahu.github.io', () => {
 	beforeEach(() => {
 		cy.visit('/')
 	});
 
-	it('has the correct <h1>', () => {
-		cy.contains('h1', 'Great success!')
-	});
+	// TODO: Check correct header
+	// it('has the correct header', () => {
+	// 	cy.contains('', 'Great success!')
+	// });
 
-	it('navigates to /about', () => {
-		cy.get('nav a').contains('about').click();
-		cy.url().should('include', '/about');
-	});
+	// TODO: Check correct number of nav items
+	
+	// TODO: Check project links
+	
+	// TODO: Check socials' links
 
 	it('navigates to /blog', () => {
 		cy.get('nav a').contains('blog').click();
