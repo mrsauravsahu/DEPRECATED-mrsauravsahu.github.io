@@ -6,17 +6,17 @@ describe('home page', () => {
 	});
 
 	it('should contain the title', () => {
-		cy.contains('./saurav-sahu').should('have.length', 1);
+		var title = cy.contains('./saurav-sahu');
+
+		title.should('have.length', 1);
+		title.should('have.attr', 'href', '/#');
 	});
-	
-
-	// TODO: Check correct number of nav items
-
-	// TODO: Check project links
-
-	// TODO: Check socials' links
 
 	it('should have link to blog page', () => {
 		cy.get('nav a').contains('blog').should('have.attr', 'href', '/blog');
 	});
+
+	// TODO: Check correct number of nav items
+
+	// TODO: Check project links
 });
