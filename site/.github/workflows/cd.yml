@@ -1,0 +1,14 @@
+name: cd
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  pull_artefacts:
+    runs-on: ubuntu-16.04
+
+    steps:
+      - name: pull artefacts
+        run: echo 'placeholder'
