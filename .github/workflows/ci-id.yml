@@ -5,7 +5,7 @@ env:
   NODE_ENV: development
   COMPONENTS_WORKING_DIRECTORY: components
   SITE_WORKING_DIRECTORY: site
-  SITE_EXPORT_DIRECTORY: site/__sapper__/export/*
+  SITE_EXPORT_DIRECTORY: site/__sapper__/export
   DEPLOY_BRANCH_REF: develop
   GITHUB_PAGES_PUBLISH_BRANCH: master
 
