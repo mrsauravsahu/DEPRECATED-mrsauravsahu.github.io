@@ -5,6 +5,7 @@ env:
   NODE_ENV: development
   COMPONENTS_WORKING_DIRECTORY: components
   SITE_WORKING_DIRECTORY: site
+  SITE_EXPORT_PATH: site/__sapper__/export/*
 
 on:
   push: 
@@ -46,3 +47,9 @@ jobs:
       - name: run portfolio tests
         working-directory: ${{ env.SITE_WORKING_DIRECTORY }}
         run: npm t
+
+      - name: upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: portfolio
+          path: ${{ env.SITE_EXPORT_PATH  }}
