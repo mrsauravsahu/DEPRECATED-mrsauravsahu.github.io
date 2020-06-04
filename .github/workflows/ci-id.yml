@@ -1,11 +1,12 @@
-name: ci
+name: ci-cd for mrsauravsahu.github.io
 
 env:
   NODE_VERSION: '12.8.0'
   NODE_ENV: development
   COMPONENTS_WORKING_DIRECTORY: components
   SITE_WORKING_DIRECTORY: site
-  SITE_EXPORT_PATH: site/__sapper__/export/*
+  SITE_EXPORT_DIRECTORY: site/__sapper__/export/*
+  DEPLOY_BRANCH_REF: develop
 
 on:
   push: 
@@ -48,8 +49,8 @@ jobs:
         working-directory: ${{ env.SITE_WORKING_DIRECTORY }}
         run: npm t
 
-      - name: upload artifacts
-        uses: actions/upload-artifact@v2
+      - name: deploy portfolio to github pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: portfolio
-          path: ${{ env.SITE_EXPORT_PATH  }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ env.SITE_EXPORT_DIRECTORY }}
