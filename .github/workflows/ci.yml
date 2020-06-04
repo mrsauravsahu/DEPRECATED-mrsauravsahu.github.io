@@ -25,10 +25,13 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: install dependencies
+        working-directory: site
         run: npm i
 
       - name: run tests
+        working-directory: site
         run: npm t
 
       - name: build 
+        working-directory: site
         run: npm run export
