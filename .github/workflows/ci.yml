@@ -1,0 +1,48 @@
+name: ci
+
+env:
+  NODE_VERSION: '12.8.0'
+  NODE_ENV: development
+  COMPONENTS_WORKING_DIRECTORY: components
+  SITE_WORKING_DIRECTORY: site
+
+on:
+  push: 
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-16.04
+
+    steps:
+      - name: checkout to branch
+        uses: actions/checkout@v2
+
+      - name: setup node.js 
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: install component dependencies
+        working-directory: ${{ env.COMPONENTS_WORKING_DIRECTORY }}
+        run: npm i
+
+      - name: build web components
+        working-directory: ${{ env.COMPONENTS_WORKING_DIRECTORY }}
+        run: npm run build
+
+      - name: install portfolio dependencies
+        working-directory: ${{ env.SITE_WORKING_DIRECTORY }}
+        run: npm i
+
+      - name: build portfolio
+        working-directory: ${{ env.SITE_WORKING_DIRECTORY }}
+        run: npm run export
+
+      - name: run portfolio tests
+        working-directory: ${{ env.SITE_WORKING_DIRECTORY }}
+        run: npm t
