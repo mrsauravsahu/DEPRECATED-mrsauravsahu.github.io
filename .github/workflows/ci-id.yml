@@ -50,9 +50,12 @@ jobs:
         working-directory: ${{ env.SITE_WORKING_DIRECTORY }}
         run: npm t
 
-      - name: deploy portfolio to github pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ env.SITE_EXPORT_DIRECTORY }}
-          publish_branch: ${{ env.GITHUB_PAGES_PUBLISH_BRANCH }}
+      - name: 'test: branch ref'
+        run: echo this is ref - ${{ github.ref }}
+
+      # - name: deploy portfolio to github pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ${{ env.SITE_EXPORT_DIRECTORY }}
+      #     publish_branch: ${{ env.GITHUB_PAGES_PUBLISH_BRANCH }}
