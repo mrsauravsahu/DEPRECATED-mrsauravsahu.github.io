@@ -6,7 +6,7 @@ env:
   COMPONENTS_WORKING_DIRECTORY: components
   SITE_WORKING_DIRECTORY: site
   SITE_EXPORT_DIRECTORY: site/__sapper__/export
-  DEPLOY_BRANCH_REF: develop
+  DEPLOY_BRANCH_REF: refs/heads/develop
   GITHUB_PAGES_PUBLISH_BRANCH: master
 
 on:
@@ -50,12 +50,10 @@ jobs:
         working-directory: ${{ env.SITE_WORKING_DIRECTORY }}
         run: npm t
 
-      - name: 'test: branch ref'
-        run: echo this is ref - ${{ github.ref }}
-
-      # - name: deploy portfolio to github pages
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ${{ env.SITE_EXPORT_DIRECTORY }}
-      #     publish_branch: ${{ env.GITHUB_PAGES_PUBLISH_BRANCH }}
+      - name: deploy portfolio to github pages
+        if: ${{ github.ref == env.DEPLOY_BRANCH_REF }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ env.SITE_EXPORT_DIRECTORY }}
+          publish_branch: ${{ env.GITHUB_PAGES_PUBLISH_BRANCH }}
