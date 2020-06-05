@@ -37,12 +37,10 @@
     flex-direction: column;
   }
 
-  .about-photo-container > img {
+  .about-photo-container {
+    cursor: pointer;
     width: 100%;
     max-width: 14rem;
-    margin: 2rem 0;
-    border-radius: 50%;
-    place-self: center;
   }
 </style>
 
@@ -55,7 +53,7 @@
   </div>
   <div class="about-container">
     <div class="about-photo-container">
-      <img src="me.jpg" alt="Saurav Sahu" />
+      <ss-ig-image src="me.jpg" message="made you click 😂" />
     </div>
     <div class="content">
       <p>Digital consultant and full stack engineer at Digital McKinsey.</p>
