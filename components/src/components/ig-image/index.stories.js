@@ -6,5 +6,10 @@ export default {
 }
 
 export const Default = () => ({
-    Component: IgImage
+    Component: IgImage,
+    props: {
+        src: '/me.jpg',
+        alt: 'saurav sahu',
+        message: 'made you click 😂',
+    }
 })
