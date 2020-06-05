@@ -5,7 +5,7 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
-    "sb": "start-storybook -p 6006",
+    "sb": "start-storybook -p 6006 -s .storybook/static",
     "sb:build": "build-storybook"
   },
   "main": "public/bundle.js",
