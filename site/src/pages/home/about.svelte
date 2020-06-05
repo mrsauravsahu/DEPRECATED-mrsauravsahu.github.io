@@ -41,6 +41,8 @@
     cursor: pointer;
     width: 100%;
     max-width: 14rem;
+    margin: 0 auto;
+    margin-top: 1rem;
   }
 </style>
 
