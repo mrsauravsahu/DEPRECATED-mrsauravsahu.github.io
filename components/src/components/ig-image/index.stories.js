@@ -11,5 +11,5 @@ export const Default = () => ({
         src: '/me.jpg',
         alt: 'saurav sahu',
         message: 'made you click 😂',
-    }
+    },
 })
