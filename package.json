@@ -1,0 +1,20 @@
+{
+  "name": "mrsauravsahu.github.io",
+  "version": "1.0.0",
+  "description": "Portfolio website and blog by Saurav Sahu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrsauravsahu/mrsauravsahu.github.io.git"
+  },
+  "keywords": [
+    "portfolio",
+    "svelte",
+    "sapper"
+  ],
+  "author": "Saurav Sahu <mrsauravsahu@outlook.com>",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/mrsauravsahu/mrsauravsahu.github.io/issues"
+  },
+  "homepage": "https://mrsauravsahu.github.io"
+}
