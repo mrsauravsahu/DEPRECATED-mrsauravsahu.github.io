@@ -26,6 +26,7 @@ importers:
       eslint-plugin-adonis: 1.0.14_eslint@7.4.0+typescript@3.9.6
       pino-pretty: 4.0.1
       typescript: 3.9.6
+      uvu: 0.2.0
       youch: 2.0.10
       youch-terminal: 1.0.0
     specifiers:
@@ -51,6 +52,7 @@ importers:
       reflect-metadata: ^0.1.13
       source-map-support: ^0.5.19
       typescript: ^3.9.6
+      uvu: ^0.2.0
       youch: ^2.0.10
       youch-terminal: ^1.0.0
   '@mrsauravsahu/components':
@@ -4581,6 +4583,12 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
+  /dequal/1.0.0:
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-/Nd1EQbQbI9UbSHrMiKZjFLrXSnU328iQdZKPQf78XQI6C+gutkFUeoHpG5J08Ioa6HeRbRNFpSIclh1xyG0mw==
   /des.js/1.0.1:
     dependencies:
       inherits: 2.0.4
@@ -4632,6 +4640,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-E+B1gzkl2gqxt1IhUzwjrxBKRqx1UzC3WLONHinn8S3T6lwV/agVCyitiFOsGJ/eYuEUBvD71MZHy3Pv1G9doQ==
+  /diff/4.0.2:
+    dev: true
+    engines:
+      node: '>=0.3.1'
+    resolution:
+      integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
   /diffie-hellman/5.0.3:
     dependencies:
       bn.js: 4.11.9
@@ -7781,6 +7795,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-6y7IjGPm8AzlvoUrwAaw1tLnUBudaS3752vcd8JtrpGGQn+rXIe63LFVHm/YMwtqAuh+LJPCFdlLYPWM1nYn6w==
+  /mri/1.1.5:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-d2RKzMD4JNyHMbnbWnznPaa8vbdlq/4pNZ3IgdaGrVbBhebBsGUUE/6qorTMYNS6TwuH3ilfOlD2bf4Igh8CKg==
   /mrm-core/4.1.1:
     dependencies:
       babel-code-frame: 6.26.0
@@ -9762,6 +9782,14 @@ packages:
       npm: '>=2.0.0'
     resolution:
       integrity: sha512-3HMA8z/Oz61DUHe+SdOiQyzIf4tOx5oQHmMir7IZEu6TMqCLHT4LRcmNaUS0NwOz8VLvmmBduMsoaUvMaIiqzg==
+  /sade/1.7.3:
+    dependencies:
+      mri: 1.1.5
+    dev: true
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-m4BctppMvJ60W1dXnHq7jMmFe3hPJZDAH85kQ3ACTo7XZNVUuTItCQ+2HfyaMeV5cKrbw7l4vD/6We3GBxvdJw==
   /safe-buffer/5.1.1:
     dev: true
     resolution:
@@ -10805,6 +10833,12 @@ packages:
       node: '>=0.1.98'
     resolution:
       integrity: sha512-WWvu8sGK8/ZmGusekZJJ5NM6rRVTTDO7/bahz4NGiSDb/XsmdYBn6a1N/bymUHuWYTWeuLUg98wUzvE4jPdCZw==
+  /totalist/1.1.0:
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-gduQwd1rOdDMGxFG1gEvhV88Oirdo2p+KjoYFU7k2g+i7n6AFFbDQ5kMPUsW0pNbfQsB/cwXvT1i4Bue0s9g5g==
   /tough-cookie/2.5.0:
     dependencies:
       psl: 1.8.0
@@ -11162,6 +11196,19 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+  /uvu/0.2.0:
+    dependencies:
+      dequal: 1.0.0
+      diff: 4.0.2
+      kleur: 4.0.2
+      sade: 1.7.3
+      totalist: 1.1.0
+    dev: true
+    engines:
+      node: '>=8'
+    hasBin: true
+    resolution:
+      integrity: sha512-fg3YhyRQfHTr+XMwBEarwKM4hwInZq1ROz2O5mSLHEMvGngwTGQ4eo55WXmSupVRDZ+tuatW0AUoW3D70N7CMg==
   /v8-compile-cache/2.1.1:
     dev: true
     resolution:
