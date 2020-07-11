@@ -1,5 +1,3 @@
-<svelte:options tag="ss-button" />
-
 <script>
   import { createEventDispatcher } from "svelte";
 
@@ -21,7 +19,7 @@
     font-size: 1rem;
     padding: 0.75rem 1rem;
     font-weight: 800;
-    border-radius: var(--ss-border-width);
+    border-radius: var(--ss-border-radius);
     color: rgb(var(--ss-accent));
     background-color: transparent;
     transition: 0.1s linear;
@@ -40,4 +38,5 @@
   }
 </style>
 
+<svelte:options tag="ss-button" />
 <button on:click={onClick}>{text}</button>

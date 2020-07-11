@@ -1,5 +1,3 @@
-<svelte:options tag="ss-card" />
-
 <script>
   export let title;
 </script>
@@ -17,12 +15,14 @@
     color: rgb(var(--ss-accent));
     font-size: calc(2 * var(--ss-base-font-size));
     margin-bottom: 1rem;
+    font-weight: 800;
   }
   .content-container {
     color: rgb(var(--ss-accent));
   }
 </style>
 
+<svelte:options tag="ss-card" />
 <div class="root">
   <div class="title-container">{title}</div>
   <div class="content-container">

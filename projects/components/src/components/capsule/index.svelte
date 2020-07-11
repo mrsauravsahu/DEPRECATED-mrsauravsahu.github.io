@@ -1,5 +1,5 @@
 <script>
-  export let text
+  export let text;
 </script>
 
 <style>
@@ -8,13 +8,11 @@
     font-family: var(--ss-font-family);
     padding: 1rem;
     display: inline-block;
-    border-radius: 2rem;
+    border-radius: var(--ss-border-radius);
 
     color: rgb(var(--ss-bg));
     background-color: rgb(var(--ss-accent));
   }
-
-  
 </style>
 
 <svelte:options tag="ss-bubble" />
