@@ -19,5 +19,5 @@
     on:click={() => goto('https://unsplash.com/@mrsauravsahu')} />
   <ss-button
     text="instagram"
-    on:click={() => goto('https://instagram.com/mrsauravsahu')} />
+    on:click={() => goto('https://instagram.com/iamsauravsahu')} />
 </div>
