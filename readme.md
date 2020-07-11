@@ -24,22 +24,22 @@ pnpm i
 ---
 #### 4. Build the components project
 ```
-pnpm --prefix projects/components build
+pnpm --prefix @mrsauravsahu/components build
 ```
 
 or 
 ```
-cd projects/components
+cd @mrsauravsahu/components
 pnpm build
 ```
 ---
 #### 5. Run the site
 ```
-pnpm --prefix projects/site dev
+pnpm --prefix @mrsauravsahu/site dev
 ```
 
 or 
 ```
-cd projects/site
+cd @mrsauravsahu/site
 pnpm dev
 ```

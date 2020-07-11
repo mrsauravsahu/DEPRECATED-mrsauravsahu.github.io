@@ -1,7 +1,7 @@
 importers:
   .:
     specifiers: {}
-  projects/components:
+  '@mrsauravsahu/components':
     devDependencies:
       '@babel/core': 7.10.4
       '@rollup/plugin-commonjs': 11.0.2_rollup@1.32.1
@@ -34,7 +34,7 @@ importers:
       rollup-plugin-terser: ^5.1.2
       svelte: ^3.23.2
       svelte-loader: ^2.13.6
-  projects/site:
+  '@mrsauravsahu/site':
     dependencies:
       compression: 1.7.4
       polka: 1.0.0-next.11
@@ -9485,7 +9485,7 @@ packages:
       integrity: sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==
   /wide-align/1.1.3:
     dependencies:
-      string-width: 1.0.2
+      string-width: 2.1.1
     dev: true
     resolution:
       integrity: sha512-QGkOQc8XL6Bt5PwnsExKBPuMKBxnGxWWW3fU55Xt4feHozMUhdUMaBCk290qpm/wG5u/RSKzwdAC4i51YigihA==

@@ -3,9 +3,9 @@ name: ci-cd for mrsauravsahu.github.io
 env:
   NODE_VERSION: "12.8.0"
   NODE_ENV: development
-  COMPONENTS_WORKING_DIRECTORY: projects/components
-  SITE_WORKING_DIRECTORY: projects/site
-  SITE_EXPORT_DIRECTORY: projects/site/__sapper__/export
+  COMPONENTS_WORKING_DIRECTORY: "@mrsauravsahu/components"
+  SITE_WORKING_DIRECTORY: "@mrsauravsahu/site"
+  SITE_EXPORT_DIRECTORY: "@mrsauravsahu/site/__sapper__/export"
   DEPLOY_BRANCH_REF: refs/heads/develop
   GITHUB_PAGES_PUBLISH_BRANCH: master
 
