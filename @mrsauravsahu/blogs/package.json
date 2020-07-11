@@ -5,7 +5,8 @@
   "scripts": {
     "build": "node ace build",
     "start": "node ace serve --watch",
-    "lint": "eslint . --ext=.ts"
+    "lint": "eslint . --ext=.ts",
+    "test": "uvu -r ts-node/register __tests__"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^2.1.3",
