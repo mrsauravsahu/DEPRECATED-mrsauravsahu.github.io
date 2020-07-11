@@ -23,6 +23,7 @@ importers:
       '@adonisjs/validator': 7.3.2_@adonisjs+http-server@2.1.2
       '@types/supertest': 2.0.10
       adonis-preset-ts: 1.0.4
+      dotenv: 8.2.0
       eslint: 7.4.0
       eslint-plugin-adonis: 1.0.14_eslint@7.4.0+typescript@3.9.6
       pino-pretty: 4.0.1
@@ -49,6 +50,7 @@ importers:
       '@adonisjs/validator': ^7.3.2
       '@types/supertest': ^2.0.10
       adonis-preset-ts: ^1.0.4
+      dotenv: ^8.2.0
       eslint: ^7.4.0
       eslint-plugin-adonis: ^1.0.14
       pino-pretty: ^4.0.1
