@@ -33,6 +33,10 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      - name: build project
+        working-directory: ${{ env.PROJECT }}
+        run: npm run build
+
       - name: run integration tests
         working-directory: ${{ env.PROJECT }}
         run: npm run e2e
