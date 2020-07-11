@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run tests",
+      "group": "test",
+      "options": {
+        "env": {
+          "BASE_URL": "http://localhost:3333"
+        }
+      },
+      "type": "shell",
+      "command": "npm test"
+    }
+  ]
+}
