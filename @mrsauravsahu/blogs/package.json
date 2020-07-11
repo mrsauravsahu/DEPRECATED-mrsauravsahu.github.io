@@ -25,6 +25,7 @@
     "eslint-plugin-adonis": "^1.0.14",
     "pino-pretty": "^4.0.1",
     "supertest": "^4.0.2",
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.6",
     "uvu": "^0.2.0",
     "youch": "^2.0.10",
