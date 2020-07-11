@@ -27,6 +27,7 @@
   li {
     list-style-type: none;
     text-decoration: none;
+    margin-bottom: 1rem;
   }
 
   a {
