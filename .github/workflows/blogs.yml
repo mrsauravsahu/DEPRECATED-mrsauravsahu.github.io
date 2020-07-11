@@ -35,7 +35,7 @@ jobs:
 
       - name: build project
         working-directory: ${{ env.PROJECT }}
-        run: npm run build
+        run: pnpm run build
 
       - name: copy test .env file to build
         working-directory: ${{ env.PROJECT }}
@@ -43,4 +43,4 @@ jobs:
 
       - name: run integration tests
         working-directory: ${{ env.PROJECT }}
-        run: npm run e2e
+        run: pnpm run e2e
