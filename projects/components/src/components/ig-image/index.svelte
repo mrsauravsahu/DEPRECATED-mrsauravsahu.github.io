@@ -1,5 +1,4 @@
 <script>
-  import classnames from "classnames";
   export let src;
   export let message;
 
@@ -51,8 +50,5 @@
   <div class="image__container">
     <img {src} alt="instagram style" on:click={onImageClicked} />
   </div>
-  <div
-    class={classnames({ message: true, 'message--image-clicked': isClicked })}>
-    {message}
-  </div>
+  <div class:message class:message--image-clicked={isClicked}>{message}</div>
 </div>
