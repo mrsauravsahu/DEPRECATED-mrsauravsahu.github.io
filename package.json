@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/mrsauravsahu/mrsauravsahu.github.io/issues"
   },
-  "homepage": "https://mrsauravsahu.github.io"
+  "homepage": "https://mrsauravsahu.github.io",
+  "dependencies": {}
 }
