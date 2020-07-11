@@ -5,6 +5,12 @@
             "slugSuffix": "first",
             "createdOn": "2020-05-21",
             "line": "My first ever post?"
+        },
+        {
+            "title": "CI for monorepos?",
+            "slugSuffix": "monorepo-ci",
+            "createdOn": "2020-07-11",
+            "line": "How does one go about doing CI-CD for monorepos?"
         }
     ]
 }
