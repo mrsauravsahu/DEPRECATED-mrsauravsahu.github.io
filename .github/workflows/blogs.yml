@@ -8,7 +8,7 @@ env:
 on:
   push:
     branches:
-      - blogs/*
+      - main/blogs
   pull_request:
     branches:
       - main/blogs
