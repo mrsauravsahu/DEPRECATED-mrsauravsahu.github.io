@@ -6,7 +6,8 @@
     "build": "node ace build",
     "start": "node ace serve --watch",
     "lint": "eslint . --ext=.ts",
-    "e2e": "NODE_ENV=test start-server-and-test http-get://localhost:8081 e2e:test-setup",
+    "e2e": "start-server-and-test e2e:server-setup http-get://localhost:8081 e2e:test-setup",
+    "e2e:server-setup": "node ace serve --no-compile",
     "e2e:test-setup": "DOTENV_CONFIG_PATH=.env.test uvu -r ts-node/register -r dotenv/config __e2e__"
   },
   "devDependencies": {
