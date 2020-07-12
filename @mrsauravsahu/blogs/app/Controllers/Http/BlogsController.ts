@@ -1,12 +1,21 @@
 // import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import { Response } from "Contracts/response";
-import { GetBlogsDto } from 'Contracts/response.get-blogs';
+import { BlogDto } from 'Contracts/response.blogs';
+import Blog from "App/Models/Blog";
 
 export default class BlogsController {
-  public async getAll(): Promise<Response<GetBlogsDto[]>> {
-    // TODO: make db call
-    const blogs = []
-    return { data: <unknown>blogs as GetBlogsDto[] }
+  public async getAll(): Promise<Response<BlogDto[]>> {
+    const blogs = await Blog.all()
+    return { data: <unknown>blogs as BlogDto[] }
+  }
+
+  public async create(): Promise<Response<BlogDto>> {
+    // read from request
+    const blog = new Blog()
+    blog.title = 'second!'
+
+    const createdBlog = await blog.save();
+    return {data:createdBlog as BlogDto}
   }
 }

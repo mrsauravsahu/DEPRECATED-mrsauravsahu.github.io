@@ -25,3 +25,4 @@ Route.get('/', 'HealthController.index')
 
 // blogs
 Route.get('blogs', 'BlogsController.getAll')
+Route.post('blogs', 'BlogsController.create')
