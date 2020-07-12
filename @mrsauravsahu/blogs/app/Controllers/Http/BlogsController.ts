@@ -6,12 +6,13 @@ import Blog from "App/Models/Blog";
 
 export default class BlogsController {
   public async getAll(): Promise<Response<BlogDto[]>> {
+    // TODO: Paginate
     const blogs = await Blog.all()
     return { data: <unknown>blogs as BlogDto[] }
   }
 
   public async create(): Promise<Response<BlogDto>> {
-    // read from request
+    // TODO: read from request
     const blog = new Blog()
     blog.title = 'second!'
 
