@@ -32,7 +32,71 @@ importers:
       supertest: 4.0.2
       ts-node: 8.10.2_typescript@3.9.6
       typescript: 3.9.6
-      uvu: 0.2.0
+      youch: 2.0.10
+      youch-terminal: 1.0.0
+    specifiers:
+      '@adonisjs/ace': ^6.9.3
+      '@adonisjs/assembler': ^2.1.3
+      '@adonisjs/bodyparser': ^4.0.4
+      '@adonisjs/config': ^1.0.17
+      '@adonisjs/core': ^5.0.0-preview-rc-1.9
+      '@adonisjs/encryption': ^2.0.5
+      '@adonisjs/env': ^1.0.17
+      '@adonisjs/events': ^3.0.0
+      '@adonisjs/fold': ^6.3.5
+      '@adonisjs/hash': ^4.0.0
+      '@adonisjs/http-server': ^2.1.2
+      '@adonisjs/logger': ^2.0.7
+      '@adonisjs/profiler': ^4.0.0
+      '@adonisjs/validator': ^7.3.2
+      '@types/node': ^14.0.22
+      '@types/supertest': ^2.0.10
+      adonis-preset-ts: ^1.0.4
+      dotenv: ^8.2.0
+      eslint: ^7.4.0
+      eslint-plugin-adonis: ^1.0.14
+      pino-pretty: ^4.0.1
+      proxy-addr: ^2.0.6
+      reflect-metadata: ^0.1.13
+      source-map-support: ^0.5.19
+      start-server-and-test: ^1.11.2
+      supertest: ^4.0.2
+      ts-node: ^8.10.2
+      typescript: ^3.9.6
+      youch: ^2.0.10
+      youch-terminal: ^1.0.0
+  '@mrsauravsahu/blogs/build':
+    dependencies:
+      '@adonisjs/ace': 6.9.3_@adonisjs+fold@6.3.5
+      '@adonisjs/core': 5.0.0-preview-rc-1.9_84be456d36416cf1b86195ef655ffd67
+      '@adonisjs/fold': 6.3.5
+      proxy-addr: 2.0.6
+      reflect-metadata: 0.1.13
+      source-map-support: 0.5.19
+    devDependencies:
+      '@adonisjs/assembler': 2.1.3_84be456d36416cf1b86195ef655ffd67
+      '@adonisjs/bodyparser': 4.0.4_@adonisjs+http-server@2.1.2
+      '@adonisjs/config': 1.0.17
+      '@adonisjs/encryption': 2.0.5
+      '@adonisjs/env': 1.0.17
+      '@adonisjs/events': 3.0.0
+      '@adonisjs/hash': 4.0.0
+      '@adonisjs/http-server': 2.1.2_eb55fdb8d4ee4c72a189e887256881c7
+      '@adonisjs/logger': 2.0.7
+      '@adonisjs/profiler': 4.0.0_@adonisjs+logger@2.0.7
+      '@adonisjs/validator': 7.3.2_@adonisjs+http-server@2.1.2
+      '@types/node': 14.0.22
+      '@types/supertest': 2.0.10
+      adonis-preset-ts: 1.0.4
+      dotenv: 8.2.0
+      eslint: 7.4.0
+      eslint-plugin-adonis: 1.0.14_eslint@7.4.0+typescript@3.9.6
+      pino-pretty: 4.0.1
+      start-server-and-test: 1.11.2
+      supertest: 4.0.2
+      ts-node: 8.10.2_typescript@3.9.6
+      typescript: 3.9.6
+      uvu: 0.2.1
       youch: 2.0.10
       youch-terminal: 1.0.0
     specifiers:
@@ -7942,12 +8006,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-6y7IjGPm8AzlvoUrwAaw1tLnUBudaS3752vcd8JtrpGGQn+rXIe63LFVHm/YMwtqAuh+LJPCFdlLYPWM1nYn6w==
-  /mri/1.1.5:
-    dev: true
-    engines:
-      node: '>=4'
-    resolution:
-      integrity: sha512-d2RKzMD4JNyHMbnbWnznPaa8vbdlq/4pNZ3IgdaGrVbBhebBsGUUE/6qorTMYNS6TwuH3ilfOlD2bf4Igh8CKg==
   /mrm-core/4.1.1:
     dependencies:
       babel-code-frame: 6.26.0
@@ -9952,7 +10010,7 @@ packages:
       integrity: sha512-3HMA8z/Oz61DUHe+SdOiQyzIf4tOx5oQHmMir7IZEu6TMqCLHT4LRcmNaUS0NwOz8VLvmmBduMsoaUvMaIiqzg==
   /sade/1.7.3:
     dependencies:
-      mri: 1.1.5
+      mri: 1.1.4
     dev: true
     engines:
       node: '>= 6'
@@ -11433,7 +11491,7 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
-  /uvu/0.2.0:
+  /uvu/0.2.1:
     dependencies:
       dequal: 1.0.0
       diff: 4.0.2
@@ -11445,7 +11503,7 @@ packages:
       node: '>=8'
     hasBin: true
     resolution:
-      integrity: sha512-fg3YhyRQfHTr+XMwBEarwKM4hwInZq1ROz2O5mSLHEMvGngwTGQ4eo55WXmSupVRDZ+tuatW0AUoW3D70N7CMg==
+      integrity: sha512-rjP0Z/elnlEdOKUCxBq1tQ46jgeFfdlvFsyJ1fwMxCrIK0mSwUcCBnXtssev8UfAictCAJSbjB2ZQU88MUYFxQ==
   /v8-compile-cache/2.1.1:
     dev: true
     resolution:
