@@ -11,6 +11,12 @@
             "slugSuffix": "monorepo-ci",
             "createdOn": "2020-07-11",
             "line": "How does one go about doing CI-CD for monorepos?"
+        },
+        {
+            "title": "Adonis V5: Writing your first custom provider!",
+            "slugSuffix": "adonis-v5-provider",
+            "createdOn": "2020-07-12",
+            "line": "Let's write a custom provider in Adonis V5"
         }
     ]
 }
