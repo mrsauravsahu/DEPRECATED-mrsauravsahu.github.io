@@ -8,10 +8,10 @@ env:
 on:
   push:
     branches:
-      - main/blogs
+      - develop
   pull_request:
     branches:
-      - main/blogs
+      - blogs/*
 
 jobs:
   build:
