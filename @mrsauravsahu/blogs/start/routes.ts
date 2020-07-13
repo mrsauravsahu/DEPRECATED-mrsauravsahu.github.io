@@ -29,3 +29,4 @@ Route.post('blogs', 'BlogsController.create')
 
 // blog posts
 Route.post('/blog-posts', 'BlogPostsController.upload')
+Route.get('/blog-posts/:id/file', 'BlogPostsController.download')
