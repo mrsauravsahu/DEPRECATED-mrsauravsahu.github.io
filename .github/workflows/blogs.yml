@@ -16,14 +16,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-16.04
-    # if: startsWith(github.ref, 'refs/heads/blogs') == true
+    if: startsWith(github.head_ref, 'blogs') == true
 
     steps:
       - name: checkout to branch
         uses: actions/checkout@v2
-
-      - name: check ref
-        run: echo ${{ github.head_ref }} ${{ github.ref }}
 
       - name: install pnpm
         uses: pnpm/action-setup/@v1.2.0
