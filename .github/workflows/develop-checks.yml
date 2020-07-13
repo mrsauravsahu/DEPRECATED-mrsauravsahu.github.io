@@ -1,12 +1,12 @@
-name: ci-cd for mrsauravsahu.github.io
+name: CI for develop - project checks
 
 env:
   NODE_VERSION: "12.8.0"
   NODE_ENV: development
-  COMPONENTS_WORKING_DIRECTORY: "@mrsauravsahu/components"
-  SITE_WORKING_DIRECTORY: "@mrsauravsahu/site"
+  COMPONENTS_PROJECT: "@mrsauravsahu/components"
+  SITE_PROJECT: "@mrsauravsahu/site"
   SITE_EXPORT_DIRECTORY: "@mrsauravsahu/site/__sapper__/export"
-  DEPLOY_BRANCH_REF: refs/heads/develop
+  BLOGS_PROJECT: "@mrsauravsahu/blogs"
   GITHUB_PAGES_PUBLISH_BRANCH: master
 
 on:
@@ -37,22 +37,24 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      # checks for site
       - name: build web components
-        working-directory: ${{ env.COMPONENTS_WORKING_DIRECTORY }}
+        working-directory: ${{ env.COMPONENTS_PROJECT }}
         run: npm run build
 
-      - name: build portfolio
-        working-directory: ${{ env.SITE_WORKING_DIRECTORY }}
-        run: npm run export
-
       - name: run portfolio tests
-        working-directory: ${{ env.SITE_WORKING_DIRECTORY }}
+        working-directory: ${{ env.SITE_PROJECT }}
         run: npm t
 
-      - name: deploy portfolio to github pages
-        if: ${{ github.ref == env.DEPLOY_BRANCH_REF }}
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ env.SITE_EXPORT_DIRECTORY }}
-          publish_branch: ${{ env.GITHUB_PAGES_PUBLISH_BRANCH }}
+      # checks for blogs project
+      - name: build project
+        working-directory: ${{ env.BLOGS_PROJECT }}
+        run: pnpm run build
+
+      - name: copy test .env file to build
+        working-directory: ${{ env.BLOGS_PROJECT }}
+        run: cp .env.test build/.env
+
+      - name: run integration tests
+        working-directory: ${{ env.BLOGS_PROJECT }}
+        run: pnpm run e2e
