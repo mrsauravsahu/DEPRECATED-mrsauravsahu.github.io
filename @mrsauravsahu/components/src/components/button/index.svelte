@@ -20,17 +20,17 @@
     padding: 0.75rem 1rem;
     font-weight: 800;
     border-radius: var(--ss-border-radius);
-    color: rgb(var(--ss-accent));
-    background-color: transparent;
+    color: rgb(var(--ss-bg));
+    background-color: rgb(var(--ss-accent));
     transition: 0.1s linear;
   }
 
   button:focus,
   button:active,
   button:hover {
-    color: rgb(var(--ss-bg));
-    border: var(--ss-border-width) solid rgba(var(--ss-accent), 0.5);
-    background-color: rgb(var(--ss-accent));
+    color: rgb(var(--ss-accent));
+    border: var(--ss-border-width) solid rgba(var(--ss-accent));
+    background-color: transparent;
   }
 
   button:active {
