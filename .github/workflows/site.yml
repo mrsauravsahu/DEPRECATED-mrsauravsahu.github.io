@@ -20,7 +20,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-16.04
-    if: startsWith(github.ref, 'blogs')
+    if: startsWith(github.ref, 'blogs') == true
 
     steps:
       - name: checkout to branch
