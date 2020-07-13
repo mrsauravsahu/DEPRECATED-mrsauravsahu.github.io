@@ -11,11 +11,12 @@ on:
       - develop
   pull_request:
     branches:
-      - blogs/*
+      - develop
 
 jobs:
   build:
     runs-on: ubuntu-16.04
+    if: startsWith(github.ref, 'blogs')
 
     steps:
       - name: checkout to branch
