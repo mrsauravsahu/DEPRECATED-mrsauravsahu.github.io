@@ -1,4 +1,4 @@
-name: ci-cd for mrsauravsahu.github.io
+name: Workflow for site project
 
 env:
   NODE_VERSION: "12.8.0"
@@ -6,16 +6,16 @@ env:
   COMPONENTS_WORKING_DIRECTORY: "@mrsauravsahu/components"
   SITE_WORKING_DIRECTORY: "@mrsauravsahu/site"
   SITE_EXPORT_DIRECTORY: "@mrsauravsahu/site/__sapper__/export"
-  DEPLOY_BRANCH_REF: refs/heads/develop
+  DEPLOY_BRANCH_REF: refs/heads/main/site
   GITHUB_PAGES_PUBLISH_BRANCH: master
 
 on:
   push:
     branches:
-      - develop
+      - main/site
   pull_request:
     branches:
-      - develop
+      - main/site
 
 jobs:
   build:
