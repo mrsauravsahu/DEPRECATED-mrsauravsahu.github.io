@@ -7,7 +7,7 @@
     font-family: var(--ss-font-family);
     background-color: rgb(var(--ss-bg));
     border: var(--ss-border-width) solid rgb(var(--ss-accent));
-    border-radius: var(--ss-border-radius);
+    border-radius: calc(var(--ss-border-radius) / 4);
     padding: 1rem;
   }
 
@@ -17,6 +17,7 @@
     margin-bottom: 1rem;
     font-weight: 800;
   }
+
   .content-container {
     color: rgb(var(--ss-accent));
   }
