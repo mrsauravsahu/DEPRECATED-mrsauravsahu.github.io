@@ -14,7 +14,7 @@ export default class BlogPostsController {
     await file?.move(Application.tmpPath(),{name:filePath})
 
     const blogPostToAdd: Partial<BlogPost> = {
-      filePath,
+      file: filePath,
       extension: 'md'
     };
 

@@ -6,7 +6,7 @@ export default class AddBlogPostsTables extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.string('file_path').notNullable().unique()
+      table.string('file').notNullable().unique()
       table.string('extension').notNullable()
       table.timestamps(true)
     })

@@ -6,7 +6,7 @@ export default class BlogPost extends BaseModel {
   public id: number
 
   @column()
-  public filePath: string
+  public file: string
 
   @column()
   public extension: string
