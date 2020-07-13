@@ -11,7 +11,7 @@
     border-radius: var(--ss-border-radius);
 
     color: rgb(var(--ss-bg));
-    background-color: rgb(var(--ss-accent));
+    background-color: rgb(var(--ss-accent), 0.75);
   }
 </style>
 
