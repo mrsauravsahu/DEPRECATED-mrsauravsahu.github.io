@@ -8,8 +8,8 @@
     background-color: rgb(var(--ss-bg));
     border: var(--ss-border-width) solid rgb(var(--ss-accent));
     border-radius: calc(var(--ss-border-radius) / 4);
-    height: 10rem;
     display: flex;
+    height: 100%;
     flex-direction: column;
     justify-content: space-between;
   }
