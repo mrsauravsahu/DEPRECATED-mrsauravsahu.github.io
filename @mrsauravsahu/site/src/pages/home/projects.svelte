@@ -16,7 +16,9 @@
 
 <ss-title id="projects">--projects</ss-title>
 <div class="projects-container content">
-  <p>Here are a few of the projects I'm working on. Find out more on Github...</p>
+  <p>
+    Here are a few of the projects I'm working on. Find out more on Github...
+  </p>
   <div>
     <button
       on:click={() => goto('https://github.com/mrsauravsahu/gitremotetourl')}>
@@ -29,10 +31,8 @@
     <button
       on:click={() => goto('https://github.com/mrsauravsahu/towerofhanoi  ')}>
       <ss-card title="TowerOfHanoi">
-        <p>
-          Cross platform Tower of Hanoi game using GLUT for Windows and freeglut
-          for Linux and Mac.
-        </p>
+        Cross platform Tower of Hanoi game using GLUT for Windows and freeglut
+        for Linux and Mac.
       </ss-card>
     </button>
   </div>
@@ -40,7 +40,7 @@
     <button
       on:click={() => goto('https://github.com/mrsauravsahu/mrsauravsahu.github.io')}>
       <ss-card title="portfolio">
-        <p>A little site that tells the world who I am.</p>
+        A little site that tells the world who I am.
       </ss-card>
     </button>
   </div>
