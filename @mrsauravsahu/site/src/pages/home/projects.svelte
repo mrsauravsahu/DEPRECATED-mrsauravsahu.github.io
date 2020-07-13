@@ -11,6 +11,7 @@
     all: unset;
     width: 100%;
     cursor: pointer;
+    margin: 1rem 0;
   }
 </style>
 
@@ -19,29 +20,24 @@
   <p>
     Here are a few of the projects I'm working on. Find out more on Github...
   </p>
-  <div>
-    <button
-      on:click={() => goto('https://github.com/mrsauravsahu/gitremotetourl')}>
-      <ss-card title="git-remote-to-url">
-        Converts git's remote url to a valid url to open in the browser.
-      </ss-card>
-    </button>
-  </div>
-  <div>
-    <button
-      on:click={() => goto('https://github.com/mrsauravsahu/towerofhanoi  ')}>
-      <ss-card title="TowerOfHanoi">
-        Cross platform Tower of Hanoi game using GLUT for Windows and freeglut
-        for Linux and Mac.
-      </ss-card>
-    </button>
-  </div>
-  <div>
-    <button
-      on:click={() => goto('https://github.com/mrsauravsahu/mrsauravsahu.github.io')}>
-      <ss-card title="portfolio">
-        A little site that tells the world who I am.
-      </ss-card>
-    </button>
-  </div>
+
+  <button
+    on:click={() => goto('https://github.com/mrsauravsahu/gitremotetourl')}>
+    <ss-card title="git-remote-to-url">
+      Converts git's remote url to a valid url to open in the browser.
+    </ss-card>
+  </button>
+  <button
+    on:click={() => goto('https://github.com/mrsauravsahu/towerofhanoi  ')}>
+    <ss-card title="TowerOfHanoi">
+      Cross platform Tower of Hanoi game using GLUT for Windows and freeglut for
+      Linux and Mac.
+    </ss-card>
+  </button>
+  <button
+    on:click={() => goto('https://github.com/mrsauravsahu/mrsauravsahu.github.io')}>
+    <ss-card title="portfolio">
+      A little site that tells the world who I am.
+    </ss-card>
+  </button>
 </div>
