@@ -15,24 +15,40 @@
 </script>
 
 <style>
-  .container {
+  .posts-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   ul {
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   li {
     list-style-type: none;
     text-decoration: none;
     margin-bottom: 1rem;
+    width: 100%;
+    min-height: 12rem;
   }
 
-  a {
+  ul a {
     all: unset;
     cursor: pointer;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 48rem) {
+    li {
+      width: calc(50% - 1rem);
+    }
   }
 </style>
 
@@ -52,7 +68,7 @@
         mrsauravsahu.wordpress.com
       </a>
     </p>
-    <ul>
+    <ul class="posts-container">
       {#each posts as post}
         <!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
