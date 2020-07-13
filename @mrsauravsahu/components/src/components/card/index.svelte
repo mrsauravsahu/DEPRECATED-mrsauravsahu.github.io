@@ -8,18 +8,40 @@
     background-color: rgb(var(--ss-bg));
     border: var(--ss-border-width) solid rgb(var(--ss-accent));
     border-radius: calc(var(--ss-border-radius) / 4);
-    padding: 1rem;
+    min-height: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .title-container {
+    padding: 1rem;
     color: rgb(var(--ss-accent));
     font-size: calc(2 * var(--ss-base-font-size));
-    margin-bottom: 1rem;
     font-weight: 800;
+    transition: 0.2s all linear;
   }
 
   .content-container {
+    padding: 1rem;
     color: rgb(var(--ss-accent));
+    margin-right: 1rem;
+    border-top: 0.0625rem solid rgb(var(--ss-accent));
+    transition: 0.2s all linear;
+  }
+
+  @media (hover: hover) {
+    .root:hover > .title-container {
+      border-top-left-radius: calc(var(--ss-border-radius) / 4);
+      border-top-right-radius: calc(var(--ss-border-radius) / 4);
+      background-color: rgb(var(--ss-accent));
+      margin: 0;
+      color: rgb(var(--ss-bg));
+    }
+
+    .root:hover > .content-container {
+      border-top: 0.0625rem solid transparent;
+    }
   }
 </style>
 
