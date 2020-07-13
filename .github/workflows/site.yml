@@ -12,10 +12,10 @@ env:
 on:
   push:
     branches:
-      - main/site
+      - develop
   pull_request:
     branches:
-      - main/site
+      - site/*
 
 jobs:
   build:
