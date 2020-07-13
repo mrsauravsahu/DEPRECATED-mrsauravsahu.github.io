@@ -2,7 +2,7 @@ import { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
 import Application from "@ioc:Adonis/Core/Application";
 import {v4 as uuid } from 'uuid'
 import BlogPost from "App/Models/BlogPost";
-import { FileService } from "App/Services/FileService";
+import TmpFileProvider from '@ioc:providers/TmpFileProvider';
 
 export default class BlogPostsController {
   public async upload({ request }: HttpContextContract) {
@@ -26,14 +26,13 @@ export default class BlogPostsController {
     }
   }
 
-  public async download({  params, response }: HttpContextContract) {
+  public async download({ params, response }: HttpContextContract) {
+    // TODO: Clean this lel
     const blogPostId: number = params.id;
-
     const blogPost = await BlogPost.find(blogPostId);
-
+    // TODO: Use request validation for this
     if (!blogPost) throw new Error('cannot find file');
-    const file = await new FileService({ basePath: Application.tmpPath() })
-      .getBufferAsync(blogPost.file);
+    const file = await TmpFileProvider.getBufferAsync(blogPost.file);
 
     response.status(200);
     response.type('application/octet-stream');
