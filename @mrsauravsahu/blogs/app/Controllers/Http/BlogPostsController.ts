@@ -1,12 +1,27 @@
 import { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
 import Application from "@ioc:Adonis/Core/Application";
+import {v4 as uuid } from 'uuid'
+import BlogPost from "App/Models/BlogPost";
 
 export default class BlogPostsController {
-  public async upload({ request}: HttpContextContract) {
+  public async upload({ request }: HttpContextContract) {
+    // TODO: refactor into service arch
     const file = request.file('file');
-    await file?.move(Application.tmpPath('uploads/blog-posts'))
+
+    const fileId = uuid();
+    const filePath = `uploads/blog-posts/${fileId}.md`;
+    // TODO: current assumption is file will be markdown
+    await file?.move(Application.tmpPath(),{name:filePath})
+
+    const blogPostToAdd: Partial<BlogPost> = {
+      filePath,
+      extension: 'md'
+    };
+
+    const addedBlogPost = await BlogPost.create(blogPostToAdd)
+
     return {
-      data: file?.filePath
+      data: addedBlogPost
     }
   }
 }
