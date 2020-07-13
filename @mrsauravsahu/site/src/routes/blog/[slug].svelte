@@ -22,10 +22,29 @@
   export let post;
 </script>
 
+<style>
+  wc-markdown :global(:not(pre) > code) {
+    background-color: rgb(var(--ss-accent));
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.25rem;
+    color: rgb(var(--ss-bg));
+  }
+
+  wc-markdown :global(pre) {
+    font-size: var(--ss-base-font-size);
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  wc-markdown :global(a) {
+    color: rgb(var(--ss-accent));
+    font-weight: 800;
+  }
+</style>
+
 <svelte:head>
   <title>{post.title}</title>
 </svelte:head>
 
 <h1>{post.title}</h1>
 
-<wc-markdown src={`/data/blog-posts/${blogSlugGenerator(post)}.md`} />
+<wc-markdown src={`/data/blog-posts/${blogSlugGenerator(post)}.md`} highlight />
