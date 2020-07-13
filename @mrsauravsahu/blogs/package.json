@@ -14,6 +14,7 @@
     "@adonisjs/assembler": "^2.1.3",
     "@adonisjs/bodyparser": "^4.0.4",
     "@adonisjs/config": "^1.0.17",
+    "@adonisjs/drive": "^1.0.4",
     "@adonisjs/encryption": "^2.0.5",
     "@adonisjs/env": "^1.0.17",
     "@adonisjs/events": "^3.0.0",

@@ -15,6 +15,7 @@ importers:
       '@adonisjs/assembler': 2.1.3_84be456d36416cf1b86195ef655ffd67
       '@adonisjs/bodyparser': 4.0.4_@adonisjs+http-server@2.1.2
       '@adonisjs/config': 1.0.17
+      '@adonisjs/drive': 1.0.4
       '@adonisjs/encryption': 2.0.5
       '@adonisjs/env': 1.0.17
       '@adonisjs/events': 3.0.0
@@ -46,6 +47,7 @@ importers:
       '@adonisjs/bodyparser': ^4.0.4
       '@adonisjs/config': ^1.0.17
       '@adonisjs/core': ^5.0.0-preview-rc-1.9
+      '@adonisjs/drive': ^1.0.4
       '@adonisjs/encryption': ^2.0.5
       '@adonisjs/env': ^1.0.17
       '@adonisjs/events': ^3.0.0
@@ -345,6 +347,12 @@ packages:
       '@adonisjs/fold': ^6.0.0
     resolution:
       integrity: sha512-VEUVcAb7hqhaJ2/XLwwn/sZQj6G3TM7CGK1X4aUZQ9YSbmfdFo2/z/MP+RQaz07WclMN07GLlJ1zWOFD3TcOJw==
+  /@adonisjs/drive/1.0.4:
+    dependencies:
+      '@slynova/flydrive': 0.3.1
+    dev: true
+    resolution:
+      integrity: sha512-p2Ot+ylOwtGV6gHIKIMJG0M+AxBatjnqv+UOrUW3Y8xsyN9bKg9khZTEqn7WrHUAlmeS4WUR5T68KIaxuXgRDw==
   /@adonisjs/encryption/2.0.5:
     dependencies:
       '@poppinss/utils': 2.2.8
@@ -2173,6 +2181,15 @@ packages:
     dev: true
     resolution:
       integrity: sha512-MZPUxrmFubI36XS1DI3qmI0YdN1gks62JtFZvxR67ljjSNCeK6U08Zx4msEWOXuofgqUt6zPHSi1H9fbjR/NRA==
+  /@slynova/flydrive/0.3.1:
+    dependencies:
+      create-output-stream: 0.0.1
+      fs-extra: 6.0.1
+      node-exceptions: 3.0.0
+      resetable: 1.0.3
+    dev: true
+    resolution:
+      integrity: sha512-/C3chxZRqonxjQwj70WOyqtw0JGjBr6rjvkcrGlDedUXi5YoiJiTVHwD4ry6tHJKwOi3PtxpWO9RZwSKElVWzw==
   /@storybook/addon-actions/5.3.19:
     dependencies:
       '@storybook/addons': 5.3.19
@@ -4642,6 +4659,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-t6wbgtoCXvAzst7QgXxJYqPt0usEfbgQdftEPbLL/cvv6HPE5VgvqCuAIDR0NgU52ds6rFwqrgakNLrHEjCbrQ==
+  /clone/2.1.2:
+    dev: true
+    engines:
+      node: '>=0.8'
+    resolution:
+      integrity: sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
   /co-compose/5.1.5:
     resolution:
       integrity: sha512-6Uk9XcvrVHRaTN8/ee0P3lUge5optVgjR38J4RGJoItHDJBObD9CW40GaudwDASj6tvCK1t/HznWrlgyNLDb6A==
@@ -4990,6 +5013,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-MJG9liiZ+ogc4TzUwuvbER1JRdgvUFSB5+VR/g5h82fGaIRWMWddtKBHi7/sVhfjQZ6SehlyhvQYrcYkaUIpLg==
+  /create-output-stream/0.0.1:
+    dependencies:
+      mkdirp: 0.5.5
+    dev: true
+    resolution:
+      integrity: sha1-4Kwx4n3v6uDk9pnA7bnGVYyfpas=
   /create-react-context/0.3.0_prop-types@15.7.2:
     dependencies:
       gud: 1.0.0
@@ -6602,6 +6631,14 @@ packages:
     dev: true
     resolution:
       integrity: sha1-8jP/zAjU2n1DLapEl3aYnbHfk/A=
+  /fs-extra/6.0.1:
+    dependencies:
+      graceful-fs: 4.2.4
+      jsonfile: 4.0.0
+      universalify: 0.1.2
+    dev: true
+    resolution:
+      integrity: sha512-GnyIkKhhzXZUWFCaJzvyDLEEgDkPfb4/TPvJCJVuS8MWZgoSsErf++QpiAlDnKFcqhRlm+tIOcencCjyJE6ZCA==
   /fs-extra/8.1.0:
     dependencies:
       graceful-fs: 4.2.4
@@ -9514,6 +9551,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Yt3384If5H6BYGVHiHwTL+99OzJKHhgp82S8/dktEK73T26BazdgZ4JZh92xSVtGNJvz9UbXdNAc5hcrXV42vw==
+  /node-exceptions/3.0.0:
+    dev: true
+    resolution:
+      integrity: sha512-pFhMAqdN1avrFwtZs66HxYiVnbnH9wjXB4m8IKs5Z9+r7U5voqxT+EDbVkRfge+V7JnkOgKhN4HfKBn1o5g9Wg==
   /node-fetch/2.6.0:
     dev: true
     engines:
@@ -11443,6 +11484,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
+  /resetable/1.0.3:
+    dependencies:
+      clone: 2.1.2
+    dev: true
+    resolution:
+      integrity: sha512-AJuhrcU5TVUaM5j0wSjZXlzt0Qb5pai7nDI+klgv7deuSHy5Kom7ovwBt5tMMO3XmJ9YYSCbKhkgDJHL4MEerQ==
   /resize-observer-polyfill/1.5.1:
     dev: true
     resolution:
