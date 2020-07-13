@@ -8,7 +8,7 @@
     background-color: rgb(var(--ss-bg));
     border: var(--ss-border-width) solid rgb(var(--ss-accent));
     border-radius: calc(var(--ss-border-radius) / 4);
-    min-height: 6rem;
+    height: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -19,14 +19,13 @@
     color: rgb(var(--ss-accent));
     font-size: calc(2 * var(--ss-base-font-size));
     font-weight: 800;
+    border-bottom: 0.0625rem solid rgb(var(--ss-accent));
     transition: 0.2s all linear;
   }
 
   .content-container {
     padding: 1rem;
     color: rgb(var(--ss-accent));
-    margin-right: 1rem;
-    border-top: 0.0625rem solid rgb(var(--ss-accent));
     transition: 0.2s all linear;
   }
 
@@ -37,10 +36,10 @@
       background-color: rgb(var(--ss-accent));
       margin: 0;
       color: rgb(var(--ss-bg));
+      border-bottom: 0.0625rem solid transparent;
     }
 
     .root:hover > .content-container {
-      border-top: 0.0625rem solid transparent;
     }
   }
 </style>
