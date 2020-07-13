@@ -45,6 +45,10 @@
   <title>{post.title}</title>
 </svelte:head>
 
-<h1>{post.title}</h1>
+<div class="content">
+  <h1>{post.title}</h1>
 
-<wc-markdown src={`/data/blog-posts/${blogSlugGenerator(post)}.md`} highlight />
+  <wc-markdown
+    src={`/data/blog-posts/${blogSlugGenerator(post)}.md`}
+    highlight />
+</div>
