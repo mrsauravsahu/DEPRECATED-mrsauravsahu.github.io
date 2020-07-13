@@ -11,6 +11,9 @@
 
 require('reflect-metadata')
 require('source-map-support').install({ handleUncaughtExceptions: false })
+const envPath = process.env.NODE_ENV ? `./.env.${process.env.NODE_ENV}` : '.env';
+
+require('dotenv').config({ path: envPath })
 
 const { Ignitor } = require('@adonisjs/core/build/src/Ignitor')
 new Ignitor(__dirname)

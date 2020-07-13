@@ -20,4 +20,9 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
+// root
 Route.get('/', 'HealthController.index')
+
+// blogs
+Route.get('blogs', 'BlogsController.getAll')
+Route.post('blogs', 'BlogsController.create')
