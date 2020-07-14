@@ -4,8 +4,6 @@
   ],
   "exclude": [
     "node_modules",
-    "__e2e__",
-    "__tests__",
     "build"
   ],
   "extends": "./node_modules/adonis-preset-ts/tsconfig",

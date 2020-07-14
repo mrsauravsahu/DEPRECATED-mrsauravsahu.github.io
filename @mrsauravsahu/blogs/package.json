@@ -6,10 +6,12 @@
     "build": "node ace build",
     "start": "node ace serve --watch",
     "lint": "eslint . --ext=.ts",
-    "e2e": "start-server-and-test e2e:server-setup http-get://localhost:8081 e2e:test-setup",
-    "e2e:server-setup": "node ace serve --no-compile",
-    "e2e:test-setup": "jest --testRegex=__e2e__",
-    "test": "jest"
+    "test": "start-server-and-test start http-get://localhost:8081 test:setup",
+    "tw": "start-server-and-test start http-get://localhost:8081 test:watch",
+    "test:server-setup": "node ace serve ",
+    "test:setup": "jest --unhandled-rejections=strict --coverage",
+    "test:watch": "jest --unhandled-rejections=strict --watch --verbose",
+    "cc": "jest --clearCache"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^2.1.3",
