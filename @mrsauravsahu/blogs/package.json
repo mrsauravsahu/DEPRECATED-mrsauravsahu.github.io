@@ -6,9 +6,12 @@
     "build": "node ace build",
     "start": "node ace serve --watch",
     "lint": "eslint . --ext=.ts",
-    "e2e": "start-server-and-test e2e:server-setup http-get://localhost:8081 e2e:test-setup",
-    "e2e:server-setup": "node ace serve --no-compile",
-    "e2e:test-setup": "jest --testRegex=__e2e__"
+    "test": "start-server-and-test start http-get://localhost:8081 test:setup",
+    "tw": "start-server-and-test start http-get://localhost:8081 test:watch",
+    "test:server-setup": "node ace serve ",
+    "test:setup": "jest --unhandled-rejections=strict --coverage",
+    "test:watch": "jest --unhandled-rejections=strict --watch --verbose",
+    "cc": "jest --clearCache"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^2.1.3",
@@ -38,6 +41,7 @@
     "supertest": "^4.0.2",
     "ts-jest": "^26.1.1",
     "ts-node": "^8.10.2",
+    "tsconfig-paths-jest": "^0.0.1",
     "typescript": "^3.9.6",
     "youch": "^2.0.10",
     "youch-terminal": "^1.0.0"
@@ -47,6 +51,7 @@
     "@adonisjs/core": "^5.0.0-preview-rc-1.9",
     "@adonisjs/fold": "^6.3.5",
     "@adonisjs/lucid": "^8.2.2",
+    "@poppinss/utils": "^2.2.8",
     "luxon": "^1.24.1",
     "proxy-addr": "^2.0.6",
     "reflect-metadata": "^0.1.13",
