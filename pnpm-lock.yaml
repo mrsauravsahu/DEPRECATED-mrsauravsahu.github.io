@@ -41,6 +41,7 @@ importers:
       supertest: 4.0.2
       ts-jest: 26.1.1_jest@26.1.0+typescript@3.9.6
       ts-node: 8.10.2_typescript@3.9.6
+      tsconfig-paths-jest: 0.0.1
       typescript: 3.9.6
       youch: 2.0.10
       youch-terminal: 1.0.0
@@ -81,6 +82,7 @@ importers:
       supertest: ^4.0.2
       ts-jest: ^26.1.1
       ts-node: ^8.10.2
+      tsconfig-paths-jest: ^0.0.1
       typescript: ^3.9.6
       uuid: ^8.2.0
       youch: ^2.0.10
@@ -12993,6 +12995,10 @@ packages:
         optional: true
     resolution:
       integrity: sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
+  /tsconfig-paths-jest/0.0.1:
+    dev: true
+    resolution:
+      integrity: sha1-qXelZIxDQDe2mITmRM4bgr8CW2g=
   /tslib/1.13.0:
     dev: true
     resolution:
