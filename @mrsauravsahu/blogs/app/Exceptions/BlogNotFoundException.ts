@@ -9,11 +9,11 @@ import { Exception } from '@poppinss/utils'
 | a status code and error code for every exception.
 |
 | @example
-| new BlogPostNotFoundException('message', 500, 'E_RUNTIME_EXCEPTION')
+| new BlogNotFoundException('message', 500, 'E_RUNTIME_EXCEPTION')
 |
 */
-export default class BlogPostNotFoundException extends Exception {
+export default class BlogNotFoundException extends Exception {
   constructor(id: number) {
-    super(`The blogPost with id: ${id} cannot be found.`, 404, 'BLOG_POST_NOT_FOUND');
+    super(`The blog with id: ${id} cannot be found.`, 404, 'BLOG_NOT_FOUND');
   }
 }

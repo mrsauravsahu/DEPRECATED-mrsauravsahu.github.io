@@ -28,5 +28,5 @@ Route.get('blogs', 'BlogsController.getAll')
 Route.post('blogs', 'BlogsController.create')
 
 // blog posts
-Route.post('/blog-posts', 'BlogPostsController.upload')
-Route.get('/blog-posts/:id/file', 'BlogPostsController.download')
+Route.post('/blogs/:blogId/posts', 'PostsController.uploadPostForBlog')
+Route.get('/blogs/:blogId/posts/:id/file', 'PostsController.download')

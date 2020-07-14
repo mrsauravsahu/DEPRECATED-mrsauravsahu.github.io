@@ -1,7 +1,7 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { schema } from '@ioc:Adonis/Core/Validator'
 
-export default class CreateBlogPostValidator {
+export default class CreatePostValidator {
   constructor (private ctx: HttpContextContract) {
   }
 
