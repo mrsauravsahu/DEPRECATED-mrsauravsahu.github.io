@@ -14,7 +14,16 @@ describe('generateSlugAsync', () => {
           day: 14
         })
       );
-      expect(slug).toBe('2020-07-14/sample')
+      expect(slug).toEqual('2020-07-14/sample')
+    })
+
+    it('should kebabify the title', async () => {
+      const slug = await sut.generateSlugAsync(
+        'First Blog Eva!! 😎',
+        DateTime.fromString("2020/07/13", "yyyy/MM/dd")
+      )
+
+      expect(slug).toEqual("2020-07-13/first-blog-eva")
     })
   })
 })
