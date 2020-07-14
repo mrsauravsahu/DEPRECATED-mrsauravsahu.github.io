@@ -3,12 +3,13 @@ import Application from "@ioc:Adonis/Core/Application";
 import {v4 as uuid } from 'uuid'
 import BlogPost from "App/Models/BlogPost";
 import TmpFileProvider from '@ioc:providers/TmpFileProvider';
+import CreateBlogPostValidator from "App/Validators/CreateBlogPostValidator";
 
 export default class BlogPostsController {
   public async upload({ request }: HttpContextContract) {
-    // TODO: refactor into service arch
-    const file = request.file('file');
+    const input =await request.validate(CreateBlogPostValidator);
 
+    const { file } = input;
     const fileId = uuid();
     const filePath = `uploads/blog-posts/${fileId}.md`;
     // TODO: current assumption is file will be markdown
