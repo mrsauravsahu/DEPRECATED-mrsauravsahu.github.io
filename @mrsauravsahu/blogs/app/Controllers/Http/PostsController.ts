@@ -32,8 +32,14 @@ export default class PostsController {
   }
 
   public async download({ params, response }: HttpContextContract) {
-    const postId: number = params.id;
-    const post = await Post.find(postId);
+    const blogId = parseInt(params.blogId);
+    const postId = parseInt(params.postId);
+
+    const post = await Post
+      .query()
+      .where('id', postId)
+      .andWhere('blog_id', blogId)
+      .first();
 
     if (!post) throw new PostNotFoundException(postId);
 
