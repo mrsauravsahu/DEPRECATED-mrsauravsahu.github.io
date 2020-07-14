@@ -26,6 +26,7 @@ Route.get('/', 'HealthController.index')
 // blogs
 Route.get('blogs', 'BlogsController.getAll')
 Route.post('blogs', 'BlogsController.create')
+Route.get('blogs/:blogId', 'BlogsController.getById')
 
 // blog posts
 Route.post('/blogs/:blogId/posts', 'PostsController.uploadPostForBlog')
