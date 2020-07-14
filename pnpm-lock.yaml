@@ -7,6 +7,7 @@ importers:
       '@adonisjs/core': 5.0.0-preview-rc-1.9_84be456d36416cf1b86195ef655ffd67
       '@adonisjs/fold': 6.3.5
       '@adonisjs/lucid': 8.2.2_0a7c54817448ac0759aba16625767922
+      '@poppinss/utils': 2.2.8
       luxon: 1.24.1
       proxy-addr: 2.0.6
       reflect-metadata: 0.1.13
@@ -60,6 +61,7 @@ importers:
       '@adonisjs/lucid': ^8.2.2
       '@adonisjs/profiler': ^4.0.0
       '@adonisjs/validator': ^7.3.2
+      '@poppinss/utils': ^2.2.8
       '@types/jest': ^26.0.4
       '@types/node': ^14.0.22
       '@types/supertest': ^2.0.10
