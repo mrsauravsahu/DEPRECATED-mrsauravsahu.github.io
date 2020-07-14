@@ -42,6 +42,6 @@ jobs:
         working-directory: ${{ env.PROJECT }}
         run: cp .env.test build/.env
 
-      - name: run integration tests
+      - name: run tests
         working-directory: ${{ env.PROJECT }}
-        run: pnpm run e2e
+        run: pnpm t
