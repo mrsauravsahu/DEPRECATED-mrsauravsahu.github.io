@@ -19,7 +19,7 @@
     width: 100%;
     cursor: pointer;
     margin: 1rem 0;
-    height: 8rem;
+    min-height: 8rem;
   }
 
   ss-card {
