@@ -4,6 +4,7 @@ import Blog from "App/Models/Blog";
 import { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
 import CreateBlogValidator from "App/Validators/CreateBlogValidator";
 import BlogNotFoundException from "App/Exceptions/BlogNotFoundException";
+import { SlugGenService } from "App/Services/SlugGenService";
 
 export default class BlogsController {
   public async getAll(): Promise<Response<BlogDto[]>> {
@@ -14,7 +15,14 @@ export default class BlogsController {
 
   public async create(ctx:HttpContextContract): Promise<Response<BlogDto>> {
     const blogToCreate = await ctx.request.validate(CreateBlogValidator);
-    const createdBlog = await Blog.create(blogToCreate)
+    const createdBlog = await Blog.create({...blogToCreate, slug:''})
+
+    createdBlog.slug = await SlugGenService.generateSlugAsync(
+      createdBlog.title,
+      createdBlog.createdAt
+    )
+
+    await createdBlog.save();
 
     ctx.response.status(201)
 
