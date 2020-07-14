@@ -4,10 +4,11 @@ import {v4 as uuid } from 'uuid'
 import BlogPost from "App/Models/BlogPost";
 import TmpFileProvider from '@ioc:providers/TmpFileProvider';
 import CreateBlogPostValidator from "App/Validators/CreateBlogPostValidator";
+import BlogPostNotFoundException from "App/Exceptions/BlogPostNotFoundException";
 
 export default class BlogPostsController {
   public async upload({ request }: HttpContextContract) {
-    const input =await request.validate(CreateBlogPostValidator);
+    const input = await request.validate(CreateBlogPostValidator);
 
     const { file } = input;
     const fileId = uuid();
@@ -28,11 +29,11 @@ export default class BlogPostsController {
   }
 
   public async download({ params, response }: HttpContextContract) {
-    // TODO: Clean this lel
     const blogPostId: number = params.id;
     const blogPost = await BlogPost.find(blogPostId);
-    // TODO: Use request validation for this
-    if (!blogPost) throw new Error('cannot find file');
+
+    if (!blogPost) throw new BlogPostNotFoundException(blogPostId);
+
     const file = await TmpFileProvider.getBufferAsync(blogPost.file);
 
     response.status(200);
