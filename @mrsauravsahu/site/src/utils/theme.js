@@ -35,6 +35,21 @@ export const setThemeVariables = (theme) => {
     }
 }
 
+export const saveTheme = (currentTheme) => {
+    localStorage.setItem('SS-THEME', currentTheme)
+}
+
+export const getCurrentSavedTheme = () => {
+    const defaultTheme = THEMES.DARK;
+    let currentSavedTheme;
+
+    if (localStorage) {
+        currentSavedTheme = localStorage.getItem('SS-THEME')
+    }
+
+    return currentSavedTheme || defaultTheme
+}
+
 export const getThemeLabelForTheme = (theme) => {
     const themeLabelMapper = {
         [THEMES.LIGHT]: 'lumos',
@@ -49,3 +64,4 @@ export const getCSSVariableForTheme = (theme, variableName) => {
 }
 
 export const getNextTheme = (theme) => theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;
+

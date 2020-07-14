@@ -1,10 +1,14 @@
 <script>
+  import { onMount } from "svelte";
   import { theme } from "../stores/theme";
+
   import {
     THEMES,
     getThemeLabelForTheme,
     getNextTheme,
-    getCSSVariableForTheme
+    getCSSVariableForTheme,
+    getCurrentSavedTheme,
+    saveTheme
   } from "../utils/theme";
 
   let nextThemeLabel = getThemeLabelForTheme(getNextTheme($theme));
@@ -14,6 +18,10 @@
     nextThemeLabel = getThemeLabelForTheme($theme);
     theme.set(nextTheme);
   };
+
+  onMount(() => {
+    theme.set(getCurrentSavedTheme());
+  });
 </script>
 
 <style>
@@ -55,7 +63,10 @@
     style={`fill: rgb(${getCSSVariableForTheme(getNextTheme($theme), '--ss-bg')})`}>
     <circle cx="50" cy="50" r="50" />
   </svg>
-  <span on:click={handleThemeChange} data-label={nextThemeLabel}>
+  <span
+    on:click={handleThemeChange}
+    data-label={nextThemeLabel}
+    on:contextmenu|preventDefault={() => saveTheme($theme)}>
     {nextThemeLabel}
   </span>
 </div>
