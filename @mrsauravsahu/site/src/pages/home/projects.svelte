@@ -19,11 +19,16 @@
     width: 100%;
     cursor: pointer;
     margin: 1rem 0;
+    height: 8rem;
   }
 
+  ss-card {
+    height: 100%;
+  }
   @media only screen and (min-width: 48rem) {
     .cards-container > button {
       width: calc(50% - 1rem);
+      height: 10rem;
     }
   }
 </style>
