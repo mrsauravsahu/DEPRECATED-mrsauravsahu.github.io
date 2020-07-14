@@ -8,7 +8,10 @@ export default class AddBlogPostsTables extends BaseSchema {
       table.increments('id')
       table.string('file').notNullable().unique()
       table.string('extension').notNullable()
+      table.integer('blog_id').notNullable()
       table.timestamps(true)
+
+      table.foreign('blog_id').references('blogs.id')
     })
   }
 

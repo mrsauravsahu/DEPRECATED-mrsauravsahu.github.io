@@ -11,6 +11,9 @@ export default class BlogPost extends BaseModel {
   @column()
   public extension: string
 
+  @column()
+  public blogId: number
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 
