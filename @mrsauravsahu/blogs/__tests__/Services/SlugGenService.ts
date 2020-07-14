@@ -1,13 +1,11 @@
 import { SlugGenService } from "App/Services/SlugGenService"
 import { DateTime } from "luxon";
 
-const sut = new SlugGenService();
-
 describe('generateSlugAsync', () => {
   describe('given a title and a creation time', () => {
     it('should generate a slug', async () => {
 
-      const slug = await sut.generateSlugAsync('sample',
+      const slug = await SlugGenService.generateSlugAsync('sample',
         DateTime.fromObject({
           year: 2020,
           month: 7,
@@ -18,7 +16,7 @@ describe('generateSlugAsync', () => {
     })
 
     it('should kebabify the title', async () => {
-      const slug = await sut.generateSlugAsync(
+      const slug = await SlugGenService.generateSlugAsync(
         'First Blog Eva!! 😎',
         DateTime.fromString("2020/07/13", "yyyy/MM/dd")
       )
