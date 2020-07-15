@@ -12,10 +12,8 @@ export default class Blog extends BaseModel {
   @column()
   public slug: string
 
-  get url(): string {
-    const creationString = this.createdAt.toFormat("yyyy-mm-dd");
-    return `${creationString}/${this.slug}`;
-  }
+  @column()
+  public description: string
 
   @hasMany(() => Post)
   public posts: HasMany<typeof Post>
