@@ -1,0 +1,1 @@
+wc-markdown.svelte-1x3a94g :not(pre) > code{background-color:rgb(var(--ss-accent));padding:0.1rem 0.5rem;border-radius:0.25rem;color:rgb(var(--ss-bg))}wc-markdown.svelte-1x3a94g pre{font-size:var(--ss-base-font-size);font-family:"Courier New", Courier, monospace}wc-markdown.svelte-1x3a94g a{color:rgb(var(--ss-accent));font-weight:800}

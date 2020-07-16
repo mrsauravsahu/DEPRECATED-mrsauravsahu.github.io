@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;900&display=swap');
+
+:root {
+	--ss-root-background: 255, 255, 255;
+
+	--ss-border-width: 0.1rem;
+	--ss-border-radius: 2rem;
+	--ss-base-font-size: 0.75rem;
+	--ss-font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+	--transition-fn: cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+html, body {
+	margin: 0;
+	height: 100%;
+	color: rgb(var(--ss-accent));
+	font-family: var(--ss-font-family);
+}
+
+body {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: rgb(var(--ss-bg1));
+}
+
+#sapper {
+	width: 100%;
+	max-width: 80rem;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgb(var(--ss-bg));
+	box-sizing: border-box;
+}
+
+main {
+	margin: 0 auto;
+	background-color: rgb(var(--ss-bg));
+	flex-grow: 1;
+	box-sizing: border-box;
+}
+
+nav {
+	box-sizing: border-box;
+}
+
+ss-title {
+	font-weight: 900;
+	font-size: 2rem;
+	display: block;
+	margin: 0.5rem 0;
+}
+
+img {
+	filter: var(--site-image-filter);
+}
+
+@media only screen and (min-width: 48rem) {
+	.content {
+		margin: 0 4rem;
+		padding: 2rem 0;
+	}
+}

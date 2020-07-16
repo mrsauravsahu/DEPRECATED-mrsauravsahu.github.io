@@ -1,0 +1,16 @@
+{
+    "nav": {
+        "primary": {
+            "label": "./saurav-sahu",
+            "path": "/#",
+            "preFetch": false
+        },
+        "secondary": [
+            {
+                "label": "blog",
+                "path": "/blog",
+                "preFetch": false
+            }
+        ]
+    }
+}
