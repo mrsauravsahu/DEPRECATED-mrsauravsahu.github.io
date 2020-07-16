@@ -15,7 +15,7 @@ describe('home page: social section', () => {
         socialButtons.should('have.length', 5);
 
         socialButtons.each((button, index) => {
-            expect(button.attr('text')).to.equal(socials[index].label);
+            expect(button.get(0).innerText).equal(socials[index].label);
         });
     });
 
