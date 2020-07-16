@@ -16,6 +16,7 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 2rem;
   }
 
   ul {
@@ -60,9 +61,9 @@
     </p>
     <p>
       Currently at:
-      <a href="https://mrsauravsahu.wordpress.com">
+      <ss-anchor href="https://mrsauravsahu.wordpress.com">
         mrsauravsahu.wordpress.com
-      </a>
+      </ss-anchor>
     </p>
     <ul class="posts-container">
       {#each blogs as blog}
