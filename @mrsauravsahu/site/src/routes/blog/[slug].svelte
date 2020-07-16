@@ -1,25 +1,22 @@
 <script context="module">
-  import { blogSlugGenerator } from "../../utils/blog";
+  import {
+    getBlogByIdAsync,
+    getBlogPostContentAsync,
+  } from "../../utils/blogs.api";
 
-  export async function preload({ params, query }) {
-    const res = await this.fetch(`/data/blogs.json`);
-    const data = await res.json();
-    let { posts } = data;
-
+  export async function preload({ params }) {
     const { slug } = params;
-
-    var post = posts.filter(p => slug == blogSlugGenerator(p))[0];
-
-    if (post) {
-      return { post };
-    } else {
-      this.error(404, data.message);
-    }
+    const blog = await getBlogByIdAsync(this.fetch, slug);
+    const blogContent = await getBlogPostContentAsync(this.fetch, {
+      blogId: blog.id,
+      postId: blog.posts[0].id,
+    });
+    return { blog, blogContent };
   }
 </script>
 
 <script>
-  export let post;
+  export let blog, blogContent;
 </script>
 
 <style>
@@ -42,13 +39,11 @@
 </style>
 
 <svelte:head>
-  <title>{post.title}</title>
+  <title>{blog.title}</title>
 </svelte:head>
 
 <div class="content">
-  <h1>{post.title}</h1>
+  <h1>{blog.title}</h1>
 
-  <wc-markdown
-    src={`/data/blog-posts/${blogSlugGenerator(post)}.md`}
-    highlight />
+  <wc-markdown highlight>{blogContent}</wc-markdown>
 </div>
