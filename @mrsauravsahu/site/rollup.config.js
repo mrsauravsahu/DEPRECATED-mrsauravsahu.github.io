@@ -22,7 +22,8 @@ export default {
 			json(),
 			replace({
 				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode)
+				'process.env.NODE_ENV': JSON.stringify(mode),
+				'process.env.BLOGS_BASE_URL': JSON.stringify(process.env.BLOGS_BASE_URL),
 			}),
 			svelte({
 				dev,

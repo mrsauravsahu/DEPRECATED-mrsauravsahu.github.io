@@ -1,17 +1,13 @@
 <script context="module">
-  import { blogSlugGenerator } from "../../utils/blog";
-
-  export function preload({ params, query }) {
-    return this.fetch("/data/blogs.json")
-      .then(r => r.json())
-      .then(blogData => {
-        return { posts: blogData.posts };
-      });
+  export async function preload() {
+    const response = await this.fetch("blog.json");
+    const blogs = await response.json();
+    return { blogs };
   }
 </script>
 
 <script>
-  export let posts;
+  export let blogs;
 </script>
 
 <style>
@@ -69,14 +65,14 @@
       </a>
     </p>
     <ul class="posts-container">
-      {#each posts as post}
+      {#each blogs as blog}
         <!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
         <li>
-          <a rel="prefetch" href="blog/{blogSlugGenerator(post)}">
-            <ss-card title={post.title}>{post.line}</ss-card>
+          <a rel="prefetch" href="blog/{blog.id}">
+            <ss-card title={blog.title}>{blog.description}</ss-card>
           </a>
         </li>
       {/each}
