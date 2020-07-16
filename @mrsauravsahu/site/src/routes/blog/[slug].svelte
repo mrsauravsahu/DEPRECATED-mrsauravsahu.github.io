@@ -1,22 +1,23 @@
 <script context="module">
   import {
     getBlogByIdAsync,
-    getBlogPostContentAsync,
+    getBlogPostContentUrl,
   } from "../../utils/blogs.api";
 
   export async function preload({ params }) {
     const { slug } = params;
     const blog = await getBlogByIdAsync(this.fetch, slug);
-    const blogContent = await getBlogPostContentAsync(this.fetch, {
+    const blogContentUrl = getBlogPostContentUrl({
       blogId: blog.id,
       postId: blog.posts[0].id,
     });
-    return { blog, blogContent };
+
+    return { blog, blogContentUrl };
   }
 </script>
 
 <script>
-  export let blog, blogContent;
+  export let blog, blogContentUrl;
 </script>
 
 <style>
@@ -45,5 +46,5 @@
 <div class="content">
   <h1>{blog.title}</h1>
 
-  <wc-markdown highlight>{blogContent}</wc-markdown>
+  <wc-markdown highlight src={blogContentUrl} />
 </div>

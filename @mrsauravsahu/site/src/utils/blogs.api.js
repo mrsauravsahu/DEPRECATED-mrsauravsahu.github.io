@@ -18,10 +18,7 @@ export const getBlogByIdAsync = async (fetch, blogId) => {
     return blog;
 }
 
-export const getBlogPostContentAsync = async (fetch, { blogId, postId }) => {
+export const getBlogPostContentUrl = ({ blogId, postId }) => {
     const dataUrl = `${Constants.BLOGS_BASE_URL}/blogs/${blogId}/posts/${postId}/file`;
-    console.log(`Fetching blog post file with blogId: ${blogId} and postId: ${postId} from ${dataUrl}`);
-    const fileResponse = await fetch(dataUrl)
-    const fileText = await fileResponse.text()
-    return fileText
+    return dataUrl
 }
