@@ -20,20 +20,20 @@
 <div class="social-container content">
   <p>Here's how you can get in touch with me 😊️</p>
   <div class="social-links">
-    <ss-button
-      text="mrsauravsahu@outlook.com"
-      on:click={() => goto('mailto:mrsauravsahu@outlook.com')} />
-    <ss-button
-      text="github"
-      on:click={() => goto('https://github.com/mrsauravsahu')} />
-    <ss-button
-      text="twitter"
-      on:click={() => goto('https://twitter.com/mrsauravsahu')} />
-    <ss-button
-      text="unsplash"
-      on:click={() => goto('https://unsplash.com/@mrsauravsahu')} />
-    <ss-button
-      text="instagram"
-      on:click={() => goto('https://instagram.com/iamsauravsahu')} />
+    <ss-button on:click={() => goto('mailto:mrsauravsahu@outlook.com')}>
+      mrsauravsahu@outlook.com
+    </ss-button>
+    <ss-button on:click={() => goto('https://github.com/mrsauravsahu')}>
+      github
+    </ss-button>
+    <ss-button on:click={() => goto('https://twitter.com/mrsauravsahu')}>
+      twitter
+    </ss-button>
+    <ss-button on:click={() => goto('https://unsplash.com/@mrsauravsahu')}>
+      unsplash
+    </ss-button>
+    <ss-button on:click={() => goto('https://instagram.com/iamsauravsahu')}>
+      instagram
+    </ss-button>
   </div>
 </div>
