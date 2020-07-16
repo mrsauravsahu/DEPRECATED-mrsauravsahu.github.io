@@ -1,9 +1,7 @@
 <script context="module">
-  import { blogSlugGenerator } from "../../utils/blog";
-  import { getBlogsAsync } from "../../utils/blogs.api";
-
   export async function preload() {
-    const blogs = await getBlogsAsync(this.fetch);
+    const response = await this.fetch("blog.json");
+    const blogs = await response.json();
     return { blogs };
   }
 </script>

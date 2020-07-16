@@ -1,18 +1,9 @@
 <script context="module">
-  import {
-    getBlogByIdAsync,
-    getBlogPostContentUrl,
-  } from "../../utils/blogs.api";
-
   export async function preload({ params }) {
     const { slug } = params;
-    const blog = await getBlogByIdAsync(this.fetch, slug);
-    const blogContentUrl = getBlogPostContentUrl({
-      blogId: blog.id,
-      postId: blog.posts[0].id,
-    });
-
-    return { blog, blogContentUrl };
+    const response = await this.fetch(`blog/${slug}.json`);
+    const data = await response.json();
+    return data;
   }
 </script>
 
