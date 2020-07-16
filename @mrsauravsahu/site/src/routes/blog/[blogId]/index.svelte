@@ -1,14 +1,16 @@
 <script context="module">
   export async function preload({ params }) {
-    const { slug } = params;
-    const response = await this.fetch(`blog/${slug}.json`);
+    const { blogId } = params;
+    const response = await this.fetch(`blog/${blogId}.json`);
     const data = await response.json();
     return data;
   }
 </script>
 
 <script>
-  export let blog, blogContentUrl;
+  export let blog;
+
+  const blogUrl = `blog/${blog.id}/${blog.posts[0].id}/file`;
 </script>
 
 <style>
@@ -36,6 +38,7 @@
 
 <div class="content">
   <h1>{blog.title}</h1>
-
-  <wc-markdown highlight src={blogContentUrl} />
+  <!-- <ss-button >Download RAW</ss-button> -->
+  <a href={blogUrl}>Download RAW</a>
+  <wc-markdown src={blogUrl} highlight />
 </div>
