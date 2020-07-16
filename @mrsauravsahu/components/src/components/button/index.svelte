@@ -1,8 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
 
-  export let text = "";
-
   const dispatch = createEventDispatcher();
 
   function onClick(event) {
@@ -39,4 +37,6 @@
 </style>
 
 <svelte:options tag="ss-button" />
-<button on:click={onClick}>{text}</button>
+<button on:click={onClick}>
+  <slot />
+</button>

@@ -1,9 +1,9 @@
 <script>
   import Anchor from "./index.svelte";
 
-  export let data, href;
+  export let data, href, underline;
 </script>
 
-<Anchor {href}>
+<Anchor {href} {underline}>
   {@html data}
 </Anchor>

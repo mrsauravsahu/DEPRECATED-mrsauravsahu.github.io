@@ -12,3 +12,12 @@ export const Default = () => ({
         href: 'https://webcomponents.org/'
     }
 })
+
+export const NotUnderlined = () => ({
+    Component: AnchorWrapper,
+    props: {
+        data: 'portfolio',
+        href: 'https://github.com/mrsauravsahu/mrsauravsahu.github.io/',
+        underline: false
+    }
+})

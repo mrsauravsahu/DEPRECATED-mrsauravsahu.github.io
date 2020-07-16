@@ -1,5 +1,6 @@
 <script>
   export let href;
+  export let underline = true;
 </script>
 
 <style>
@@ -12,6 +13,9 @@
     border: 0.0625rem solid transparent;
     transition: all 0.2s linear;
     box-sizing: border-box;
+  }
+
+  a.underline {
     border-bottom: 0.0625rem solid rgb(var(--ss-accent));
   }
 
@@ -22,8 +26,11 @@
   }
 
   @media (hover: hover) {
-    div:hover > a {
+    div:hover > a.underline {
       border-bottom: 0.0625rem solid rgb(var(--ss-accent));
+    }
+
+    div:hover > a {
       /* transform: translateY(-0.25rem); */
       transform: scaleY(1.25) scaleX(1.25);
       background-color: rgb(var(--ss-bg));
@@ -33,7 +40,7 @@
 
 <svelte:options tag="ss-anchor" />
 <div>
-  <a {href}>
+  <a {href} class:underline>
     <slot />
   </a>
 </div>
