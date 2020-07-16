@@ -1,22 +1,22 @@
 import { action } from '@storybook/addon-actions';
 
-import Button from './index.svelte';
+import ButtonWrapper from './index.wrapper.svelte';
 
 export default {
   title: 'Button',
-  component: Button,
+  component: ButtonWrapper,
 };
 
 export const Text = () => ({
-  Component: Button,
-  props: { text: 'Hello Button' },
+  Component: ButtonWrapper,
+  props: { data: 'Hello Button' },
   on: { click: action('clicked') },
 });
 
 export const Emoji = () => ({
-  Component: Button,
+  Component: ButtonWrapper,
   props: {
-    text: '😀 😎 👍 💯',
+    data: '😀 😎 👍 💯',
   },
   on: { click: action('clicked') },
 });

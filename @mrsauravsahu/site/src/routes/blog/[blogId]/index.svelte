@@ -38,7 +38,6 @@
 
 <div class="content">
   <h1>{blog.title}</h1>
-  <!-- <ss-button >Download RAW</ss-button> -->
-  <a href={blogUrl}>Download RAW</a>
+  <ss-anchor href={blogUrl}>🔽 read raw</ss-anchor>
   <wc-markdown src={blogUrl} highlight />
 </div>
