@@ -39,5 +39,7 @@
 <div class="content">
   <h1>{blog.title}</h1>
   <ss-anchor href={blogUrl}>🔽 read raw</ss-anchor>
+  <!-- TODO: fix crawling without this extra anchor tag -->
+  <a href={blogUrl} />
   <wc-markdown src={blogUrl} highlight />
 </div>
