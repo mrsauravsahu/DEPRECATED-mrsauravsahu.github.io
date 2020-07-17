@@ -7,6 +7,7 @@
 </script>
 
 <script>
+  import { DateTime } from "luxon";
   export let blogs;
 </script>
 
@@ -73,7 +74,10 @@
 				waiting for the 'click' event -->
         <li>
           <a rel="prefetch" href="blog/{blog.id}">
-            <ss-card title={blog.title}>{blog.description}</ss-card>
+            <ss-card title={blog.title}>
+              <h4>{DateTime.fromISO(blog.created_at).toRelative()}</h4>
+              {#if blog.description}{blog.description}{/if}
+            </ss-card>
           </a>
         </li>
       {/each}
