@@ -11,6 +11,7 @@ env:
   COMPONENTS_WORKING_DIRECTORY: "@mrsauravsahu/components"
   SITE_WORKING_DIRECTORY: "@mrsauravsahu/site"
   SITE_EXPORT_DIRECTORY: "@mrsauravsahu/site/__sapper__/export"
+  BLOGS_WORKING_DIRECTORY: "@mrsauravsahu/blogs"
   GITHUB_PAGES_PUBLISH_BRANCH: master
 
 jobs:
@@ -38,7 +39,7 @@ jobs:
         run: pnpm run build
 
       - name: copy deploy .env file to build
-        run: cp .env.deploy build/.env
+        run: cp .env.deploy ${{ env.BLOGS_WORKING_DIRECTORY }}/build/.env
 
       - name: export site
         run: pnpm run site:export
