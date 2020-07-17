@@ -30,7 +30,7 @@
   li {
     list-style-type: none;
     text-decoration: none;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     width: 100%;
     min-height: 12rem;
   }

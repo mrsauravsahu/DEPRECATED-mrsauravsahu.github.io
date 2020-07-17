@@ -12,14 +12,14 @@
     flex-direction: column;
     justify-content: space-between;
     transition: 0.2s all linear;
-    box-shadow: none;
+    box-shadow: 0 0.5rem 1rem rgb(var(--ss-accent), 0.5);
   }
 
   .title-container {
     padding: 1rem;
     color: rgb(var(--ss-bg));
     -webkit-text-fill-color: rgb(var(--ss-bg));
-    background-color: rgb(var(--ss-accent));
+    background-color: rgba(var(--ss-accent), 0.5);
     font-size: calc(2 * var(--ss-base-font-size));
     font-weight: 800;
     border-bottom: 0.0625rem solid rgb(var(--ss-accent));
@@ -43,8 +43,8 @@
 
   @media (hover: hover) {
     .root:hover {
-      box-shadow: 0 0.5rem 1rem rgb(var(--ss-accent), 0.75);
-      transform: translateY(-0.5rem);
+      box-shadow: 0 0.5rem 1rem rgb(var(--ss-accent), 0.1);
+      transform: translateY(0.5rem);
     }
 
     .title-container {
