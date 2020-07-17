@@ -57,14 +57,9 @@
 <div class="container">
   <div class="content">
     <p>
-      Here are a few thoughts that I thought should be written down... Don't
-      worry, the old blogs will get imported here.
-    </p>
-    <p>
-      Currently at:
-      <ss-anchor href="https://mrsauravsahu.wordpress.com">
-        mrsauravsahu.wordpress.com
-      </ss-anchor>
+      Here are a few thoughts that I thought should be written down... The old
+      blogs have also been imported here. If they don't look alright, just give
+      me shoutout on Twitter, will check it out.
     </p>
     <ul class="posts-container">
       {#each blogs as blog}
