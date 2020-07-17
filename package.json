@@ -20,7 +20,7 @@
   "scripts": {
     "build:components": "pnpm --prefix @mrsauravsahu/components build",
     "site:export": "start-server-and-test site:server-setup http-get://localhost:5000 site:export-setup",
-    "site:server-setup": "pnpm --prefix @mrsauravsahu/blogs start --no-compile",
+    "site:server-setup": "pnpm --prefix @mrsauravsahu/blogs start -- --no-compile",
     "site:export-setup": "pnpm --prefix @mrsauravsahu/site export"
   },
   "devDependencies": {
