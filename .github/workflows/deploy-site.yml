@@ -47,3 +47,9 @@ jobs:
 
       - name: export site
         run: pnpm run site:export
+
+      - name: upload site artefact
+        uses: actions/upload-artifact@v1
+        with:
+          name: site
+          path: ${{ env.SITE_EXPORT_DIRECTORY }}
