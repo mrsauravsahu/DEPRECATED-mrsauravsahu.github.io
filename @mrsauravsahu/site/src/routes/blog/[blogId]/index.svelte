@@ -30,6 +30,12 @@
     color: rgb(var(--ss-accent));
     font-weight: 800;
   }
+
+  wc-markdown :global(img) {
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
 </style>
 
 <svelte:head>

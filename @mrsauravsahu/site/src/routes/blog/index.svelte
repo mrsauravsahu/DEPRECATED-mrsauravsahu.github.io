@@ -7,6 +7,7 @@
 </script>
 
 <script>
+  import { DateTime } from "luxon";
   export let blogs;
 </script>
 
@@ -29,7 +30,7 @@
   li {
     list-style-type: none;
     text-decoration: none;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     width: 100%;
     min-height: 12rem;
   }
@@ -56,14 +57,9 @@
 <div class="container">
   <div class="content">
     <p>
-      Here are a few thoughts that I thought should be written down... Don't
-      worry, the old blogs will get imported here.
-    </p>
-    <p>
-      Currently at:
-      <ss-anchor href="https://mrsauravsahu.wordpress.com">
-        mrsauravsahu.wordpress.com
-      </ss-anchor>
+      Here are a few thoughts that I thought should be written down... The old
+      blogs have also been imported here. If they don't look alright, just give
+      me shoutout on Twitter, will check it out.
     </p>
     <ul class="posts-container">
       {#each blogs as blog}
@@ -73,7 +69,10 @@
 				waiting for the 'click' event -->
         <li>
           <a rel="prefetch" href="blog/{blog.id}">
-            <ss-card title={blog.title}>{blog.description}</ss-card>
+            <ss-card title={blog.title}>
+              <h4>{DateTime.fromISO(blog.created_at).toRelative()}</h4>
+              {#if blog.description}{blog.description}{/if}
+            </ss-card>
           </a>
         </li>
       {/each}
