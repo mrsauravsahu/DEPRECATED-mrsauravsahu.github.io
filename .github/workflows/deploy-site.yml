@@ -1,0 +1,63 @@
+name: Deploy site to Github pages
+
+on:
+  push:
+    branches:
+      - develop
+
+env:
+  NODE_VERSION: "12.8.0"
+  BLOGS_BASE_URL: http://localhost:5000
+  COMPONENTS_WORKING_DIRECTORY: "@mrsauravsahu/components"
+  SITE_WORKING_DIRECTORY: "@mrsauravsahu/site"
+  SITE_EXPORT_DIRECTORY: "@mrsauravsahu/site/__sapper__/export"
+  BLOGS_WORKING_DIRECTORY: "@mrsauravsahu/blogs"
+  GITHUB_PAGES_PUBLISH_BRANCH: master
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-16.04
+
+    steps:
+      - name: checkout to branch
+        uses: actions/checkout@v2
+
+      - name: install pnpm
+        uses: pnpm/action-setup@v1.2.0
+        with:
+          version: 4.11.1
+          run_install: |
+            - recursive: true
+
+      - name: setup node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: build web components
+        working-directory: ${{ env.COMPONENTS_WORKING_DIRECTORY }}
+        run: pnpm run build
+
+      - name: build project
+        working-directory: ${{ env.BLOGS_WORKING_DIRECTORY }}
+        run: pnpm run build
+
+      - name: copy deploy .env file to build
+        run: cp .env.deploy ${{ env.BLOGS_WORKING_DIRECTORY }}/build/.env
+
+      - name: export site
+        run: pnpm run site:export
+
+      - name: upload site artefact
+        uses: actions/upload-artifact@v1
+        with:
+          name: site
+          path: ${{ env.SITE_EXPORT_DIRECTORY }}
+
+      - name: deploy portfolio to github pages
+        if: ${{ github.ref == env.DEPLOY_BRANCH_REF }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ env.SITE_EXPORT_DIRECTORY }}
+          publish_branch: ${{ env.GITHUB_PAGES_PUBLISH_BRANCH }}

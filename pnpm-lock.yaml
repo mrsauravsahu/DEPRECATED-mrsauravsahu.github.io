@@ -1,6 +1,9 @@
 importers:
   .:
-    specifiers: {}
+    devDependencies:
+      start-server-and-test: 1.11.2
+    specifiers:
+      start-server-and-test: ^1.11.2
   '@mrsauravsahu/blogs':
     dependencies:
       '@adonisjs/ace': 6.9.3_@adonisjs+fold@6.3.5
