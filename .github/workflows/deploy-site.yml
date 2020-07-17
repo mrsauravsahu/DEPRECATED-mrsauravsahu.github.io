@@ -7,7 +7,7 @@ on:
 
 env:
   NODE_VERSION: "12.8.0"
-  BLOGS_BASE_URL: http://localhost:5000
+  BLOGS_BASE_URL: http://localhost:5001
   COMPONENTS_WORKING_DIRECTORY: "@mrsauravsahu/components"
   SITE_WORKING_DIRECTORY: "@mrsauravsahu/site"
   SITE_EXPORT_DIRECTORY: "@mrsauravsahu/site/__sapper__/export"
@@ -36,6 +36,9 @@ jobs:
       - name: build web components
         working-directory: ${{ env.COMPONENTS_WORKING_DIRECTORY }}
         run: pnpm run build
+
+      - name: copy deploy .env file to build
+        run: cp .env.deploy build/.env
 
       - name: export site
         run: pnpm run site:export
