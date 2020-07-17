@@ -9,7 +9,7 @@ import { SlugGenService } from "App/Services/SlugGenService";
 export default class BlogsController {
   public async getAll(): Promise<Response<BlogDto[]>> {
     // TODO: Paginate
-    const blogs = await Blog.all()
+    const blogs = await Blog.query().orderBy('createdAt','desc')
     return { data: blogs }
   }
 
