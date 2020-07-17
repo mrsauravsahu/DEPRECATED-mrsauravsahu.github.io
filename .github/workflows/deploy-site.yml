@@ -3,7 +3,7 @@ name: Deploy site to Github pages
 on:
   push:
     branches:
-      - develop
+      - site/cd
 
 env:
   NODE_VERSION: "12.8.0"
