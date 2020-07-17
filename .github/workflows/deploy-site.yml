@@ -35,7 +35,7 @@ jobs:
 
       - name: build web components
         working-directory: ${{ env.COMPONENTS_WORKING_DIRECTORY }}
-        run: pnpm build:components
+        run: pnpm build
 
       - name: export site
         run: pnpm site:export
