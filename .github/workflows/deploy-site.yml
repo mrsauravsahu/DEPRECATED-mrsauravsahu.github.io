@@ -3,7 +3,7 @@ name: Deploy site to Github pages
 on:
   push:
     branches:
-      - site/cd
+      - develop
 
 env:
   NODE_VERSION: "12.8.0"
@@ -53,3 +53,11 @@ jobs:
         with:
           name: site
           path: ${{ env.SITE_EXPORT_DIRECTORY }}
+
+      - name: deploy portfolio to github pages
+        if: ${{ github.ref == env.DEPLOY_BRANCH_REF }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ env.SITE_EXPORT_DIRECTORY }}
+          publish_branch: ${{ env.GITHUB_PAGES_PUBLISH_BRANCH }}

@@ -5,9 +5,6 @@ env:
   NODE_ENV: development
   COMPONENTS_WORKING_DIRECTORY: "@mrsauravsahu/components"
   SITE_WORKING_DIRECTORY: "@mrsauravsahu/site"
-  SITE_EXPORT_DIRECTORY: "@mrsauravsahu/site/__sapper__/export"
-  DEPLOY_BRANCH_REF: refs/heads/develop
-  GITHUB_PAGES_PUBLISH_BRANCH: master
 
 on:
   push:
@@ -49,11 +46,3 @@ jobs:
       - name: run portfolio tests
         working-directory: ${{ env.SITE_WORKING_DIRECTORY }}
         run: npm t
-
-      - name: deploy portfolio to github pages
-        if: ${{ github.ref == env.DEPLOY_BRANCH_REF }}
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ env.SITE_EXPORT_DIRECTORY }}
-          publish_branch: ${{ env.GITHUB_PAGES_PUBLISH_BRANCH }}
