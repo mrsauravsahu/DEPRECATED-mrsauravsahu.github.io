@@ -218,8 +218,9 @@ importers:
       '@rollup/plugin-json': 4.1.0_rollup@1.32.1
       '@rollup/plugin-node-resolve': 7.1.3_rollup@1.32.1
       '@rollup/plugin-replace': 2.3.3_rollup@1.32.1
-      '@rollup/plugin-typescript': 5.0.2_rollup@1.32.1+typescript@3.9.7
+      '@rollup/plugin-typescript': 5.0.2_b63bca19b5ed55cafdbb31cdec877ccd
       '@tsconfig/svelte': 1.0.2
+      '@types/node': 14.0.24
       '@vanillawc/wc-markdown': 1.6.3
       classnames: 2.2.6
       cypress: 4.10.0
@@ -234,6 +235,7 @@ importers:
       svelte: 3.24.0
       svelte-check: 0.1.55_@babel+core@7.10.4
       svelte-preprocess: 4.0.8_3bedc32e25bb87fc62dd57c2762b067a
+      tslib: 2.0.0
       typescript: 3.9.7
     specifiers:
       '@babel/core': ^7.10.2
@@ -248,6 +250,7 @@ importers:
       '@rollup/plugin-typescript': ^5.0.2
       '@tsconfig/svelte': ^1.0.2
       '@types/luxon': ^1.24.1
+      '@types/node': ^14.0.24
       '@vanillawc/wc-markdown': ^1.5.7
       classnames: ^2.2.6
       compression: ^1.7.1
@@ -266,6 +269,7 @@ importers:
       svelte: ^3.23.2
       svelte-check: ^0.1.55
       svelte-preprocess: ^4.0.8
+      tslib: ^2.0.0
       typescript: ^3.9.7
 lockfileVersion: 5.1
 packages:
@@ -2181,11 +2185,12 @@ packages:
       rollup: ^1.20.0 || ^2.0.0
     resolution:
       integrity: sha512-XPmVXZ7IlaoWaJLkSCDaa0Y6uVo5XQYHhiMFzOd5qSv5rE+t/UJToPIOE56flKIxBFQI27ONsxb7dqHnwSsjKQ==
-  /@rollup/plugin-typescript/5.0.2_rollup@1.32.1+typescript@3.9.7:
+  /@rollup/plugin-typescript/5.0.2_b63bca19b5ed55cafdbb31cdec877ccd:
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@1.32.1
       resolve: 1.17.0
       rollup: 1.32.1
+      tslib: 2.0.0
       typescript: 3.9.7
     dev: true
     engines:
@@ -13340,6 +13345,10 @@ packages:
   /tslib/1.13.0:
     resolution:
       integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
+  /tslib/2.0.0:
+    dev: true
+    resolution:
+      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
   /tsse/2.0.0:
     dependencies:
       safe-buffer: 5.2.1
