@@ -8,7 +8,7 @@
     getNextTheme,
     getCSSVariableForTheme,
     getCurrentSavedTheme,
-    saveTheme
+    saveTheme,
   } from "../utils/theme";
 
   let nextThemeLabel = getThemeLabelForTheme(getNextTheme($theme));

@@ -17,9 +17,11 @@
 
   onMount(() => {
     // import external and ss components
-    import("@vanillawc/wc-markdown/index");
+    // @ts-ignore
     import("@vanillawc/wc-markdown/themes/prism-okaidia.css");
-    import("../../../components/public/build/bundle");
+    import("@vanillawc/wc-markdown/index");
+    // @ts-ignore
+    import("@mrsauravsahu/components/public/build/bundle");
 
     themeSubscription = theme.subscribe((theme) => {
       currentTheme = theme;
