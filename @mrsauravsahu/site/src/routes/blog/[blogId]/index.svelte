@@ -1,4 +1,4 @@
-<script context="module">
+<script lang="ts" context="module">
   export async function preload({ params }) {
     const { blogId } = params;
     const response = await this.fetch(`blog/${blogId}.json`);
@@ -7,7 +7,7 @@
   }
 </script>
 
-<script>
+<script lang="ts">
   export let blog;
 
   const blogUrl = `blog/${blog.id}/${blog.posts[0].id}/file`;

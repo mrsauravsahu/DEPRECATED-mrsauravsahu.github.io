@@ -1,4 +1,4 @@
-<script context="module">
+<script lang="ts" context="module">
   export async function preload() {
     const response = await this.fetch("blog.json");
     const blogs = await response.json();
@@ -6,7 +6,7 @@
   }
 </script>
 
-<script>
+<script lang="ts">
   import { DateTime } from "luxon";
   export let blogs;
 </script>

@@ -1,12 +1,12 @@
-<script context="module">
+<script lang="ts" context="module">
   export function preload() {
     return this.fetch("/data/_layout.json")
-      .then(r => r.json())
-      .then(data => ({ layoutContent: data }));
+      .then((r) => r.json())
+      .then((data) => ({ layoutContent: data }));
   }
 </script>
 
-<script>
+<script lang="ts">
   import { onDestroy, onMount } from "svelte";
   import Nav from "../components/nav.svelte";
 
@@ -21,7 +21,7 @@
     import("@vanillawc/wc-markdown/themes/prism-okaidia.css");
     import("../../../components/public/build/bundle");
 
-    themeSubscription = theme.subscribe(theme => {
+    themeSubscription = theme.subscribe((theme) => {
       currentTheme = theme;
 
       // Update CSS variables

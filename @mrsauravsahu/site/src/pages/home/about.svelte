@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Theme from "../../components/theme.svelte";
 </script>
 
