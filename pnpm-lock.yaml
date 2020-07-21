@@ -214,6 +214,7 @@ importers:
       '@babel/plugin-transform-runtime': 7.10.4_@babel+core@7.10.4
       '@babel/preset-env': 7.10.4_@babel+core@7.10.4
       '@babel/runtime': 7.10.4
+      '@mrsauravsahu/components': 'link:../components'
       '@rollup/plugin-commonjs': 11.0.2_rollup@1.32.1
       '@rollup/plugin-json': 4.1.0_rollup@1.32.1
       '@rollup/plugin-node-resolve': 7.1.3_rollup@1.32.1
@@ -243,6 +244,7 @@ importers:
       '@babel/plugin-transform-runtime': ^7.10.1
       '@babel/preset-env': ^7.10.2
       '@babel/runtime': ^7.10.2
+      '@mrsauravsahu/components': 'workspace:^1.0.0'
       '@rollup/plugin-commonjs': 11.0.2
       '@rollup/plugin-json': ^4.1.0
       '@rollup/plugin-node-resolve': ^7.0.0
