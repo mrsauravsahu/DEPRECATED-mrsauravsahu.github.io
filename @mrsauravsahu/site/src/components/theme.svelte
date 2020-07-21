@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
   import { theme } from "../stores/theme";
 
@@ -8,7 +8,7 @@
     getNextTheme,
     getCSSVariableForTheme,
     getCurrentSavedTheme,
-    saveTheme
+    saveTheme,
   } from "../utils/theme";
 
   let nextThemeLabel = getThemeLabelForTheme(getNextTheme($theme));

@@ -1,3 +1,5 @@
+/// @ts-nocheck
+
 import { timestamp, files, shell, routes } from '@sapper/service-worker';
 
 const ASSETS = `cache${timestamp}`;
