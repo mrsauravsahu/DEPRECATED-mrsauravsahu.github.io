@@ -1,8 +1,9 @@
-// using System.IO;
+using System.IO;
 using System.IO.Abstractions;
 using System.Threading.Tasks;
 using blogs.services.contracts;
-
+using blogs.services.options;
+using Microsoft.Extensions.Options;
 using Blob = System.IO.MemoryStream;
 
 namespace blogs.services
@@ -10,12 +11,12 @@ namespace blogs.services
     public class LocalFileService : IBlobService
     {
         private readonly IFileSystem fileSystem;
-        private readonly string basePath;
+        private readonly LocalFileServiceOptions config;
 
-        public LocalFileService(IFileSystem fileSystem, string basePath)
+        public LocalFileService(IFileSystem fileSystem, IOptions<LocalFileServiceOptions> options)
         {
             this.fileSystem = fileSystem;
-            this.basePath = basePath;
+            this.config = options.Value;
         }
 
         public Task<Blob> GetBlobAsync(string container, string name)
@@ -27,15 +28,17 @@ namespace blogs.services
         {
             await Task.Run(() =>
             {
-                var containerPath = fileSystem.Path.Combine(new string[] { basePath, container });
+                var containerPath = fileSystem.Path.Combine(new[] { config.BasePath, container });
 
                 var directoryExists = fileSystem.Directory.Exists(containerPath);
                 if (!directoryExists) fileSystem.Directory.CreateDirectory(containerPath);
 
-                var filePath = fileSystem.Path.Combine(new string[] { basePath, container, name });
-                var fileStream = fileSystem.File.Create(filePath);
+                var filePath = fileSystem.Path.Combine(new[] { config.BasePath, container, name });
+                using (var fileStream = fileSystem.FileStream.Create(filePath, FileMode.Create, FileAccess.Write))
+                {
+                    stream.WriteTo(fileStream);
+                }
 
-                fileSystem.File.WriteAllBytes(filePath, stream.GetBuffer());
             });
         }
     }

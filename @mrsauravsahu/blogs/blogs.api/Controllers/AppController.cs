@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using blogs.api.Contracts;
+using blogs.api.contracts;
 using blogs.services;
 using Microsoft.AspNetCore.Mvc;
 using Propfull.AspNet.Config;
