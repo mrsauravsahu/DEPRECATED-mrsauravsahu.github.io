@@ -12,8 +12,9 @@ namespace blogs.services.tests
 {
     public class LocalFileServiceTests
     {
-        private string sampleBasePath = nameof(sampleBasePath);
+        private const string DOES_NOT_EXIST = nameof(DOES_NOT_EXIST);
 
+        private bool created = false;
         private readonly Mock<IFileSystem> mockFS;
         private readonly IBlobService sut;
 
@@ -22,13 +23,36 @@ namespace blogs.services.tests
             mockFS = new Mock<IFileSystem>();
             mockFS
                 .Setup(m => m.Path.Combine(It.IsAny<string[]>()))
-                .Returns("fullPath");
+                .Returns((string[] parts) => String.Join("/", parts));
 
             mockFS
                 .Setup(m => m.File.Create(It.IsAny<string>()))
-                .Returns(new Mock<Stream>().Object);
+                .Returns(new Func<string, Stream>((string path) =>
+                {
+                    if (path.Contains(DOES_NOT_EXIST) && !created)
+                    {
+                        throw new DirectoryNotFoundException();
+                    }
+                    return new Mock<Stream>().Object;
+                }));
 
-            sut = new LocalFileService(mockFS.Object, sampleBasePath);
+            mockFS
+                .Setup(m => m.Directory.CreateDirectory(It.IsAny<string>()))
+                .Returns(new Func<string, IDirectoryInfo>((string path) =>
+                {
+                    created = true;
+                    return new Mock<IDirectoryInfo>().Object;
+                }));
+
+            mockFS
+                .Setup(m => m.Directory.Exists(It.IsAny<string>()))
+                .Returns(new Func<string, bool>(path =>
+                {
+                    var exists = !path.Contains(DOES_NOT_EXIST);
+                    return exists;
+                }));
+
+            sut = new LocalFileService(mockFS.Object, "base");
         }
 
         [Fact]
@@ -42,15 +66,30 @@ namespace blogs.services.tests
         [Fact]
         public void ShouldNotThrowExceptionIfContainerDoesNotExist()
         {
-            mockFS
-                .Setup(m => m.File.Create(It.IsAny<string>()))
-                .Throws(new DirectoryNotFoundException());
-
             var mockBlob = new Mock<MemoryStream>();
 
-            new Action(() => sut.SaveBlobAsync("container", "file.md", mockBlob.Object))
+            new Action(() => sut.SaveBlobAsync(DOES_NOT_EXIST, "file.md", mockBlob.Object))
             .Should()
             .NotThrow();
+        }
+
+        [Fact]
+        public async Task ShouldCreateContainerIfDoesNotExist()
+        {
+            var mockBlob = new Mock<MemoryStream>();
+            await sut.SaveBlobAsync(DOES_NOT_EXIST, "file.md", mockBlob.Object);
+
+            mockFS.Verify(m => m.Directory.CreateDirectory($"base/{DOES_NOT_EXIST}"), Times.Once());
+        }
+
+        [Fact]
+        public async Task ShouldSaveFileIfContainerDoesNotExist()
+        {
+            var mockBlob = new Mock<MemoryStream>();
+
+            await sut.SaveBlobAsync(DOES_NOT_EXIST, "file.md", mockBlob.Object);
+
+            mockFS.Verify(m => m.File.Create($"base/{DOES_NOT_EXIST}/file.md"), Times.Once());
         }
     }
 }
