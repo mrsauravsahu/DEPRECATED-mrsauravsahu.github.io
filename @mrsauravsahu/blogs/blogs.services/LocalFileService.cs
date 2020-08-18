@@ -1,4 +1,5 @@
 using System.IO;
+using System.IO.Abstractions;
 using System.Threading.Tasks;
 using blogs.services.contracts;
 
@@ -6,10 +7,12 @@ namespace blogs.services
 {
     public class LocalFileService : IBlobService
     {
+        private readonly IFileSystem fileSystem;
         private readonly string basePath;
 
-        public LocalFileService(string basePath)
+        public LocalFileService(IFileSystem fileSystem, string basePath)
         {
+            this.fileSystem =fileSystem;
             this.basePath = basePath;
         }
 
@@ -22,9 +25,16 @@ namespace blogs.services
         {
             await Task.Run(() =>
             {
-                var filePath = Path.Combine(basePath, container, name);
+var containerPath = fileSystem.Path.Combine(new string[] {basePath, container});
+if(!Directory.Exists(containerPath)){
+// Directory.CreateDirectory(containerPath)
+return ;
+}
 
-                var fileStream = File.Create(filePath);
+
+                var filePath = fileSystem.Path.Combine(new string[] {basePath, container, name});
+
+                var fileStream = fileSystem.File.Create(filePath);
                 stream.WriteTo(fileStream);
             });
         }
