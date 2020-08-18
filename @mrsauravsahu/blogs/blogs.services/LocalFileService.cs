@@ -35,7 +35,7 @@ namespace blogs.services
                 var filePath = fileSystem.Path.Combine(new string[] { basePath, container, name });
                 var fileStream = fileSystem.File.Create(filePath);
 
-                stream.WriteTo(fileStream);
+                fileSystem.File.WriteAllBytes(filePath, stream.GetBuffer());
             });
         }
     }
