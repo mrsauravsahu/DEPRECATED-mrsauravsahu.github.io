@@ -1,9 +1,2 @@
-node_modules
-build
-coverage
-.vscode
-.DS_STORE
-.env
-
-# remove tmp for site export
-# tmp
+bin
+obj
