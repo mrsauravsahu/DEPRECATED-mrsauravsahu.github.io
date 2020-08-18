@@ -1,18 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
+using blogs.Contracts;
+using Microsoft.AspNetCore.Mvc;
+using Propfull.AspNet.Config;
 
 namespace blogs.Controllers
 {
     [ApiController]
     [Route("")]
-    public class WeatherForecastController : ControllerBase
+    public class AppController : ControllerBase
     {
+public AppController(ConfigService<AppAboutConfig> configService){
+    this.configService = configService;
+}
+private readonly ConfigService<AppAboutConfig> configService ;
+
         [HttpGet]
-        public dynamic GetAppInfo()
+        public async Task<AppAboutConfig> GetAppInfo()
         {
-            return new {
-                Name = "blogs",
-                Version = "0.0.0-alpha.1"
-            };
+            var aboutConfig = await configService.GetConfigAsync();
+            return aboutConfig;
         }
     }
 }
