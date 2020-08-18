@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blogs.api", "blogs.api\blog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blogs.services", "blogs.services\blogs.services.csproj", "{309B8061-C296-43FA-9C9B-60B1A1E45FB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blogs.services.test", "blogs.services.test\blogs.services.test.csproj", "{560D1459-C53F-449A-B59F-9B3C192987A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blogs.services.tests", "blogs.services.tests\blogs.services.tests.csproj", "{560D1459-C53F-449A-B59F-9B3C192987A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
