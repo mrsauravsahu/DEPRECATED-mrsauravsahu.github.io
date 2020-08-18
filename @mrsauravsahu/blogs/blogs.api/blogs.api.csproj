@@ -8,5 +8,9 @@
     <PackageReference Include="Propfull.AspNet.Config" Version="0.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\blogs.services\blogs.services.csproj" />
+  </ItemGroup>
+
 
 </Project>

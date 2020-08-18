@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using blogs.api.Contracts;
+using blogs.services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,7 @@ namespace blogs.api
 
             services.Configure<AppAboutConfig>(Configuration.GetSection(nameof(blogs.api)));
             services.AddSingleton(options => options.GetConfigService<AppAboutConfig>());
+            services.AddSingleton((options) => new LocalFileService("/home/mrsauravsahu/code/mrsauravsahu.github.io/store"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
