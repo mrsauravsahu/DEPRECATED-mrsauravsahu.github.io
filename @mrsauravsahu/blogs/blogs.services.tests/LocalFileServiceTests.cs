@@ -15,6 +15,7 @@ namespace blogs.services.tests
         private const string DOES_NOT_EXIST = nameof(DOES_NOT_EXIST);
 
         private bool created = false;
+        private Mock<Stream> mockCreatedFileStream = new Mock<Stream>();
         private readonly Mock<IFileSystem> mockFS;
         private readonly IBlobService sut;
 
@@ -33,7 +34,7 @@ namespace blogs.services.tests
                     {
                         throw new DirectoryNotFoundException();
                     }
-                    return new Mock<Stream>().Object;
+                    return mockCreatedFileStream.Object;
                 }));
 
             mockFS
@@ -58,9 +59,21 @@ namespace blogs.services.tests
         [Fact]
         public async Task ShouldSaveAFileToSpecifiedContainer()
         {
-            // Create fake objects for testing
-            var sampleFile = new MemoryStream();
-            await sut.SaveBlobAsync("container", "file.md", sampleFile);
+
+            await sut.SaveBlobAsync(
+                "container",
+                 "file.md",
+                 new Mock<MemoryStream>().Object);
+        }
+
+        [Fact]
+        public async Task ShouldWriteToTheFileIfContainerExists()
+        {
+            var mockBlob = new Mock<MemoryStream>();
+
+            await sut.SaveBlobAsync("exists", "file.md", mockBlob.Object);
+
+            mockFS.Verify(m => m.File.WriteAllBytes(It.IsAny<string>(), It.IsAny<byte[]>()), Times.Once());
         }
 
         [Fact]
@@ -90,6 +103,16 @@ namespace blogs.services.tests
             await sut.SaveBlobAsync(DOES_NOT_EXIST, "file.md", mockBlob.Object);
 
             mockFS.Verify(m => m.File.Create($"base/{DOES_NOT_EXIST}/file.md"), Times.Once());
+        }
+
+        [Fact]
+        public async Task ShouldWriteToTheFileIfContainerDoesNotExist()
+        {
+            var mockBlob = new Mock<MemoryStream>();
+
+            await sut.SaveBlobAsync(DOES_NOT_EXIST, "file.md", mockBlob.Object);
+
+            mockFS.Verify(m => m.File.WriteAllBytes(It.IsAny<string>(), It.IsAny<byte[]>()), Times.Once());
         }
     }
 }
