@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using blogs.Contracts;
+using blogs.api.Contracts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Propfull.AspNet.Config;
 
-namespace blogs
+namespace blogs.api
 {
     public class Startup
     {
@@ -28,7 +28,7 @@ namespace blogs
         {
             services.AddControllers();
 
-            services.Configure<AppAboutConfig>(Configuration.GetSection(nameof(blogs)));
+            services.Configure<AppAboutConfig>(Configuration.GetSection(nameof(blogs.api)));
             services.AddSingleton(options => options.GetConfigService<AppAboutConfig>());
         }
 

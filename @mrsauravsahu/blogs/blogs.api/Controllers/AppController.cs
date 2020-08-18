@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
-using blogs.Contracts;
+using blogs.api.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using Propfull.AspNet.Config;
 
-namespace blogs.Controllers
+namespace blogs.api.Controllers
 {
     [ApiController]
     [Route("")]
