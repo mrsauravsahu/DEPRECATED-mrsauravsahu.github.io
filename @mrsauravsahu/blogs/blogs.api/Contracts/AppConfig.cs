@@ -1,4 +1,4 @@
-namespace blogs.api.Contracts
+namespace blogs.api.contracts
 {
     public class AppAboutConfig {
         public string AppName { get; set; }

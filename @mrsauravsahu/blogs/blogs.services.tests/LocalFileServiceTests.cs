@@ -7,6 +7,8 @@ using System.IO.Abstractions;
 using Moq;
 using System.Threading.Tasks;
 using FluentAssertions;
+using Microsoft.Extensions.Options;
+using blogs.services.options;
 
 namespace blogs.services.tests
 {
@@ -27,15 +29,16 @@ namespace blogs.services.tests
                 .Returns((string[] parts) => String.Join("/", parts));
 
             mockFS
-                .Setup(m => m.File.Create(It.IsAny<string>()))
-                .Returns(new Func<string, Stream>((string path) =>
-                {
-                    if (path.Contains(DOES_NOT_EXIST) && !created)
+                .Setup(m => m.FileStream.Create(It.IsAny<string>(), FileMode.Create, FileAccess.Write))
+                .Returns(new Func<string, FileMode, FileAccess, Stream>(
+                    (string path, FileMode mode, FileAccess access) =>
                     {
-                        throw new DirectoryNotFoundException();
-                    }
-                    return mockCreatedFileStream.Object;
-                }));
+                        if (path.Contains(DOES_NOT_EXIST) && !created)
+                        {
+                            throw new DirectoryNotFoundException();
+                        }
+                        return mockCreatedFileStream.Object;
+                    }));
 
             mockFS
                 .Setup(m => m.Directory.CreateDirectory(It.IsAny<string>()))
@@ -53,7 +56,12 @@ namespace blogs.services.tests
                     return exists;
                 }));
 
-            sut = new LocalFileService(mockFS.Object, "base");
+
+            var options = Options.Create(new LocalFileServiceOptions
+            {
+                BasePath = "base"
+            });
+            sut = new LocalFileService(mockFS.Object, options);
         }
 
         [Fact]
@@ -73,7 +81,7 @@ namespace blogs.services.tests
 
             await sut.SaveBlobAsync("exists", "file.md", mockBlob.Object);
 
-            mockFS.Verify(m => m.File.WriteAllBytes(It.IsAny<string>(), It.IsAny<byte[]>()), Times.Once());
+            mockBlob.Verify(m => m.WriteTo(It.IsAny<Stream>()), Times.Once());
         }
 
         [Fact]
@@ -102,7 +110,11 @@ namespace blogs.services.tests
 
             await sut.SaveBlobAsync(DOES_NOT_EXIST, "file.md", mockBlob.Object);
 
-            mockFS.Verify(m => m.File.Create($"base/{DOES_NOT_EXIST}/file.md"), Times.Once());
+            mockFS.Verify(m => m.FileStream.Create(
+                $"base/{DOES_NOT_EXIST}/file.md",
+                FileMode.Create,
+                FileAccess.Write
+            ), Times.Once());
         }
 
         [Fact]
@@ -112,7 +124,7 @@ namespace blogs.services.tests
 
             await sut.SaveBlobAsync(DOES_NOT_EXIST, "file.md", mockBlob.Object);
 
-            mockFS.Verify(m => m.File.WriteAllBytes(It.IsAny<string>(), It.IsAny<byte[]>()), Times.Once());
+            mockBlob.Verify(m => m.WriteTo(It.IsAny<Stream>()), Times.Once());
         }
     }
 }

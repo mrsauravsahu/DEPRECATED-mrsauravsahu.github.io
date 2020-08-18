@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.IO.Abstractions;
 using System.Linq;
 using System.Threading.Tasks;
-using blogs.api.Contracts;
+using blogs.api.contracts;
+using blogs.services.contracts;
+using blogs.services.options;
 using blogs.services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,9 +32,11 @@ namespace blogs.api
         {
             services.AddControllers();
 
-            services.Configure<AppAboutConfig>(Configuration.GetSection(nameof(blogs.api)));
+            services.Configure<AppAboutConfig>(Configuration.GetSection(nameof(blogs)));
+            services.Configure<LocalFileServiceOptions>(Configuration.GetSection(nameof(blogs)));
             services.AddSingleton(options => options.GetConfigService<AppAboutConfig>());
-            services.AddSingleton((options) => new LocalFileService("/home/mrsauravsahu/code/mrsauravsahu.github.io/store"));
+            services.AddSingleton<IFileSystem, FileSystem>();
+            services.AddSingleton<LocalFileService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
