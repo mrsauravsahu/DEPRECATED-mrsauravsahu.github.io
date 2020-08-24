@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\blogs.services\blogs.services.csproj" />
+    <ProjectReference Include="..\blogs.data\blogs.data.csproj" />
   </ItemGroup>
 
 

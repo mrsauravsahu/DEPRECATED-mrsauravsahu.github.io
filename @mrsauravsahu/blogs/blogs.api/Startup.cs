@@ -15,6 +15,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Propfull.AspNet.Config;
+using blogs.data.context;
+using FileContextCore;
+using FileContextCore.Serializer;
+using FileContextCore.FileManager;
 
 namespace blogs.api
 {
@@ -34,7 +38,13 @@ namespace blogs.api
 
             services.Configure<AboutAppOptions>(Configuration.GetSection(nameof(blogs)));
             services.AddSingleton(options => options.GetConfigService<AboutAppOptions>());
-                        
+
+            services.AddDbContext<BlogsContext>(options =>
+                options.UseFileContextDatabase<CSVSerializer, DefaultFileManager>(
+                    location: "/files/Saurav Sahu/Documents/Code/mrsauravsahu.github.io/store"
+                )
+            );
+
             services.Configure<LocalFileServiceOptions>(Configuration.GetSection(nameof(blogs)));
             services.AddSingleton<IFileSystem, FileSystem>();
             services.AddSingleton<LocalFileService>();
