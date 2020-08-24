@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO.Abstractions;
 using System.Linq;
 using System.Threading.Tasks;
-using blogs.api.contracts;
+using blogs.api.options;
 using blogs.services.contracts;
 using blogs.services.options;
 using blogs.services;
@@ -32,9 +32,10 @@ namespace blogs.api
         {
             services.AddControllers();
 
-            services.Configure<AppAboutConfig>(Configuration.GetSection(nameof(blogs)));
+            services.Configure<AboutAppOptions>(Configuration.GetSection(nameof(blogs)));
+            services.AddSingleton(options => options.GetConfigService<AboutAppOptions>());
+                        
             services.Configure<LocalFileServiceOptions>(Configuration.GetSection(nameof(blogs)));
-            services.AddSingleton(options => options.GetConfigService<AppAboutConfig>());
             services.AddSingleton<IFileSystem, FileSystem>();
             services.AddSingleton<LocalFileService>();
         }
