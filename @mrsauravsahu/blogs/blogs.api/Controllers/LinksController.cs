@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using blogs.data.context;
 using blogs.data.models;
 using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace blogs.api.Controllers
 {
@@ -21,20 +22,8 @@ namespace blogs.api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetLinksAsync()
         {
-            var links = blogsContext.Links.ToList();
-            if (links.Count == 0)
-            {
-                blogsContext.Links.Add(new Link
-                {
-                    Title = "sample",
-                    Description = "this is a sample link",
-                    Url = "https://mrsauravsahu.github.io",
-                    CreatedAt = DateTime.UtcNow
-                });
-                await blogsContext.SaveChangesAsync();
-            }
+            var links = await blogsContext.Links.ToListAsync();
 
-            links = blogsContext.Links.ToList();
             return Ok(new
             {
                 Data = links
