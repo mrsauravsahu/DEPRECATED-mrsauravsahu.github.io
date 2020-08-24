@@ -3,10 +3,11 @@ using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using blogs.api.contracts;
+using blogs.api.options;
 using blogs.services;
 using Microsoft.AspNetCore.Mvc;
 using Propfull.AspNet.Config;
+using Propfull.AspNet.Config.Exceptions;
 
 namespace blogs.api.Controllers
 {
@@ -14,27 +15,23 @@ namespace blogs.api.Controllers
     [Route("")]
     public class AppController : ControllerBase
     {
-        public AppController(ConfigService<AppAboutConfig> configService,
+        public AppController(ConfigService<AboutAppOptions> configService,
         LocalFileService localFileService)
         {
             this.configService = configService;
             this.localFileService = localFileService;
         }
-        private readonly ConfigService<AppAboutConfig> configService;
+        private readonly ConfigService<AboutAppOptions> configService;
         private readonly LocalFileService localFileService;
 
         [HttpGet]
-        public async Task<AppAboutConfig> GetAppInfo()
+        public async Task<IActionResult> GetAppInfo()
         {
             var aboutConfig = await configService.GetConfigAsync();
-
-            var fileName = $"{DateTime.UtcNow.ToString().Replace("/", "-")}.txt";
-            var data = JsonSerializer.Serialize(aboutConfig);
-            var stream = new MemoryStream(Encoding.UTF8.GetBytes(data));
-            
-            await localFileService.SaveBlobAsync("dotnet", fileName, stream);
-
-            return aboutConfig;
+            return Ok(new
+            {
+                Data = aboutConfig
+            });
         }
     }
 }
