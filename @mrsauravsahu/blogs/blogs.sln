@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blogs.services", "blogs.ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blogs.services.tests", "blogs.services.tests\blogs.services.tests.csproj", "{560D1459-C53F-449A-B59F-9B3C192987A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blogs.data", "blogs.data\blogs.data.csproj", "{D760D273-BB60-4556-AE78-F1AFB98DE529}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,17 @@ Global
 		{560D1459-C53F-449A-B59F-9B3C192987A6}.Release|x64.Build.0 = Release|Any CPU
 		{560D1459-C53F-449A-B59F-9B3C192987A6}.Release|x86.ActiveCfg = Release|Any CPU
 		{560D1459-C53F-449A-B59F-9B3C192987A6}.Release|x86.Build.0 = Release|Any CPU
+		{D760D273-BB60-4556-AE78-F1AFB98DE529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D760D273-BB60-4556-AE78-F1AFB98DE529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D760D273-BB60-4556-AE78-F1AFB98DE529}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D760D273-BB60-4556-AE78-F1AFB98DE529}.Debug|x64.Build.0 = Debug|Any CPU
+		{D760D273-BB60-4556-AE78-F1AFB98DE529}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D760D273-BB60-4556-AE78-F1AFB98DE529}.Debug|x86.Build.0 = Debug|Any CPU
+		{D760D273-BB60-4556-AE78-F1AFB98DE529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D760D273-BB60-4556-AE78-F1AFB98DE529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D760D273-BB60-4556-AE78-F1AFB98DE529}.Release|x64.ActiveCfg = Release|Any CPU
+		{D760D273-BB60-4556-AE78-F1AFB98DE529}.Release|x64.Build.0 = Release|Any CPU
+		{D760D273-BB60-4556-AE78-F1AFB98DE529}.Release|x86.ActiveCfg = Release|Any CPU
+		{D760D273-BB60-4556-AE78-F1AFB98DE529}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
