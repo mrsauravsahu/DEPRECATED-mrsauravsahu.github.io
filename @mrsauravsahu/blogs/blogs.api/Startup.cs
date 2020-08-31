@@ -48,9 +48,8 @@ namespace blogs.api
 
             services.AddDbContext<BlogsContext>(options =>
                 options.UseFileContextDatabase<CSVSerializer, DefaultFileManager>(
-                    location: "/files/Saurav Sahu/Documents/Code/mrsauravsahu.github.io/store"
-                )
-            );
+                    location: Configuration.GetValue<string>("blogs:StoreBasePath")
+                ));
 
             services.Configure<LocalFileServiceOptions>(Configuration.GetSection(nameof(blogs)));
             services.AddSingleton<IFileSystem, FileSystem>();

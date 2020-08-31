@@ -19,9 +19,19 @@ namespace blogs.services
             this.config = options.Value;
         }
 
-        public Task<Blob> GetBlobAsync(string container, string name)
+        public async Task<Blob> GetBlobAsync(string container, string name)
         {
-            throw new System.NotImplementedException();
+            var containerPath = fileSystem.Path.Combine(new[] { config.BasePath, container });
+
+            var filePath = fileSystem.Path.Combine(new[] { containerPath, name });
+
+            var stream = new Blob();
+            using (var fileStream = fileSystem.File.OpenRead(filePath))
+            {
+                await fileStream.CopyToAsync(stream);
+            }
+
+            return stream;
         }
 
         public async Task SaveBlobAsync(string container, string name, Blob stream)
