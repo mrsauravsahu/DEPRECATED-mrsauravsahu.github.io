@@ -1,6 +1,9 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using blogs.services;
+using blogs.services.contracts;
+using System.Collections.Generic;
+using blogs.data.models;
 
 namespace blogs.api.Controllers
 {
@@ -15,6 +18,7 @@ namespace blogs.api.Controllers
         }
 
         [HttpGet]
+        [ProducesDefaultResponseType(typeof(PaginatedResult<List<Blog>>))]
         public async Task<IActionResult> GetBlogsAsync()
         {
             var allblogsResult = await blogsService.GetAllAsync();
