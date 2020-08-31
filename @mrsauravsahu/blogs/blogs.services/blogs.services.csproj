@@ -9,4 +9,8 @@
     <PackageReference Include="System.IO.Abstractions" Version="12.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\blogs.data\blogs.data.csproj" />
+  </ItemGroup>
+
 </Project>
