@@ -1,13 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using blogs.api.dto;
 using blogs.api.options;
 using blogs.services;
 using Microsoft.AspNetCore.Mvc;
 using Propfull.AspNet.Config;
-using Propfull.AspNet.Config.Exceptions;
 
 namespace blogs.api.Controllers
 {
@@ -25,12 +21,21 @@ namespace blogs.api.Controllers
         private readonly LocalFileService localFileService;
 
         [HttpGet]
+        [ProducesDefaultResponseType(typeof(Response<AppInfo>))]
         public async Task<IActionResult> GetAppInfo()
         {
             var aboutConfig = await configService.GetConfigAsync();
-            return Ok(new
+
+            var appInfo = new AppInfo
             {
-                Data = aboutConfig
+                Name = aboutConfig.AppName,
+                ContactEmail = aboutConfig.ContactEmail,
+                Version = $"v{aboutConfig.Version}"
+            };
+
+            return Ok(new Response<AppInfo>
+            {
+                Data = appInfo
             });
         }
     }
