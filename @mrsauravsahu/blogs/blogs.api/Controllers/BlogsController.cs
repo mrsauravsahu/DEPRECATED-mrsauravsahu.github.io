@@ -1,32 +1,25 @@
-using System;
-using System.Linq;
 using System.Threading.Tasks;
-using blogs.data.context;
 using Microsoft.AspNetCore.Mvc;
-using blogs.data.models;
-using Microsoft.EntityFrameworkCore;
+using blogs.services;
 
 namespace blogs.api.Controllers
 {
     [Route("api/[controller]")]
     public class BlogsController : ControllerBase
     {
-        private readonly BlogsContext blogsContext;
+        private readonly BlogsService blogsService;
 
-        public BlogsController(BlogsContext blogsContext)
+        public BlogsController(BlogsService blogsService)
         {
-            this.blogsContext = blogsContext;
+            this.blogsService = blogsService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetBlogsAsync()
         {
-            var blogs = await blogsContext.Blogs.ToListAsync();
+            var allblogsResult = await blogsService.GetAllAsync();
 
-            return Ok(new
-            {
-                Data = blogs
-            });
+            return Ok(allblogsResult);
         }
     }
 }

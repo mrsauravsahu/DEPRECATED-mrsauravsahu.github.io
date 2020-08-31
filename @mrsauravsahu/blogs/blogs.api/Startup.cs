@@ -54,6 +54,8 @@ namespace blogs.api
             services.Configure<LocalFileServiceOptions>(Configuration.GetSection(nameof(blogs)));
             services.AddSingleton<IFileSystem, FileSystem>();
             services.AddSingleton<LocalFileService>();
+
+            services.AddScoped<BlogsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
