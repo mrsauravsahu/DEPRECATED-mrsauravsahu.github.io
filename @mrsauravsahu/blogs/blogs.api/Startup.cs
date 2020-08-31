@@ -19,6 +19,7 @@ using blogs.data.context;
 using FileContextCore;
 using FileContextCore.Serializer;
 using FileContextCore.FileManager;
+using Microsoft.OpenApi.Models;
 
 namespace blogs.api
 {
@@ -35,6 +36,12 @@ namespace blogs.api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "@mrsauravsahu/blogs", Version = "v1" });
+            });
+
 
             services.Configure<AboutAppOptions>(Configuration.GetSection(nameof(blogs)));
             services.AddSingleton(options => options.GetConfigService<AboutAppOptions>());
@@ -65,6 +72,12 @@ namespace blogs.api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "@mrsauravsahu/blogs");
             });
         }
     }
