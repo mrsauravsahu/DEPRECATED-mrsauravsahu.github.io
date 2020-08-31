@@ -1,33 +1,25 @@
 using System.Threading.Tasks;
-using System.Linq;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using blogs.data.context;
-using blogs.data.models;
-using System;
-using Microsoft.EntityFrameworkCore;
+using blogs.services;
 
 namespace blogs.api.Controllers
 {
     [Route("api/[controller]")]
     public class LinksController : ControllerBase
     {
-        private readonly BlogsContext blogsContext;
+        private readonly LinksService linksService;
 
-        public LinksController(BlogsContext blogsContext)
+        public LinksController(LinksService linksService)
         {
-            this.blogsContext = blogsContext;
+            this.linksService = linksService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetLinksAsync()
         {
-            var links = await blogsContext.Links.ToListAsync();
+            var paginatedLinks = await linksService.GetAllAsync();
 
-            return Ok(new
-            {
-                Data = links
-            });
+            return Ok(paginatedLinks);
         }
     }
 

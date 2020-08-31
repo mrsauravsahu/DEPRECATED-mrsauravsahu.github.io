@@ -56,6 +56,7 @@ namespace blogs.api
             services.AddSingleton<LocalFileService>();
 
             services.AddScoped<BlogsService>();
+            services.AddScoped<LinksService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
