@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace blogs.services
 {
-    public class BlogsService
+      public class BlogsService : IBasicService<Blog>
     {
         private readonly BlogsContext blogsContext;
 
