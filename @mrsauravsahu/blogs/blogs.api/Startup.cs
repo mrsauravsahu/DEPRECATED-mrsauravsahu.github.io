@@ -36,6 +36,10 @@ namespace blogs.api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
+            services
+                .AddMvcCore()
+                .AddApiExplorer();
 
             services.AddSwaggerGen(c =>
             {
