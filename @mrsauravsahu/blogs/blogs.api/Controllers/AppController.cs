@@ -1,9 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System.Net;
+using System.Threading.Tasks;
 using blogs.api.dto;
 using blogs.api.options;
 using blogs.services;
 using Microsoft.AspNetCore.Mvc;
 using Propfull.AspNet.Config;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace blogs.api.Controllers
 {
@@ -21,7 +23,7 @@ namespace blogs.api.Controllers
         private readonly LocalFileService localFileService;
 
         [HttpGet]
-        [ProducesDefaultResponseType(typeof(Response<AppInfo>))]
+        [SwaggerResponse(200, "Retrieved the app info", typeof(Response<AppInfo>))]
         public async Task<IActionResult> GetAppInfo()
         {
             var aboutConfig = await configService.GetConfigAsync();

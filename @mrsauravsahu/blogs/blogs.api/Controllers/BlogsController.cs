@@ -4,6 +4,7 @@ using blogs.services;
 using blogs.services.contracts;
 using System.Collections.Generic;
 using blogs.data.models;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace blogs.api.Controllers
 {
@@ -18,7 +19,7 @@ namespace blogs.api.Controllers
         }
 
         [HttpGet]
-        [ProducesDefaultResponseType(typeof(PaginatedResult<List<Blog>>))]
+        [SwaggerResponse(200, "Retrieved all blogs", typeof(PaginatedResult<List<Blog>>))]
         public async Task<IActionResult> GetBlogsAsync()
         {
             var allblogsResult = await blogsService.GetAllAsync();
