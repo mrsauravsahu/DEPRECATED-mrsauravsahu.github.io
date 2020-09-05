@@ -22,7 +22,7 @@ namespace blogs.data.models
 
         [NotMapped]
         public IEnumerable<string> Images { 
-            get => images.Split(Constants.FieldDelimiter);
+            get => (images ?? string.Empty).Split(new char [] { Constants.FieldDelimiter }, StringSplitOptions.RemoveEmptyEntries);
             set => images = String.Join(Constants.FieldDelimiter.ToString(), value);
         }
 
