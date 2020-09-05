@@ -23,7 +23,7 @@ namespace blogs.api.Controllers
         private readonly LocalFileService localFileService;
 
         [HttpGet]
-        [SwaggerResponse(200, "Retrieved the app info", typeof(Response<AppInfo>))]
+        [SwaggerResponse(200, "Retrieved the app info", typeof(Envelope<AppInfo>))]
         public async Task<IActionResult> GetAppInfo()
         {
             var aboutConfig = await configService.GetConfigAsync();
@@ -35,7 +35,7 @@ namespace blogs.api.Controllers
                 Version = $"v{aboutConfig.Version}"
             };
 
-            return Ok(new Response<AppInfo>
+            return Ok(new Envelope<AppInfo>
             {
                 Data = appInfo
             });

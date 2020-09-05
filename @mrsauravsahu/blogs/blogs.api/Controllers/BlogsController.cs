@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using blogs.api.dto;
 using blogs.services;
 using blogs.services.contracts;
 using System.Collections.Generic;
@@ -25,6 +26,14 @@ namespace blogs.api.Controllers
             var allblogsResult = await blogsService.GetAllAsync();
 
             return Ok(allblogsResult);
+        }
+
+        [HttpPost]
+        [SwaggerResponse(201, "Added a new blog", typeof(Envelope<BlogDto>))]
+        public async Task<IActionResult> AddBlogAsync([FromBody] CreateBlogDto dto)
+        {
+            var blog = await blogsService.AddBlogAsync(dto);
+            return CreatedAtRoute(new { }, new Envelope<BlogDto> { Data = blog });
         }
     }
 }

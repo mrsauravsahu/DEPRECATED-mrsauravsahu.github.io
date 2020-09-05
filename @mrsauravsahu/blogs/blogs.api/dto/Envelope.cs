@@ -1,6 +1,6 @@
 namespace blogs.api.dto
 {
-    public class Response<T>
+    public class Envelope<T>
     {
         public T Data { get; set; }
     }

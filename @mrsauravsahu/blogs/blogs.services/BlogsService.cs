@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using blogs.data.context;
 using blogs.data.models;
@@ -7,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace blogs.services
 {
-      public class BlogsService : IBasicService<Blog>
+    public class BlogsService : IBasicService<Blog>
     {
         private readonly BlogsContext blogsContext;
 
@@ -29,6 +30,33 @@ namespace blogs.services
             };
 
             return result;
+        }
+
+        public async Task<BlogDto> AddBlogAsync(CreateBlogDto blog)
+        {
+            // TODO: Update this with an AutoMapper or similar mapping library
+            var result = blogsContext.Blogs.Add(new Blog
+            {
+                Title = blog.Title,
+                Description = blog.Description,
+                Slug = blog.Slug,
+                CreatedAt = DateTime.UtcNow,
+            });
+
+            await blogsContext.SaveChangesAsync();
+
+            var addedBlog = result.Entity;
+            var response = new BlogDto {
+                Id = addedBlog.Id,
+                Title = addedBlog.Title,
+                Description = addedBlog.Description,
+                Slug = addedBlog.Slug,
+                FileUrl = addedBlog.File, // TODO: Convert this to a URL to file download API
+                ImageUrls = addedBlog.Images, // TODO: -do-
+                CreatedAt = addedBlog.CreatedAt
+            };
+
+            return response;
         }
     }
 }
