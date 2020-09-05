@@ -65,6 +65,12 @@ namespace blogs.services
             return response;
         }
 
+        public async Task<Blog> GetByIdAsync(int id)
+        {
+            var blog = await blogsContext.Blogs.FindAsync(id);
+            return blog;
+        }
+
         public async Task SetFileForBlogAsync(int id, MemoryStream stream)
         {
             var blog = await blogsContext.Blogs.FindAsync(id);

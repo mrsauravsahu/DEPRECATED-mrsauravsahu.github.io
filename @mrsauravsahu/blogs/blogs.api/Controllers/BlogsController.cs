@@ -39,6 +39,17 @@ namespace blogs.api.Controllers
             return CreatedAtRoute(new { }, new Envelope<BlogDto> { Data = blog });
         }
 
+        [HttpGet("{Id:int}")]
+        [SwaggerResponse(200, "Retrieved all blogs", typeof(Envelope<Blog>))]
+        public async Task<IActionResult> GetBlogByIdAsync(
+            [FromRoute] BlogRouteParams routeParams
+        )
+        {
+            var blogResult = await blogsService.GetByIdAsync(routeParams.Id);
+
+            return Ok(new Envelope<Blog> { Data = blogResult });
+        }
+
         [HttpPut("{Id:int}/file")]
         [SwaggerResponse(200, "Update blog file for blog")]
         public async Task<IActionResult> SetBlogFileForBlogAsync(
@@ -61,7 +72,7 @@ namespace blogs.api.Controllers
         )
         {
             var stream = await blogsService.GetFileForBlogAsync(routeParams.Id);
-            
+
             return File(stream, "application/octet-stream", $"blog-{routeParams.Id}.md");
         }
     }
