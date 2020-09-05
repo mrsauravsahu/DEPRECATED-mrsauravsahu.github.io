@@ -20,6 +20,7 @@ using FileContextCore;
 using FileContextCore.Serializer;
 using FileContextCore.FileManager;
 using Microsoft.OpenApi.Models;
+using Sieve.Services;
 
 namespace blogs.api
 {
@@ -61,6 +62,8 @@ namespace blogs.api
 
             services.AddScoped<BlogsService>();
             services.AddScoped<LinksService>();
+
+            services.AddScoped<SieveProcessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
