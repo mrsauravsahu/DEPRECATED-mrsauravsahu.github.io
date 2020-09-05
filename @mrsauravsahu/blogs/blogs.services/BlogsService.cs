@@ -6,6 +6,8 @@ using blogs.data.context;
 using blogs.data.models;
 using blogs.services.contracts;
 using Microsoft.EntityFrameworkCore;
+using Sieve.Models;
+using Sieve.Services;
 
 namespace blogs.services
 {
@@ -13,19 +15,23 @@ namespace blogs.services
     {
         private readonly BlogsContext blogsContext;
         private readonly LocalFileService localFileService;
+        private readonly SieveProcessor sieveProcessor;
 
         public BlogsService(
             BlogsContext blogsContext,
-            LocalFileService localFileService)
+            LocalFileService localFileService,
+            SieveProcessor sieveProcessor)
         {
             this.blogsContext = blogsContext;
             this.localFileService = localFileService;
+            this.sieveProcessor = sieveProcessor;
         }
 
-        public async Task<PaginatedResult<List<Blog>>> GetAllAsync()
+        public async Task<PaginatedResult<List<Blog>>> GetAllAsync(SieveModel sieve)
         {
             var totalCount = await blogsContext.Blogs.LongCountAsync();
-            var blogs = await blogsContext.Blogs.ToListAsync();
+            var allBlogsQuery = blogsContext.Blogs.AsQueryable();
+            var blogs = await sieveProcessor.Apply(sieve, allBlogsQuery).ToListAsync();
 
             var result = new PaginatedResult<List<Blog>>
             {

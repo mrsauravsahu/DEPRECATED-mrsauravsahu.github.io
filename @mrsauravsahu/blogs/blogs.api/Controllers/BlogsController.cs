@@ -9,6 +9,7 @@ using Swashbuckle.AspNetCore.Annotations;
 using blogs.api.contracts;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using Sieve.Models;
 
 namespace blogs.api.Controllers
 {
@@ -24,9 +25,11 @@ namespace blogs.api.Controllers
 
         [HttpGet]
         [SwaggerResponse(200, "Retrieved all blogs", typeof(PaginatedResult<List<Blog>>))]
-        public async Task<IActionResult> GetBlogsAsync()
+        public async Task<IActionResult> GetBlogsAsync(
+            SieveModel sieve
+        )
         {
-            var allblogsResult = await blogsService.GetAllAsync();
+            var allblogsResult = await blogsService.GetAllAsync(sieve);
 
             return Ok(allblogsResult);
         }
