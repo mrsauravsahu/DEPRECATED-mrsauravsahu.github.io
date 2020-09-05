@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using blogs.data.context;
 using blogs.data.models;
@@ -11,10 +12,14 @@ namespace blogs.services
     public class BlogsService : IBasicService<Blog>
     {
         private readonly BlogsContext blogsContext;
+        private readonly LocalFileService localFileService;
 
-        public BlogsService(BlogsContext blogsContext)
+        public BlogsService(
+            BlogsContext blogsContext,
+            LocalFileService localFileService)
         {
             this.blogsContext = blogsContext;
+            this.localFileService = localFileService;
         }
 
         public async Task<PaginatedResult<List<Blog>>> GetAllAsync()
@@ -46,7 +51,8 @@ namespace blogs.services
             await blogsContext.SaveChangesAsync();
 
             var addedBlog = result.Entity;
-            var response = new BlogDto {
+            var response = new BlogDto
+            {
                 Id = addedBlog.Id,
                 Title = addedBlog.Title,
                 Description = addedBlog.Description,
@@ -57,6 +63,12 @@ namespace blogs.services
             };
 
             return response;
+        }
+
+        public async Task SetFileForBlogAsync(int id, MemoryStream stream)
+        {
+            var blog = await blogsContext.Blogs.FindAsync(id);
+            await localFileService.SaveBlobAsync($"{blog.Id}-{blog.Slug}", "content.md", stream);
         }
     }
 }
