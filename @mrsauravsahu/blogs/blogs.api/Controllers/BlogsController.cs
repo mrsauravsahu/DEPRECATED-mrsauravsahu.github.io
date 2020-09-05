@@ -6,6 +6,9 @@ using blogs.services.contracts;
 using System.Collections.Generic;
 using blogs.data.models;
 using Swashbuckle.AspNetCore.Annotations;
+using blogs.api.contracts;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace blogs.api.Controllers
 {
@@ -34,6 +37,22 @@ namespace blogs.api.Controllers
         {
             var blog = await blogsService.AddBlogAsync(dto);
             return CreatedAtRoute(new { }, new Envelope<BlogDto> { Data = blog });
+        }
+
+        [HttpPut("{id:int}/file")]
+        [Route("{id:int}/file")]
+        [SwaggerResponse(200, "Update blog file for blog")]
+        public async Task<IActionResult> SetBlogFileForBlogAsync(
+            [FromRoute] BlogRouteParams routeParams,
+            IFormFile file
+        )
+        {
+            var stream = new MemoryStream();
+            await file.CopyToAsync(stream);
+
+            await blogsService.SetFileForBlogAsync(routeParams.Id, stream);
+
+            return Ok();
         }
     }
 }
