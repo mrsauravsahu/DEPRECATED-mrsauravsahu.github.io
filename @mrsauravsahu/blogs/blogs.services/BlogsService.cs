@@ -68,7 +68,17 @@ namespace blogs.services
         public async Task SetFileForBlogAsync(int id, MemoryStream stream)
         {
             var blog = await blogsContext.Blogs.FindAsync(id);
-            await localFileService.SaveBlobAsync($"{blog.Id}-{blog.Slug}", "content.md", stream);
+            blog.File = "content.md";
+            await blogsContext.SaveChangesAsync();
+            await localFileService.SaveBlobAsync(blog.ContainerBasePath, "content.md", stream);
+        }
+
+        public async Task<MemoryStream> GetFileForBlogAsync(int id)
+        {
+            var blog = await blogsContext.Blogs.FindAsync(id);
+            var blogFile = await localFileService.GetBlobAsync(blog.ContainerBasePath, blog.File);
+            blogFile.Seek(0, SeekOrigin.Begin);
+            return blogFile;
         }
     }
 }

@@ -25,5 +25,7 @@ namespace blogs.data.models
             get => images.Split(Constants.FieldDelimiter);
             set => images = String.Join(Constants.FieldDelimiter.ToString(), value);
         }
+
+        public string ContainerBasePath => $"{Id}-{Slug}";
     }
 }

@@ -53,5 +53,16 @@ namespace blogs.api.Controllers
 
             return Ok();
         }
+
+        [HttpGet("{Id:int}/file")]
+        [SwaggerResponse(200, "Retrieved blog file")]
+        public async Task<IActionResult> GetBlogFileForBlogAsync(
+            [FromRoute] BlogRouteParams routeParams
+        )
+        {
+            var stream = await blogsService.GetFileForBlogAsync(routeParams.Id);
+            
+            return File(stream, "application/octet-stream", $"blog-{routeParams.Id}.md");
+        }
     }
 }
