@@ -4,6 +4,7 @@ using blogs.data.context;
 using blogs.data.models;
 using blogs.services.contracts;
 using Microsoft.EntityFrameworkCore;
+using Sieve.Models;
 
 namespace blogs.services
 {
@@ -16,7 +17,9 @@ namespace blogs.services
             this.blogsContext = blogsContext;
         }
 
-        public async Task<PaginatedResult<List<Link>>> GetAllAsync()
+        // TODO: Remove null default from sieve
+        // should be implemented
+        public async Task<PaginatedResult<List<Link>>> GetAllAsync(SieveModel sieve = null)
         {
             var totalCount = await blogsContext.Links.LongCountAsync();
             var links = await blogsContext.Links.ToListAsync();

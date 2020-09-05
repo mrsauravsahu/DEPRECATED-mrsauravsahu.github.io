@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using Sieve.Attributes;
 
 namespace blogs.data.models
 {
@@ -15,6 +16,8 @@ namespace blogs.data.models
         public string Title { get; set; }
         public string Description { get; set; }
         public string Slug { get; set; }
+
+        [Sieve(CanSort = true)]
         public DateTime CreatedAt { get; set; }
         public string File { get; set; }
 
