@@ -55,7 +55,7 @@ namespace blogs.api
                     location: Configuration.GetValue<string>("blogs:StoreBasePath")
                 ));
 
-            services.Configure<LocalFileServiceOptions>(Configuration.GetSection(nameof(blogs)));
+            services.Configure<LocalFileServiceOptions>(Configuration.GetSection("blogs:files"));
             services.AddSingleton<IFileSystem, FileSystem>();
             services.AddSingleton<LocalFileService>();
 

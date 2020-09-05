@@ -39,8 +39,7 @@ namespace blogs.api.Controllers
             return CreatedAtRoute(new { }, new Envelope<BlogDto> { Data = blog });
         }
 
-        [HttpPut("{id:int}/file")]
-        [Route("{id:int}/file")]
+        [HttpPut("{Id:int}/file")]
         [SwaggerResponse(200, "Update blog file for blog")]
         public async Task<IActionResult> SetBlogFileForBlogAsync(
             [FromRoute] BlogRouteParams routeParams,
