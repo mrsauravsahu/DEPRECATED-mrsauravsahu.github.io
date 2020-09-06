@@ -1,0 +1,19 @@
+version: '3'
+
+services: 
+    site:
+        build:
+            context: .
+            dockerfile: site.dockerfile
+        environment: 
+            - BLOGS_BASE_URL=http://api
+
+    api:
+        build:
+            context: .
+            dockerfile: blogs.api.dev.dockerfile
+        ports: 
+            - '5000:5000'
+        volumes: 
+            - './blogs:/app'
+        
