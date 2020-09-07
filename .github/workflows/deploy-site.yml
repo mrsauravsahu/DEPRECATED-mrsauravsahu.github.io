@@ -45,8 +45,8 @@ jobs:
         run: pnpm run build
 
       - name: run app locally
-      run: |
-        docker-compose up -d
+        run: |
+          docker-compose up -d
 
       - name: export site
         run: pnpm run site:export
