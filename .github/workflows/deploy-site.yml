@@ -44,7 +44,7 @@ jobs:
           docker-compose up -d
 
       - name: export site
-        run: pnpm run site:export
+        run: pnpm run --prefix @mrsauravsahu/site export
 
       - name: upload site artefact
         uses: actions/upload-artifact@v1
