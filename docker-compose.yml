@@ -4,16 +4,19 @@ services:
     site:
         build:
             context: .
-            dockerfile: site.dockerfile
+            dockerfile: '${PWD}/@mrsauravsahu/site/dev.dockerfile'
         environment: 
-            - BLOGS_BASE_URL=http://api
+            - BLOGS_BASE_URL=http://api:5000
+        ports: 
+            - '3000:3000'
 
     api:
         build:
             context: .
-            dockerfile: blogs.api.dev.dockerfile
+            dockerfile: ${PWD}/blogs/dev.dockerfile
         ports: 
             - '5000:5000'
         volumes: 
             - './blogs:/app'
+            - './store:/store'
         
