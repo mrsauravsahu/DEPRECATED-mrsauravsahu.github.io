@@ -1,1 +1,0 @@
-This marks the date when I started writing this god awful post... The truth.

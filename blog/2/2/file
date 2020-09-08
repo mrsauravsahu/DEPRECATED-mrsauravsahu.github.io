@@ -1,5 +1,0 @@
-Just realized I've created new problems that didn't even exist while trying to simplifying things. Case in point, CI for a monorepo. The [portfolio](https://github.com/mrsauravsahu/mrsauravsahu.github.io) repository uses a mono-repo. Before that, it was just a front end component kit and a static site with sapper. But now that I have the monorepo setup (a new blogs repo) how do I manage the deployment process? I don't want to deploy to Github Pages just because I added a new API in my blogs project. Maybe I need to check in my CI process which projects' files got changed and trigger a corresponding CD? But that's just too much, right?
-
-After looking around for a while, turns out that's one of the ways you'd do things. But if I were using something like Docker Swarm or Kubernetes for container-based deployments, this problem would still be there. Maybe this would be an optimization, but atleast new images would still built for each of the services, right?
-
-Need to research on this more.

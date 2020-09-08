@@ -1,7 +1,0 @@
-These days I've been thinking about life a lot, its purpose, what's the use of all the fuss? Obviously the experiences with family, friends, exploring new places, understanding its history is great. But the only question that remains unanswered till the very end, is, "What is on the other side?"
-
-In our daily lives, even unknowingly, you would be looking forward to some event in the near future. Be it waiting to watch a newly released movie, expecting to meet a friend, going out to get your favourite dish, waiting for that new device to release - the one you've been eyeing for months, or waiting for that special someone to talk back, and once they actually happen, you enjoy the moment but also quickly move on to the next thing. I never really created timetables or plans or to-dos in my life. Even whilst in school, I just studied a little without any plan and things were fine. But now that I've basically finished my education (or so I think, for the foreseeable future) I'm not sure what I should wait for.
-
-Also, I'm neither accepting that the things mentioned above are the things I'm waiting on, but nor am I disagreeing. So, what I'm saying is, no matter what these short terms goals are, the idea is to have fun, meet interesting people but just hope at the very end, everything will be explained.
-
-Written on mobile, that too after a long time.
