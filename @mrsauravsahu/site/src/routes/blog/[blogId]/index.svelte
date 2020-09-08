@@ -10,7 +10,7 @@
 <script lang="ts">
   export let blog;
 
-  const blogUrl = `blog/${blog.id}/file`;
+  const blogUrl = `blog/${blog.id}/${blog.posts[0].id}/file`;
 </script>
 
 <style>
