@@ -28,12 +28,4 @@ jobs:
 
       - name: build app locally
         run: |
-          docker build api  
-
-      - name: copy test .env file to build
-        working-directory: ${{ env.PROJECT }}
-        run: cp .env.test build/.env
-
-      - name: run tests
-        working-directory: ${{ env.PROJECT }}
-        run: pnpm t
+          docker build -f ./blogs/dockerfile ./blogs
