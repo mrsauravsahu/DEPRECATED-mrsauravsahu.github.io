@@ -70,7 +70,7 @@
         <li>
           <a rel="prefetch" href="blog/{blog.id}">
             <ss-card title={blog.title}>
-              <h4>{DateTime.fromISO(blog.created_at).toRelative()}</h4>
+              <h4>{DateTime.fromISO(blog.createdAt).toRelative()}</h4>
               {#if blog.description}{blog.description}{/if}
             </ss-card>
           </a>
