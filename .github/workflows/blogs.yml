@@ -22,21 +22,13 @@ jobs:
       - name: checkout to branch
         uses: actions/checkout@v2
 
-      - name: install pnpm
-        uses: pnpm/action-setup/@v1.2.0
+      - uses: actions/setup-dotnet@v1
         with:
-          version: 4.11.1
-          run_install: |
-            - recursive: true
+        dotnet-version: '3.1.x'
 
-      - name: setup node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: build project
-        working-directory: ${{ env.PROJECT }}
-        run: pnpm run build
+      - name: build app locally
+        run: |
+          docker build api  
 
       - name: copy test .env file to build
         working-directory: ${{ env.PROJECT }}
