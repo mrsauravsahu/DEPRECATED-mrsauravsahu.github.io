@@ -1,22 +1,18 @@
 version: '3'
 
 services: 
-    site:
-        build:
-            context: .
-            dockerfile: '${PWD}/@mrsauravsahu/site/dev.dockerfile'
-        environment: 
-            - BLOGS_BASE_URL=http://api:5000
-        ports: 
-            - '3000:3000'
-
     api:
         build:
-            context: .
-            dockerfile: ${PWD}/blogs/dev.dockerfile
+            context: ./blogs
+            dockerfile: ${PWD}/blogs/dockerfile
         ports: 
-            - '5000:5000'
+            - '8080:80'
         volumes: 
-            - './blogs:/app'
             - './store:/store'
+        environment: 
+            - blogs:AppName=@mrsauravsahu/blogs
+            - blogs:ContactEmail=mrsauravsahu@outlook.com
+            - blogs:Version=0.0.0
+            - blogs:StoreBasePath=/store
+            - blogs:files:BasePath=/store
         
