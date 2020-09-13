@@ -10,6 +10,11 @@
                 "label": "blog",
                 "path": "/blog",
                 "preFetch": false
+            },
+            {
+                "label": "links",
+                "path": "/links",
+                "preFetch": false
             }
         ]
     }
