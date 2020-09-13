@@ -7,4 +7,4 @@ docker-compose -f docker-compose.debug.yml build --parallel
 docker-compose -f docker-compose.debug.yml up -d
 ```
 
-Now you can visit http://localhost:3000 for the frontend app and http://localhost:5000/swagger for the Web API
+Now you can visit http://localhost:3000 for the frontend sapper app and http://localhost:5000/swagger for the ASP .NET Core Web API
