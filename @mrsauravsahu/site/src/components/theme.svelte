@@ -20,7 +20,10 @@
   };
 
   onMount(() => {
-    theme.set(getCurrentSavedTheme());
+    const currentTheme = getCurrentSavedTheme();
+
+    theme.set(currentTheme);
+    nextThemeLabel = getThemeLabelForTheme(getNextTheme(currentTheme));
   });
 </script>
 
