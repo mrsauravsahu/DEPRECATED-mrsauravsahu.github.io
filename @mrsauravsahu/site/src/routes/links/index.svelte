@@ -20,7 +20,7 @@
 
   .links-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     width: 100%;
     align-items: stretch;
     align-self: center;
@@ -31,11 +31,19 @@
   }
 
   .link-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .link-content > h4 {
     margin: 0;
     margin-bottom: 0.5rem;
+  }
+
+  a {
+    all: unset;
+    cursor: pointer;
   }
 
   @media only screen and (min-width: 48rem) {
@@ -51,15 +59,16 @@
 <div class="content">
   <p>Links to interesting places that are pinned for your perusal. 😬</p>
   <div class="links-container">
-    {#each links as link, index}
+    {#each links as link}
+    <a href={link.url}>
       <div class="link">
-        <ss-card title={`${links.length - index}. ${link.title}`}>
+        <ss-card title={link.title}>
           <div class="link-content">
             <h4>{DateTime.fromISO(link.createdAt).toRelative()}</h4>
-            {link.description}
           </div>
         </ss-card>
       </div>
+    </a>
     {/each}
   </div>
 </div>
