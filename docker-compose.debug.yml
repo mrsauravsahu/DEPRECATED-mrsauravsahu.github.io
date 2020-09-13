@@ -1,19 +1,19 @@
 version: '3'
 
 services: 
-    site:
+    site.debug:
         build:
             context: .
-            dockerfile: '${PWD}/@mrsauravsahu/site/dev.dockerfile'
+            dockerfile: '${PWD}/@mrsauravsahu/site/debug.dockerfile'
         environment: 
-            - BLOGS_BASE_URL=http://api:5000
+            - BLOGS_BASE_URL=http://api.debug:5000
         ports: 
             - '3000:3000'
 
-    api:
+    api.debug:
         build:
             context: .
-            dockerfile: ${PWD}/blogs/dev.dockerfile
+            dockerfile: ${PWD}/blogs/debug.dockerfile
         ports: 
             - '5000:5000'
         volumes: 
