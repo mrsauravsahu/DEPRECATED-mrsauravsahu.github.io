@@ -39,6 +39,11 @@
     Here are a few of the projects I'm working on. Find out more on Github...
   </p>
   <div class="cards-container">
+    <a href='https://github.com/mrsauravsahu/cli-config'>
+      <ss-card title="cli-config">
+        Helping you setup your CLI experience easily. Some goodies for the ol' terminal.
+      </ss-card>
+    </a>
     <a href='https://github.com/mrsauravsahu/gitremotetourl'>
       <ss-card title="git-remote-to-url">
         Converts git's remote url to a valid url to open in the browser.
