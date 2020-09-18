@@ -14,7 +14,7 @@
     justify-content: space-between;
   }
 
-  button {
+  a {
     all: unset;
     width: 100%;
     cursor: pointer;
@@ -26,7 +26,7 @@
     height: 100%;
   }
   @media only screen and (min-width: 48rem) {
-    .cards-container > button {
+    .cards-container > a {
       width: calc(50% - 1rem);
       height: 10rem;
     }
@@ -39,24 +39,26 @@
     Here are a few of the projects I'm working on. Find out more on Github...
   </p>
   <div class="cards-container">
-    <button
-      on:click={() => goto('https://github.com/mrsauravsahu/gitremotetourl')}>
+    <a href='https://github.com/mrsauravsahu/cli-config'>
+      <ss-card title="cli-config">
+        Helping you setup your CLI experience easily. Some goodies for the ol' terminal.
+      </ss-card>
+    </a>
+    <a href='https://github.com/mrsauravsahu/gitremotetourl'>
       <ss-card title="git-remote-to-url">
         Converts git's remote url to a valid url to open in the browser.
       </ss-card>
-    </button>
-    <button
-      on:click={() => goto('https://github.com/mrsauravsahu/towerofhanoi  ')}>
+    </a>
+    <a  href='https://github.com/mrsauravsahu/towerofhanoi'>
       <ss-card title="TowerOfHanoi">
         Cross platform Tower of Hanoi game using GLUT for Windows and freeglut
         for Linux and Mac.
       </ss-card>
-    </button>
-    <button
-      on:click={() => goto('https://github.com/mrsauravsahu/mrsauravsahu.github.io')}>
+    </a>
+    <a href='https://github.com/mrsauravsahu/mrsauravsahu.github.io'>
       <ss-card title="portfolio">
-        A little site that tells the world who I am.
+        You're on that site right now! A little website that tells the world who I am.
       </ss-card>
-    </button>
+    </a>
   </div>
 </div>
