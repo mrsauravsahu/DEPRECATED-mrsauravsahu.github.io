@@ -57,7 +57,7 @@
     </a>
     <a href='https://github.com/mrsauravsahu/mrsauravsahu.github.io'>
       <ss-card title="portfolio">
-        You're on that side right now! A little site that tells the world who I am.
+        You're on that site right now! A little website that tells the world who I am.
       </ss-card>
     </a>
   </div>
