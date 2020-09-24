@@ -21,19 +21,23 @@
   <p>Here's how you can get in touch with me 😊️</p>
   <div class="social-links">
     <ss-button on:click={() => goto('mailto:mrsauravsahu@outlook.com')}>
-      mrsauravsahu@outlook.com
+      email
     </ss-button>
     <ss-button on:click={() => goto('https://github.com/mrsauravsahu')}>
       github
     </ss-button>
+    <ss-button
+      on:click={() => goto('https://www.linkedin.com/in/mrsauravsahu/')}>
+      linkedIn
+    </ss-button>
     <ss-button on:click={() => goto('https://twitter.com/mrsauravsahu')}>
       twitter
     </ss-button>
-    <ss-button on:click={() => goto('https://unsplash.com/@mrsauravsahu')}>
-      unsplash
-    </ss-button>
     <ss-button on:click={() => goto('https://instagram.com/iamsauravsahu')}>
       instagram
+    </ss-button>
+    <ss-button on:click={() => goto('https://unsplash.com/@mrsauravsahu')}>
+      unsplash
     </ss-button>
   </div>
 </div>
