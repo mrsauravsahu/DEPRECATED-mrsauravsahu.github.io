@@ -37,3 +37,4 @@ Id,CreatedAt,Description,File,Slug,Title,Images
 36,07/11/2020 14:50:39,How does one go about doing CI-CD for monorepos. Just checking how I should manage CI in this portfolio project without creating unnecessary complications...,content.md,ci-for-monorepos,CI for monorepos?,
 37,07/13/2020 17:21:02,"From the past couple of days, I've been working with Adonis V5. In fact, this site's API is being written with Adonis V5. It's a really cool and feature-packed Framework for node...",content.md,adonis-v5-writing-your-first-custom-provider,Adonis V5: Writing your first custom provider!,
 38,07/22/2020 00:25:37,Finally! Let's add TypeScript to an exising Sapper project,content.md,adding-type-script-to-sapper-projects,Adding TypeScript to Sapper Projects,
+39,09/30/2020 11:44:56,"Let's allow for some interactions... Enter, comments.",content.md,hello-comments,Hello comments!,

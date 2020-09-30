@@ -8,6 +8,7 @@
 </script>
 
 <script lang="ts">
+  import { theme } from "../../../stores/theme";
   export let blog;
 
   const blogUrl = `blog/${blog.id}/file`;
@@ -36,6 +37,11 @@
     margin-bottom: 0.5rem;
     display: block;
   }
+
+  :global(.utterances) {
+    width: 100%;
+    max-width: unset;
+  }
 </style>
 
 <svelte:head>
@@ -48,4 +54,14 @@
   <!-- TODO: fix crawling without this extra anchor tag -->
   <a href={blogUrl} />
   <wc-markdown src={blogUrl} highlight />
+  <!-- TODO: Theme switching without reloads -->
+  <script
+    src="https://utteranc.es/client.js"
+    repo="mrsauravsahu/portfolio-comments"
+    issue-term="title"
+    label="comments"
+    theme={`github-${$theme}`}
+    crossorigin="anonymous"
+    async>
+  </script>
 </div>
