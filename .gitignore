@@ -70,3 +70,5 @@ yarn-error.log
 
 # ignore sapper build folder
 **/*/__sapper__
+
+/playground
