@@ -1,0 +1,1 @@
+One of the most important parts of any website, is interaction. There needs to be that connection that forms between the content of the site and the user. And for far too long, I was been thinking about a way to go about this, for this site.
