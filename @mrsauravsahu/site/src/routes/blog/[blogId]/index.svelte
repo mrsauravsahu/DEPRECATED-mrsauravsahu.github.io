@@ -36,6 +36,12 @@
     margin-bottom: 0.5rem;
     display: block;
   }
+
+  :global(.utterances)
+  {
+    width: 100%;
+    max-width: unset;
+  }
 </style>
 
 <svelte:head>
@@ -48,4 +54,12 @@
   <!-- TODO: fix crawling without this extra anchor tag -->
   <a href={blogUrl} />
   <wc-markdown src={blogUrl} highlight />
+  <script src="https://utteranc.es/client.js"
+        repo="mrsauravsahu/portfolio-comments"
+        issue-term="title"
+        label="comments"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+</script>
 </div>
