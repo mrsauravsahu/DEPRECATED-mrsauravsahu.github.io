@@ -1,30 +1,19 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import { theme } from "../stores/theme";
 
   var utteranceRootElement: HTMLElement;
 
-  onMount(() => {
-    theme.subscribe((currentTheme) => {
-      
-      if (utteranceRootElement) {
-        // clear old script
-        utteranceRootElement.innerHTML = "";
+  theme.subscribe((currentTheme) => {
+    if (utteranceRootElement) {
+      const iFrameElement = utteranceRootElement.querySelector(
+        "iframe.utterances-frame"
+      ) as any;
 
-        // add new utterances script
-        var utteranceScript = document.createElement("script");
-        utteranceScript.src = "https://utteranc.es/client.js";
-        utteranceScript.setAttribute("repo", "mrsauravsahu/portfolio-comments");
-        utteranceScript.setAttribute("issue-term", "title");
-        utteranceScript.setAttribute("label", "comments");
-        utteranceScript.setAttribute("theme", `github-${currentTheme}`);
-        utteranceScript.setAttribute("crossorigin", "anonymous");
-        utteranceScript.async = true;
-
-        // append the new script with updated theme
-        utteranceRootElement.appendChild(utteranceScript);
-      }
-    });
+      iFrameElement?.contentWindow.postMessage(
+        { type: "set-theme", theme: `github-${currentTheme}` },
+        "https://utteranc.es/"
+      );
+    }
   });
 </script>
 
@@ -37,4 +26,14 @@
   }
 </style>
 
-<div class="utterance-root" bind:this={utteranceRootElement} />
+<div class="utterance-root" bind:this={utteranceRootElement}>
+  <script
+    src="https://utteranc.es/client.js"
+    repo="mrsauravsahu/portfolio-comments"
+    issue-term="title"
+    theme={`github-${$theme}`}
+    crossorigin="anonymous"
+    label="comments"
+    async>
+  </script>
+</div>
