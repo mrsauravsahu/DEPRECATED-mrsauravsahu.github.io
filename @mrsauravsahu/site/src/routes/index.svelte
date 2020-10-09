@@ -9,7 +9,7 @@
 <script lang="ts">
   export let highlights, latestBlog;
   import About from "../pages/home/about.svelte";
-  import Projects from "../pages/home/projects.svelte";
+  import Highlights from "../pages/home/highlights.svelte";
   import Socials from "../pages/home/socials.svelte";
   import Tag from "../pages/home/tag.svelte";
   import WhatsNew from "../pages/home/whats-new.svelte";
@@ -22,5 +22,5 @@
 <Tag />
 <About />
 <WhatsNew {latestBlog}/>
-<Projects projects={highlights}/>
+<Highlights projects={highlights}/>
 <Socials />
