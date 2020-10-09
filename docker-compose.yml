@@ -10,9 +10,10 @@ services:
         volumes: 
             - './store:/store'
         environment: 
-            - blogs:AppName=@mrsauravsahu/blogs
-            - blogs:ContactEmail=mrsauravsahu@outlook.com
-            - blogs:Version=0.0.0
-            - blogs:StoreBasePath=/store
-            - blogs:files:BasePath=/store
+            - Blogs__AppName=${Blogs__AppName}
+            - Blogs__Version=${Blogs__Version}
+            - Blogs__ContactEmail=${Blogs__ContactEmail}
+            - Blogs__StoreBasePath=/store
+            - Files__BasePath=/store
+            - Github__Token=${Github__Token}
         
