@@ -3,7 +3,7 @@ const superagent = require('superagent');
 export const get = async (_, res) => {
 
 // Get highlights
-    const highlightsUrl = `${process.env.BLOGS_BASE_URL}/api/highlights`;
+    const highlightsUrl = `${process.env.BLOGS_BASE_URL}/api/Highlights?Sorts=-createdAt`;
     console.log(`Fetching highlights from: ${highlightsUrl}`)
     const allHighlightsResponse = await superagent.get(highlightsUrl)
     const allHighlightsJson = allHighlightsResponse.body

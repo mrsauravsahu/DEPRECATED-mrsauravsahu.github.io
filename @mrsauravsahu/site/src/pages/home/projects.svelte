@@ -1,5 +1,5 @@
-<script lang="ts">
-  
+<script>
+  export let projects;
 </script>
 
 <style>
@@ -36,29 +36,14 @@
 <ss-title id="projects">--projects</ss-title>
 <div class="projects-container content">
   <p>
-    Here are a few of the projects I'm working on. Find out more on Github...
+    Here are a few of the projects I'm working on. You can find more about them
+    on Github, be sure to give a star if you like it :)
   </p>
   <div class="cards-container">
-    <a href='https://github.com/mrsauravsahu/cli-config'>
-      <ss-card title="cli-config">
-        Helping you setup your CLI experience easily. Some goodies for the ol' terminal.
-      </ss-card>
-    </a>
-    <a href='https://github.com/mrsauravsahu/gitremotetourl'>
-      <ss-card title="git-remote-to-url">
-        Converts git's remote url to a valid url to open in the browser.
-      </ss-card>
-    </a>
-    <a  href='https://github.com/mrsauravsahu/towerofhanoi'>
-      <ss-card title="TowerOfHanoi">
-        Cross platform Tower of Hanoi game using GLUT for Windows and freeglut
-        for Linux and Mac.
-      </ss-card>
-    </a>
-    <a href='https://github.com/mrsauravsahu/mrsauravsahu.github.io'>
-      <ss-card title="portfolio">
-        You're on that site right now! A little website that tells the world who I am.
-      </ss-card>
-    </a>
+    {#each projects as project}
+      <a href={project.url}>
+        <ss-card title={project.title}>{project.description}</ss-card>
+      </a>
+    {/each}
   </div>
 </div>
