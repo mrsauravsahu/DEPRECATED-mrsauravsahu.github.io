@@ -43,6 +43,18 @@ jobs:
         working-directory: ${{ env.SITE_WORKING_DIRECTORY }}
         run: npm run export
 
+      - name: run api locally
+        env:
+          Blogs__AppName: blogs.api
+          # TODO: Create a VERSION file to read version
+          Blogs__Version: 0.0.0-alpha.1
+          Blogs__ContactEmail: mrsauravsahu@outlook.com
+          Github__Token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          docker-compose up -d
+
       - name: run portfolio tests
         working-directory: ${{ env.SITE_WORKING_DIRECTORY }}
         run: npm t
+        env:
+          BLOGS_BASE_URL: http://localhost:5000
