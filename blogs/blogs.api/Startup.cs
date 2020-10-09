@@ -7,6 +7,7 @@ using blogs.api.options;
 using blogs.services.contracts;
 using blogs.services.options;
 using blogs.services;
+using blogs.services.integrations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -48,20 +49,25 @@ namespace blogs.api
             });
 
 
-            services.Configure<AboutAppOptions>(Configuration.GetSection(nameof(blogs)));
+            services.Configure<AboutAppOptions>(Configuration.GetSection("Blogs"));
             services.AddSingleton(options => options.GetConfigService<AboutAppOptions>());
+
+            services.Configure<GithubServiceOptions>(Configuration.GetSection("Github"));
+            services.AddSingleton(options => options.GetConfigService<GithubServiceOptions>());
 
             services.AddDbContext<BlogsContext>(options =>
                 options.UseFileContextDatabase<CSVSerializer, DefaultFileManager>(
                     location: Configuration.GetValue<string>("blogs:StoreBasePath")
                 ));
 
-            services.Configure<LocalFileServiceOptions>(Configuration.GetSection("blogs:files"));
+            services.Configure<LocalFileServiceOptions>(Configuration.GetSection("Files"));
             services.AddSingleton<IFileSystem, FileSystem>();
             services.AddSingleton<LocalFileService>();
 
             services.AddScoped<BlogsService>();
             services.AddScoped<LinksService>();
+            services.AddScoped<HighlightsService>();
+            services.AddScoped<GithubService>();
 
             services.AddScoped<SieveProcessor>();
         }

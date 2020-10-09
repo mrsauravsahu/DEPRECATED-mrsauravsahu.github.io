@@ -72,3 +72,6 @@ yarn-error.log
 **/*/__sapper__
 
 /playground
+
+# ignore all .envrc files
+.envrc
