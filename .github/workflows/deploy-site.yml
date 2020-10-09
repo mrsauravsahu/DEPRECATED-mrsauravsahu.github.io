@@ -44,7 +44,7 @@ jobs:
           # TODO: Create a VERSION file to read version
           Blogs__Version: 0.0.0-alpha.1
           Blogs__ContactEmail: mrsauravsahu@outlook.com
-          Github__Token: ${{ secrets.GITHUB_TOKEN }}
+          Github__Token: ${{ secrets.PORTFOLIO_TOKEN }}
         run: |
           docker-compose up -d
 
