@@ -42,6 +42,7 @@ namespace blogs.services.integrations
                             name
                             description
                             isFork
+                            createdAt
                             repositoryTopics(first: 20) {
                             nodes {
                                 topic {

@@ -57,7 +57,7 @@ namespace blogs.api
 
             services.AddDbContext<BlogsContext>(options =>
                 options.UseFileContextDatabase<CSVSerializer, DefaultFileManager>(
-                    location: Configuration.GetValue<string>("blogs:StoreBasePath")
+                    location: Configuration.GetValue<string>("Files:BasePath")
                 ));
 
             services.Configure<LocalFileServiceOptions>(Configuration.GetSection("Files"));

@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using blogs.services;
+using Sieve.Models;
 
 namespace blogs.api
 {
@@ -15,9 +16,9 @@ namespace blogs.api
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllHighlightsAsync()
+        public async Task<IActionResult> GetAllHighlightsAsync(SieveModel sieveModel)
         {
-            var res = await highlightsService.GetAllAsync();
+            var res = await highlightsService.GetAllAsync(sieveModel);
             return Ok(res);
         }
     }
