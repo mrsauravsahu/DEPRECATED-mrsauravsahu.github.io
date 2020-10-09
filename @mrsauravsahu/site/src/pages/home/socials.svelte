@@ -33,7 +33,7 @@
     <ss-button on:click={() => goto('https://twitter.com/mrsauravsahu')}>
       twitter
     </ss-button>
-    <ss-button on:click={() => goto('https://instagram.com/iamsauravsahu')}>
+    <ss-button on:click={() => goto('https://instagram.com/mrsauravsahu')}>
       instagram
     </ss-button>
     <ss-button on:click={() => goto('https://unsplash.com/@mrsauravsahu')}>
