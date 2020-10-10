@@ -8,6 +8,7 @@
 </script>
 
 <script lang="ts">
+  import { DateTime } from "luxon";
   import Utterance from "../../../components/utterance.svelte";
   export let blog;
 
@@ -15,6 +16,10 @@
 </script>
 
 <style>
+  .blog-date-prefix {
+    font-weight: 100;
+  }
+
   wc-markdown :global(:not(pre) > code) {
     background-color: rgb(var(--ss-accent));
     padding: 0.1rem 0.5rem;
@@ -45,7 +50,11 @@
 
 <div class="content">
   <h1>{blog.title}</h1>
-  <ss-anchor href={blogUrl}>🔽 read raw</ss-anchor>
+  <h4>
+    <span class="blog-date-prefix">Published on
+    </span>{DateTime.fromISO(blog.createdAt).toFormat('EEEE, MMMM dd yyyy')}
+  </h4>
+  <ss-anchor href={blogUrl}>🔽 (download raw)</ss-anchor>
   <!-- TODO: fix crawling without this extra anchor tag -->
   <a href={blogUrl} />
   <wc-markdown src={blogUrl} highlight />
