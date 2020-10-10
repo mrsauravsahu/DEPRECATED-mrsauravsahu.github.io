@@ -8,15 +8,18 @@
 </script>
 
 <script lang="ts">
-  import { DateTime } from "luxon";
+  import { DateTime, Duration } from "luxon";
   import Utterance from "../../../components/utterance.svelte";
   export let blog;
 
   const blogUrl = `blog/${blog.id}/file`;
+
+  const duration = Duration.fromISO(blog.approxTimeToRead);
+  const durationText = duration.minutes <= 1 ? 'less than a minute' : `${duration.toFormat('m')} minutes`;
 </script>
 
 <style>
-  .blog-date-prefix {
+  .prefix {
     font-weight: 100;
   }
 
@@ -51,8 +54,11 @@
 <div class="content">
   <h1>{blog.title}</h1>
   <h4>
-    <span class="blog-date-prefix">Published on
-    </span>{DateTime.fromISO(blog.createdAt).toFormat('EEEE, MMMM dd yyyy')}
+    <span class="prefix"> Published on </span>
+    {DateTime.fromISO(blog.createdAt).toFormat('EEEE, MMMM dd yyyy')}
+    •
+    {durationText}
+    <span class="prefix">read</span>
   </h4>
   <ss-anchor href={blogUrl}>🔽 download raw</ss-anchor>
   <!-- TODO: fix crawling without this extra anchor tag -->
