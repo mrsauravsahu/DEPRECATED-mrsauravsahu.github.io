@@ -54,7 +54,7 @@
     <span class="blog-date-prefix">Published on
     </span>{DateTime.fromISO(blog.createdAt).toFormat('EEEE, MMMM dd yyyy')}
   </h4>
-  <ss-anchor href={blogUrl}>🔽 (download raw)</ss-anchor>
+  <ss-anchor href={blogUrl}>🔽 download raw</ss-anchor>
   <!-- TODO: fix crawling without this extra anchor tag -->
   <a href={blogUrl} />
   <wc-markdown src={blogUrl} highlight />
