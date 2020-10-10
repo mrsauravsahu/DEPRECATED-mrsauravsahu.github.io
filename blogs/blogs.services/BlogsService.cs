@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Xml;
 using blogs.data.context;
 using blogs.data.models;
 using blogs.services.contracts;
@@ -32,6 +34,19 @@ namespace blogs.services
             var totalCount = await blogsContext.Blogs.LongCountAsync();
             var allBlogsQuery = blogsContext.Blogs.AsQueryable();
             var blogs = await sieveProcessor.Apply(sieve, allBlogsQuery).ToListAsync();
+
+            // Updating wordCount for testing
+            // foreach (var b in blogs)
+            // {
+            //     var blogFile = await localFileService.GetBlobAsync(b.ContainerBasePath, b.File);
+            //     blogFile.Seek(0, SeekOrigin.Begin);
+            //     b.WordCount = await LocalFileService.GetWordCountAsync(blogFile);
+
+            //     var approxTimeToRead = TimeSpan.FromMinutes((int)(b.WordCount / 225));
+            //     b.ApproxTimeToRead = XmlConvert.ToString(approxTimeToRead);
+            // }
+
+            await blogsContext.SaveChangesAsync();
 
             var result = new PaginatedResult<List<Blog>>
             {
@@ -80,7 +95,13 @@ namespace blogs.services
         public async Task SetFileForBlogAsync(int id, MemoryStream stream)
         {
             var blog = await blogsContext.Blogs.FindAsync(id);
+            
             blog.File = "content.md";
+            blog.WordCount = await LocalFileService.GetWordCountAsync(stream);
+
+            var approxTimeToRead = TimeSpan.FromMinutes((int)(blog.WordCount / 225));
+            blog.ApproxTimeToRead = XmlConvert.ToString(approxTimeToRead);
+
             await blogsContext.SaveChangesAsync();
             await localFileService.SaveBlobAsync(blog.ContainerBasePath, "content.md", stream);
         }

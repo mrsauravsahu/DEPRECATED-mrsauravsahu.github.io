@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.IO.Abstractions;
 using System.Threading.Tasks;
@@ -50,6 +51,22 @@ namespace blogs.services
                 }
 
             });
+        }
+
+        public async static Task<long> GetWordCountAsync(Blob stream)
+        {
+            var copiedStream = new Blob();
+            await stream.CopyToAsync(copiedStream);
+            // Move to the starting of the file
+            copiedStream.Position = 0;
+
+            using (var reader = new StreamReader(copiedStream))
+            {
+                var fileString = await reader.ReadToEndAsync();
+                Console.WriteLine("contents -> ", fileString);
+                var wordCount = fileString.Split(new char[] { ' ', '\n', }).LongLength;
+                return wordCount;
+            }
         }
     }
 }

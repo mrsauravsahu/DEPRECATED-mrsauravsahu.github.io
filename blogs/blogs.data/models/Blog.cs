@@ -20,12 +20,14 @@ namespace blogs.data.models
         [Sieve(CanSort = true)]
         public DateTime CreatedAt { get; set; }
         public string File { get; set; }
-
+        public long WordCount { get; set; }
+        public string ApproxTimeToRead { get; set; }
         private string images;
 
         [NotMapped]
-        public IEnumerable<string> Images { 
-            get => (images ?? string.Empty).Split(new char [] { Constants.FieldDelimiter }, StringSplitOptions.RemoveEmptyEntries);
+        public IEnumerable<string> Images
+        {
+            get => (images ?? string.Empty).Split(new char[] { Constants.FieldDelimiter }, StringSplitOptions.RemoveEmptyEntries);
             set => images = String.Join(Constants.FieldDelimiter.ToString(), value);
         }
 
