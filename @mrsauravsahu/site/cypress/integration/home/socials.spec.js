@@ -1,5 +1,6 @@
 var socials = [
     { label: 'email', url: 'mailto:mrsauravsahu@outlook.com' },
+    { label: 'youtube', url: 'https://youtube.com/channel/UCPWETNZS6Cu3X2fYnpME32g' },
     { label: 'github', url: 'https://github.com/mrsauravsahu' },
     { label: 'linkedIn', url: 'https://www.linkedin.com/in/mrsauravsahu' },
     { label: 'twitter', url: 'https://twitter.com/mrsauravsahu' },

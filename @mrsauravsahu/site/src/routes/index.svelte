@@ -22,5 +22,5 @@
 <Tag />
 <About />
 <WhatsNew {latestBlog}/>
-<Highlights projects={highlights}/>
 <Socials />
+<Highlights projects={highlights}/>

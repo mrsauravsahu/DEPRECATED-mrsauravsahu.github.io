@@ -23,6 +23,9 @@
     <ss-button on:click={() => goto('mailto:mrsauravsahu@outlook.com')}>
       email
     </ss-button>
+    <ss-button on:click={() => goto('https://youtube.com/channel/UCPWETNZS6Cu3X2fYnpME32g')}>
+      youtube
+    </ss-button>
     <ss-button on:click={() => goto('https://github.com/mrsauravsahu')}>
       github
     </ss-button>
