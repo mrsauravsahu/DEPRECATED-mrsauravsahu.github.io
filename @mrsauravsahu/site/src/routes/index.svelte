@@ -7,6 +7,8 @@
 </script>
 
 <script lang="ts">
+  import { PfButton } from "@propfull/kit";
+
   export let highlights, latestBlog;
   import About from "../pages/home/about.svelte";
   import Highlights from "../pages/home/highlights.svelte";
@@ -19,8 +21,10 @@
   <title>Saurav Sahu</title>
 </svelte:head>
 
+<PfButton>@mrsauravsahu</PfButton>
+
 <Tag />
 <About />
-<WhatsNew {latestBlog}/>
+<WhatsNew {latestBlog} />
 <Socials />
-<Highlights projects={highlights}/>
+<Highlights projects={highlights} />

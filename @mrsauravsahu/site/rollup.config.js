@@ -26,6 +26,7 @@ export default {
 	client: {
 		input: config.client.input().replace(/\.js$/, '.ts'),
 		output: config.client.output(),
+		preserveEntrySignatures: false,
 		plugins: [
 			json(),
 			replace({
