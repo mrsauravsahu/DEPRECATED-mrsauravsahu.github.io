@@ -23,7 +23,7 @@
 </style>
 
 <ss-title>--whats-new</ss-title>
-<div class="content">
+<div class="ss-content">
     <p>
         So here's what's up. This section has all the latest things I have got
         going. From blogs to latest YouTube videos, to pinned links... they're

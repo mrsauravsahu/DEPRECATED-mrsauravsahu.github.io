@@ -18,7 +18,7 @@
 
 <div class="tech-container">
     <ss-title id="tech">--tech-experiments</ss-title>
-    <div class="content">
+    <div class="ss-content">
         <p>
             With so many options to choose from, sometimes it gets difficult to
             find something that just works. These are a few of the frameworks

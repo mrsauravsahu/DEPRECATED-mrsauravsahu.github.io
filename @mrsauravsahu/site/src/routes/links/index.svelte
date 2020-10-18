@@ -13,7 +13,7 @@
 </script>
 
 <style>
-  .content {
+  .ss-content {
     display: flex;
     flex-direction: column;
   }
@@ -56,7 +56,7 @@
 <svelte:head>
   <title>Links</title>
 </svelte:head>
-<div class="content">
+<div class="ss-content">
   <p>Links to interesting places that are pinned for your perusal. 😬</p>
   <div class="links-container">
     {#each links as link}

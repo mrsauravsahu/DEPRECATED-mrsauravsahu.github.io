@@ -55,7 +55,7 @@
 </svelte:head>
 
 <div class="container">
-  <div class="content">
+  <div class="ss-content">
     <p>
       Here are a few thoughts that I thought should be written down... The old
       blogs have also been imported here. If they don't look alright, just give
