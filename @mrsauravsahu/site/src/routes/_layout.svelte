@@ -11,7 +11,7 @@
   import Nav from "../components/nav.svelte";
 
   import { theme } from "../stores/theme";
-  import { setThemeVariables, THEMES } from "../utils/theme";
+  import { setThemeVariables } from "../utils/theme";
 
   let currentTheme, themeSubscription;
 

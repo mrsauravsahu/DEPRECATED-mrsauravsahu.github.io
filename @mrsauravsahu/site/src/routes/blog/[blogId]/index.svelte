@@ -50,7 +50,7 @@
   <title>{blog.title}</title>
 </svelte:head>
 
-<div class="content">
+<div class="ss-content">
   <h1>{blog.title}</h1>
   <h4>
     <span class="prefix"> Published on </span>

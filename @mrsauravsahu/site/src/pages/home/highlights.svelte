@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
   import { PfCard, PfHeader } from "@propfull/kit";
   export let projects;
+  export let theme;
 </script>
 
 <style>
@@ -53,7 +54,7 @@
   <div class="cards-container">
     {#each projects as project}
       <a class="highlight" href={project.url}>
-        <PfCard theme="dark">
+        <PfCard {theme}>
           <div class="title" slot="title">
             <PfHeader type="h3" theme="dark">{project.title}</PfHeader>
           </div>
