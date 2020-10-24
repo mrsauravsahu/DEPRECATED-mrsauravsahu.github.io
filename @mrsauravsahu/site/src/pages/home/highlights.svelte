@@ -44,7 +44,7 @@
   }
 </style>
 
-<ss-title id="highlights">--highlights</ss-title>
+<ss-title id="highlights">--highlighted-projects</ss-title>
 <div class="projects-container ss-content">
   <p>
     First, here are a few of the projects that I'm working on. You can find more
