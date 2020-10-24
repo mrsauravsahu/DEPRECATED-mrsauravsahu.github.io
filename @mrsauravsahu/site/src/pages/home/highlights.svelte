@@ -44,8 +44,8 @@
   }
 </style>
 
-<ss-title id="highlights">--highlighted-projects</ss-title>
 <div class="projects-container ss-content">
+<PfHeader theme='dark' type='h1'>--highlighted-projects</PfHeader>
   <p>
     First, here are a few of the projects that I'm working on. You can find more
     about them on Github, be sure to give a star if you like it :) I will be
@@ -56,7 +56,7 @@
       <a class="highlight" href={project.url}>
         <PfCard {theme}>
           <div class="title" slot="title">
-            <PfHeader type="h3" theme="dark">{project.title}</PfHeader>
+            <PfHeader type="h5" theme="dark">{project.title}</PfHeader>
           </div>
           <div class="project-content" slot="content">
             {project.description}
