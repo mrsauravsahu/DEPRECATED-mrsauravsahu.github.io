@@ -5,6 +5,7 @@ env:
   NODE_ENV: development
   COMPONENTS_WORKING_DIRECTORY: "@mrsauravsahu/components"
   SITE_WORKING_DIRECTORY: "@mrsauravsahu/site"
+  NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
 on:
   push:
@@ -27,13 +28,14 @@ jobs:
         uses: pnpm/action-setup@v1.2.0
         with:
           version: 4.11.1
-          run_install: |
-            - recursive: true
 
       - name: setup node.js
         uses: actions/setup-node@v1
         with:
           node-version: ${{ env.NODE_VERSION }}
+
+      - name: install packages
+        run: pnpm i
 
       - name: build web components
         working-directory: ${{ env.COMPONENTS_WORKING_DIRECTORY }}

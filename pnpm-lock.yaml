@@ -42,7 +42,6 @@ importers:
       '@types/luxon': 1.24.1
       compression: 1.7.4
       luxon: 1.24.1
-      polka: 1.0.0-next.11
       sirv: 0.4.6
     devDependencies:
       '@babel/core': 7.10.4
@@ -50,7 +49,10 @@ importers:
       '@babel/plugin-transform-runtime': 7.10.4_@babel+core@7.10.4
       '@babel/preset-env': 7.10.4_@babel+core@7.10.4
       '@babel/runtime': 7.10.4
+      '@fortawesome/free-brands-svg-icons': 5.15.1
+      '@fortawesome/free-regular-svg-icons': 5.15.1
       '@mrsauravsahu/components': 'link:../components'
+      '@propfull/kit': 0.0.0-alpha.12
       '@rollup/plugin-commonjs': 11.0.2_rollup@1.32.1
       '@rollup/plugin-json': 4.1.0_rollup@1.32.1
       '@rollup/plugin-node-resolve': 7.1.3_rollup@1.32.1
@@ -63,6 +65,7 @@ importers:
       cypress: 4.10.0
       gh-pages: 2.2.0
       npm-run-all: 4.1.5
+      polka: 1.0.0-next.11
       rollup: 1.32.1
       rollup-plugin-babel: 4.4.0_@babel+core@7.10.4+rollup@1.32.1
       rollup-plugin-svelte: 5.2.3_rollup@1.32.1+svelte@3.24.0
@@ -70,6 +73,7 @@ importers:
       sapper: 0.27.16_svelte@3.24.0
       superagent: 5.3.1
       svelte: 3.24.0
+      svelte-awesome: 2.3.0
       svelte-check: 0.1.55_@babel+core@7.10.4
       svelte-preprocess: 4.0.8_3bedc32e25bb87fc62dd57c2762b067a
       tslib: 2.0.0
@@ -80,7 +84,10 @@ importers:
       '@babel/plugin-transform-runtime': ^7.10.1
       '@babel/preset-env': ^7.10.2
       '@babel/runtime': ^7.10.2
+      '@fortawesome/free-brands-svg-icons': ^5.15.1
+      '@fortawesome/free-regular-svg-icons': ^5.15.1
       '@mrsauravsahu/components': 'workspace:^1.0.0'
+      '@propfull/kit': 0.0.0-alpha.12
       '@rollup/plugin-commonjs': 11.0.2
       '@rollup/plugin-json': ^4.1.0
       '@rollup/plugin-node-resolve': ^7.0.0
@@ -96,7 +103,7 @@ importers:
       gh-pages: ^2.2.0
       luxon: ^1.24.1
       npm-run-all: ^4.1.5
-      polka: next
+      polka: ^1.0.0-next.11
       rollup: ^1.20.0
       rollup-plugin-babel: ^4.0.2
       rollup-plugin-svelte: ^5.2.2
@@ -105,6 +112,7 @@ importers:
       sirv: ^0.4.0
       superagent: ^5.3.1
       svelte: ^3.23.2
+      svelte-awesome: ^2.3.0
       svelte-check: ^0.1.55
       svelte-preprocess: ^4.0.8
       tslib: ^2.0.0
@@ -1205,6 +1213,31 @@ packages:
     dev: true
     resolution:
       integrity: sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
+  /@fortawesome/fontawesome-common-types/0.2.32:
+    dev: true
+    engines:
+      node: '>=6'
+    requiresBuild: true
+    resolution:
+      integrity: sha512-ux2EDjKMpcdHBVLi/eWZynnPxs0BtFVXJkgHIxXRl+9ZFaHPvYamAfCzeeQFqHRjuJtX90wVnMRaMQAAlctz3w==
+  /@fortawesome/free-brands-svg-icons/5.15.1:
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 0.2.32
+    dev: true
+    engines:
+      node: '>=6'
+    requiresBuild: true
+    resolution:
+      integrity: sha512-pkTZIWn7iuliCCgV+huDfZmZb2UjslalXGDA2PcqOVUYJmYL11y6ooFiMJkJvUZu+xgAc1gZgQe+Px12mZF0CA==
+  /@fortawesome/free-regular-svg-icons/5.15.1:
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 0.2.32
+    dev: true
+    engines:
+      node: '>=6'
+    requiresBuild: true
+    resolution:
+      integrity: sha512-eD9NWFy89e7SVVtrLedJUxIpCBGhd4x7s7dhesokjyo1Tw62daqN5UcuAGu1NrepLLq1IeAYUVfWwnOjZ/j3HA==
   /@hapi/address/4.1.0:
     dependencies:
       '@hapi/hoek': 9.0.4
@@ -1260,9 +1293,13 @@ packages:
     resolution:
       integrity: sha512-oZLYFEAzUKyi3SKnXvj32ZCEGH6RDnao7COuCVhDydMS9NrCSVXhM79VaKyP5+Zc33m0QXEd2DN3UkU7OsHcfw==
   /@polka/url/1.0.0-next.11:
-    dev: false
+    dev: true
     resolution:
       integrity: sha512-3NsZsJIA/22P3QUyrEDNA2D133H4j224twJrdipXN38dpnIOzAbUDtOwkcJ5pXmn75w7LSQDjA4tO9dm1XlqlA==
+  /@propfull/kit/0.0.0-alpha.12:
+    dev: true
+    resolution:
+      integrity: sha512-D24/cV8h8U4B1ejiRMCvjfEchRcHdb4Qi/BanT7YPCOD7Mj0wP1G37e3AvW1UieTBENTA8nYdsOAGTZDJS+60Q==
   /@reach/router/1.3.4:
     dependencies:
       create-react-context: 0.3.0_prop-types@15.7.2
@@ -1460,7 +1497,6 @@ packages:
       util-deprecate: 1.0.2
     dev: true
     peerDependencies:
-      react-dom: '*'
       regenerator-runtime: '*'
     resolution:
       integrity: sha512-U/VzDvhNCPmw2igvJYNNM+uwJCL+3teiL6JmuoL4/cmcqhI6IqqG9dZmMP1egoCd19wXEP7rnAfB/VcYVg41dQ==
@@ -7488,7 +7524,7 @@ packages:
     dependencies:
       '@polka/url': 1.0.0-next.11
       trouter: 3.1.0
-    dev: false
+    dev: true
     engines:
       node: '>=6'
     resolution:
@@ -8173,7 +8209,7 @@ packages:
     resolution:
       integrity: sha512-2+Q0C5g951OlYlJz6yu5/M33IcsESLlLfsyIaLJaG4FA2r4yP8MvVMJUUP/fVBkSpbbbZlS5gynbEWLipiiXiQ==
   /regexparam/1.3.0:
-    dev: false
+    dev: true
     engines:
       node: '>=6'
     resolution:
@@ -9174,6 +9210,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-oRSIpR8pxT1Wr2FquTNnGet79b3BWljqOuoW/h4oBhxJ/HUbX5nX6JSruTkvXDCFMwDPvsaTTbvMLKZWSy0R5g==
+  /svelte-awesome/2.3.0:
+    dependencies:
+      svelte: 3.29.4
+    dev: true
+    resolution:
+      integrity: sha512-xXU3XYJmr5PK9e3pCpW6feU/tNpAhERWDrgDxkC0DU6LNum02zzc00I17bmUWTSRdKLf+IFbA5hWvCm1V8g+/A==
   /svelte-check/0.1.55_@babel+core@7.10.4:
     dependencies:
       chalk: 4.1.0
@@ -9335,6 +9377,12 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-VFXom6EP2DK83kxy4ZlBbaZklSbZIrpNH3oNXlPYHJUuW4q1OuAr3ZoYbfIVTVYPDgrI7Yq0gQcOhDlAtO4qfw==
+  /svelte/3.29.4:
+    dev: true
+    engines:
+      node: '>= 8'
+    resolution:
+      integrity: sha512-oW0fGHlyFFMvzRtIvOs84b0fOc0gmZNQcL5Is3hxuTpvaYX3pfd8oHy4KnOvbq4Ca6SG6AHdRMk7OhApTo0NqA==
   /svelte2tsx/0.1.60_svelte@3.24.0+typescript@3.9.7:
     dependencies:
       dedent-js: 1.0.1
@@ -9566,7 +9614,7 @@ packages:
   /trouter/3.1.0:
     dependencies:
       regexparam: 1.3.0
-    dev: false
+    dev: true
     engines:
       node: '>=6'
     resolution:

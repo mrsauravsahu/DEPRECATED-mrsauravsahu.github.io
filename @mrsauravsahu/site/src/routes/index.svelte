@@ -1,16 +1,17 @@
 <script lang="ts" context="module">
   export async function preload({ params }) {
     const response = await this.fetch("home.json");
-    const data = await response.json();
-    return data;
+    const { highlights, latestBlog } = await response.json();
+    return { highlights, latestBlog };
   }
 </script>
 
 <script lang="ts">
   export let highlights, latestBlog;
+
+  import { theme } from "../stores/theme";
   import About from "../pages/home/about.svelte";
   import Highlights from "../pages/home/highlights.svelte";
-  import Socials from "../pages/home/socials.svelte";
   import Tag from "../pages/home/tag.svelte";
   import WhatsNew from "../pages/home/whats-new.svelte";
 </script>
@@ -21,6 +22,5 @@
 
 <Tag />
 <About />
-<WhatsNew {latestBlog}/>
-<Socials />
-<Highlights projects={highlights}/>
+<WhatsNew {latestBlog} />
+<Highlights projects={highlights} theme={$theme} />

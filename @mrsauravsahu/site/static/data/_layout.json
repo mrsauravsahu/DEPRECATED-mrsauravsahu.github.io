@@ -12,6 +12,11 @@
                 "preFetch": false
             },
             {
+                "label": "socials",
+                "path": "/socials",
+                "preFetch": false
+            },
+            {
                 "label": "links",
                 "path": "/links",
                 "preFetch": false
