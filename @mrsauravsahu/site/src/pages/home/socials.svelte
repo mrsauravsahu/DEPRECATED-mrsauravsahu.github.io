@@ -83,6 +83,14 @@
             </div>
           </PfCard>
         </a>
+        <a class="social-link-anchor" href="https://instagram.com/mrsauravsahu">
+          <PfCard {theme}>
+            <div slot="content" class="social-card-content">
+              <PfHeader theme="dark" type="h2">instagram</PfHeader>
+              <Icon data={faInstagram} scale={2.5} />
+            </div>
+          </PfCard>
+        </a>
         <a class="social-link-anchor" href="https://twitter.com/mrsauravsahu">
           <PfCard {theme}>
             <div slot="content" class="social-card-content">
@@ -101,7 +109,7 @@
         </a>
         <a
           class="social-link-anchor"
-          href="https://www.linkedin.com/in/mrsauravsahu/">
+          href="https://www.linkedin.com/in/mrsauravsahu">
           <PfCard {theme}>
             <div slot="content" class="social-card-content">
               <PfHeader theme="dark" type="h2">linkedIn</PfHeader>
@@ -109,15 +117,7 @@
             </div>
           </PfCard>
         </a>
-        <a class="social-link-anchor" href="https://instagram.com/mrsauravsahu">
-          <PfCard {theme}>
-            <div slot="content" class="social-card-content">
-              <PfHeader theme="dark" type="h2">instagram</PfHeader>
-              <Icon data={faInstagram} scale={2.5} />
-            </div>
-          </PfCard>
-        </a>
-        <a class="social-link-anchor" href="https://unsplash.com/@mrsauravsahu">
+        <a class="social-link-anchor" href="https://unsplash.com/mrsauravsahu">
           <PfCard {theme}>
             <div slot="content" class="social-card-content">
               <PfHeader theme="dark" type="h2">unsplash</PfHeader>
