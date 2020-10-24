@@ -58,10 +58,10 @@
   }
 </style>
 
-<section>
-  <ss-title id="socials">--socials</ss-title>
+<section class="ss-content">
+  <PfHeader type='h1' theme='dark'>--socials</PfHeader>
   <div class="main-content">
-    <div class="social-container ss-content">
+    <div class="social-container">
       <p>Here's how you can get in touch with me. Links to all socials.</p>
 
       <div class="social-links">

@@ -54,7 +54,7 @@
     <a href={content.primary.path}>
       <ss-title>{content.primary.label}</ss-title>
     </a>
-    <Theme />
+    <!-- <Theme /> -->
   </div>
   <div class="nav-secondary-container">
     {#each content.secondary as navItem}

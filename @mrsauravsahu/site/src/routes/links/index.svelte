@@ -7,11 +7,11 @@
 </script>
 
 <script lang="ts">
+  export let links//: Link[];
   import { PfCard, PfHeader } from "@propfull/kit";
   import { DateTime } from "luxon";
 
-  import type { Link } from "../../../types/models/link";
-  export let links: Link[];
+  // import type { Link } from "../../../types/models/link";
 </script>
 
 <style>
@@ -19,7 +19,6 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 0;
   }
   .links-content {
     flex-grow: 1;
@@ -49,6 +48,8 @@
     padding: 0 1rem;
   }
 
+  p {margin: 0;}
+
   @media only screen and (min-width: 48rem) {
     a {
       width: calc(50% - 0.5rem);
@@ -61,8 +62,9 @@
 </svelte:head>
 
 <section class="ss-content">
-  <p>Links to interesting places that are pinned for your perusal. 😬 These get updated every week with the latest YouTube videos. And coming soon, will showcase latest photos from Unsplash.</p>
+  <PfHeader type='h1' theme='dark'>--links</PfHeader>
   <div class="links-content">
+    <p>Links to interesting places that are pinned for your perusal. 😬 These get updated every week with the latest YouTube videos. And coming soon, will showcase latest photos from Unsplash.</p>
     <div class="links-container">
       {#each links as link}
         <a href={link.url}>
