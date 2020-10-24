@@ -7,48 +7,51 @@
 </script>
 
 <script lang="ts">
+  import { PfCard, PfHeader } from "@propfull/kit";
   import { DateTime } from "luxon";
 
-  export let links;
+  import type { Link } from "../../../types/models/link";
+  export let links: Link[];
 </script>
 
 <style>
   .ss-content {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    padding: 0;
+  }
+  .links-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .links-container {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
     width: 100%;
-    align-items: stretch;
-    align-self: center;
-  }
-
-  .link {
-    padding: 2rem 0;
-  }
-
-  .link-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .link-content > h4 {
-    margin: 0;
-    margin-bottom: 0.5rem;
   }
 
   a {
     all: unset;
     cursor: pointer;
+    margin: 0.5rem 0;
+    width: 100%;
+    min-height: 10rem;
+  }
+
+  div[slot="title"],
+  div[slot="content"] {
+    padding: 0 1rem;
   }
 
   @media only screen and (min-width: 48rem) {
-    .links-container {
-      width: 50%;
+    a {
+      width: calc(50% - 0.5rem);
     }
   }
 </style>
@@ -56,19 +59,23 @@
 <svelte:head>
   <title>Links</title>
 </svelte:head>
-<div class="ss-content">
-  <p>Links to interesting places that are pinned for your perusal. 😬</p>
-  <div class="links-container">
-    {#each links as link}
-    <a href={link.url}>
-      <div class="link">
-        <ss-card title={link.title}>
-          <div class="link-content">
-            <h4>{DateTime.fromISO(link.createdAt).toRelative()}</h4>
-          </div>
-        </ss-card>
-      </div>
-    </a>
-    {/each}
+
+<section class="ss-content">
+  <p>Links to interesting places that are pinned for your perusal. 😬 These get updated every week with the latest YouTube videos. And coming soon, will showcase latest photos from Unsplash.</p>
+  <div class="links-content">
+    <div class="links-container">
+      {#each links as link}
+        <a href={link.url}>
+          <PfCard theme="dark">
+            <div slot="title">
+              <PfHeader type="h2" theme="dark">{link.title}</PfHeader>
+            </div>
+            <div class="" slot="content">
+              <h4>{DateTime.fromISO(link.createdAt).toRelative()}</h4>
+            </div>
+          </PfCard>
+        </a>
+      {/each}
+    </div>
   </div>
-</div>
+</section>
