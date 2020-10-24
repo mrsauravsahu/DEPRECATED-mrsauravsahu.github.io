@@ -6,6 +6,7 @@
 
 <style>
   nav {
+    box-sizing: border-box;
     flex: 0 0 auto;
     display: flex;
     width: 100%;
@@ -13,7 +14,7 @@
     flex-direction: column;
     align-items: stretch;
     flex-wrap: wrap;
-    background-color: rgb(var(--ss-accent));
+    background-color: rgb(var(--ss-bg));
   }
 
   a {

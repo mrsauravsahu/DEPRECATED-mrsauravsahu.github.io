@@ -31,8 +31,7 @@
   wc-markdown :global(:not(pre) > code) {
     background-color: rgb(var(--ss-accent));
     padding: 0.1rem 0.5rem;
-    /* color: rgb(var(--ss-bg)); */
-    color: rgb(150, 150, 150);
+    color: rgb(var(--ss-bg));
   }
 
   wc-markdown :global(pre) {
