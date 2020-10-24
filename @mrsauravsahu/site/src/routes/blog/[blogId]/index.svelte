@@ -9,13 +9,18 @@
 
 <script lang="ts">
   import { DateTime, Duration } from "luxon";
+  import { PfHeader } from "@propfull/kit";
+
   import Utterance from "../../../components/utterance.svelte";
   export let blog;
 
   const blogUrl = `blog/${blog.id}/file`;
 
   const duration = Duration.fromISO(blog.approxTimeToRead);
-  const durationText = duration.minutes <= 1 ? 'less than a minute' : `${duration.toFormat('m')} minutes`;
+  const durationText =
+    duration.minutes <= 1
+      ? "less than a minute"
+      : `${duration.toFormat("m")} minutes`;
 </script>
 
 <style>
@@ -26,7 +31,8 @@
   wc-markdown :global(:not(pre) > code) {
     background-color: rgb(var(--ss-accent));
     padding: 0.1rem 0.5rem;
-    color: rgb(var(--ss-bg));
+    /* color: rgb(var(--ss-bg)); */
+    color: rgb(150, 150, 150);
   }
 
   wc-markdown :global(pre) {
@@ -35,7 +41,7 @@
   }
 
   wc-markdown :global(a) {
-    color: rgb(var(--ss-accent));
+    color: rgb(150, 150, 150);
     font-weight: 800;
   }
 
@@ -44,6 +50,11 @@
     margin-bottom: 0.5rem;
     display: block;
   }
+
+  a {
+    all: unset;
+    cursor: pointer;
+  }
 </style>
 
 <svelte:head>
@@ -51,7 +62,7 @@
 </svelte:head>
 
 <div class="ss-content">
-  <h1>{blog.title}</h1>
+  <PfHeader theme='dark' type='h1'>{blog.title}</PfHeader>
   <h4>
     <span class="prefix"> Published on </span>
     {DateTime.fromISO(blog.createdAt).toFormat('EEEE, MMMM dd yyyy')}
@@ -59,7 +70,9 @@
     {durationText}
     <span class="prefix">read</span>
   </h4>
-  <ss-anchor href={blogUrl}>🔽 download raw</ss-anchor>
+  <a href={blogUrl}>
+    <PfHeader theme='dark' type='h4'>🔽 download raw</PfHeader>
+  </a>
   <!-- TODO: fix crawling without this extra anchor tag -->
   <a href={blogUrl} />
   <wc-markdown src={blogUrl} highlight />
