@@ -29,6 +29,8 @@ jobs:
           version: 4.11.1
           run_install: |
             - recursive: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
       - name: setup node.js
         uses: actions/setup-node@v1
