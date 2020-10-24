@@ -11,8 +11,8 @@ const resourceDictionary = {
         '--site-image-filter': 'none',
     },
     [THEMES.DARK]: {
-        '--ss-accent': '43, 45, 62',
-        '--ss-bg': '20, 20, 20',
+        '--ss-accent': '150, 150, 150',
+        '--ss-bg': '43, 45, 62',
         '--ss-bg1': '30, 30, 30',
         '--site-image-filter': 'grayscale()',
     }

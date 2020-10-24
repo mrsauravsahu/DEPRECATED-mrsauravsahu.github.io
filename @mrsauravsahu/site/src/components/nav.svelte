@@ -1,5 +1,6 @@
 <script lang="ts">
-  import Theme from "./theme.svelte";
+  import { PfHeader } from "@propfull/kit";
+
   export let content;
 </script>
 
@@ -21,11 +22,6 @@
     padding: 0.25rem;
     color: rgb(var(--ss-bg));
   }
-  ss-title {
-    --ss-accent: var(--ss-bg);
-    display: inline;
-  }
-
   .nav-primary-container {
     display: flex;
     flex-direction: row;
@@ -38,11 +34,15 @@
     flex-direction: column;
   }
 
-  @media only screen and (min-width: 48rem) {
-    nav {
-      /* margin: 1rem; */
-    }
+  :global(nav h1, nav h4) {
+    margin: 0.25rem 0;
+  }
 
+  :global(nav h1) {
+    font-size: 2rem;
+  }
+
+  @media only screen and (min-width: 48rem) {
     .nav-secondary-container {
       flex-direction: row;
     }
@@ -52,14 +52,14 @@
 <nav>
   <div class="nav-primary-container">
     <a href={content.primary.path}>
-      <ss-title>{content.primary.label}</ss-title>
+      <PfHeader theme="dark">{content.primary.label}</PfHeader>
     </a>
     <!-- <Theme /> -->
   </div>
   <div class="nav-secondary-container">
     {#each content.secondary as navItem}
       <a rel={navItem.preFetch ? 'prefetch' : undefined} href={navItem.path}>
-        {navItem.label}
+        <PfHeader theme="dark" type="h4">{navItem.label}</PfHeader>
       </a>
     {/each}
   </div>
