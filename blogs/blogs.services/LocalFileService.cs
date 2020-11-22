@@ -56,14 +56,14 @@ namespace blogs.services
         public async static Task<long> GetWordCountAsync(Blob stream)
         {
             var copiedStream = new Blob();
+            stream.Seek(0, SeekOrigin.Begin);
             await stream.CopyToAsync(copiedStream);
             // Move to the starting of the file
-            copiedStream.Position = 0;
+            copiedStream.Seek(0, SeekOrigin.Begin);
 
             using (var reader = new StreamReader(copiedStream))
             {
                 var fileString = await reader.ReadToEndAsync();
-                Console.WriteLine("contents -> ", fileString);
                 var wordCount = fileString.Split(new char[] { ' ', '\n', }).LongLength;
                 return wordCount;
             }
