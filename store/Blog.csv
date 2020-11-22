@@ -38,4 +38,4 @@ Id,ApproxTimeToRead,CreatedAt,Description,File,Slug,Title,WordCount,Images
 37,PT4M,07/13/2020 17:21:02,"From the past couple of days, I've been working with Adonis V5. In fact, this site's API is being written with Adonis V5. It's a really cool and feature-packed Framework for node...",content.md,adonis-v5-writing-your-first-custom-provider,Adonis V5: Writing your first custom provider!,975,
 38,PT5M,07/22/2020 00:25:37,Finally! Let's add TypeScript to an exising Sapper project,content.md,adding-type-script-to-sapper-projects,Adding TypeScript to Sapper Projects,1326,
 39,PT1M,09/30/2020 11:44:56,"Let's allow for some interactions... Enter, comments.",content.md,hello-comments,Hello comments!,391,
-40,PT2M,11/22/2020 10:41:35,Let's create isolated VSCode profiles. Also understanding how to migrate settings and extensions from old profile.,content.md,custom-vscode-profiles,Create Custom VSCode Profiles + Migrating Extensions & Settings,546,
+40,PT2M,11/22/2020 10:41:35,Let's create isolated VSCode profiles. Also understanding how to migrate settings and extensions from old profile.,content.md,custom-vscode-profiles,Custom VSCode Profiles + Migrating old ones,546,
