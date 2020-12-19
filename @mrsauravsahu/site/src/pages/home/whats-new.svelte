@@ -40,7 +40,7 @@
     Latest blog post -
     {DateTime.fromISO(latestBlog.createdAt).toFormat('EEEE, MMMM dd yyyy')}
   </h6>
-  <a href={`blog/${latestBlog.id}`}>
+  <a href={`posts/${latestBlog.id}`}>
     <h3>{latestBlog.title}</h3>
     <p>{latestBlog.description}</p>
   </a>
