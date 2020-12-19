@@ -81,7 +81,9 @@
   }
 
   hr {
-    color: rgb(62, 64, 80);
+    background-color: rgb(62, 64, 80);
+    height: calc(1rem / 16);
+    border: none;
   }
 
   @media only screen and (min-width: 48rem) {
