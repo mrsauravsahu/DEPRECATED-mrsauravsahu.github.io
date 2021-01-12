@@ -22,6 +22,7 @@ using FileContextCore.Serializer;
 using FileContextCore.FileManager;
 using Microsoft.OpenApi.Models;
 using Sieve.Services;
+using blogs.api.contracts;
 
 namespace blogs.api
 {
@@ -70,6 +71,10 @@ namespace blogs.api
             services.AddScoped<GithubService>();
 
             services.AddScoped<SieveProcessor>();
+
+            services
+                .AddGraphQLServer()
+                .AddQueryType<Query>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -87,6 +92,7 @@ namespace blogs.api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapGraphQL();
             });
 
             app.UseSwagger();
