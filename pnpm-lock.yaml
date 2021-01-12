@@ -61,10 +61,12 @@ importers:
       '@rollup/plugin-typescript': 5.0.2_b63bca19b5ed55cafdbb31cdec877ccd
       '@tsconfig/svelte': 1.0.2
       '@types/node': 14.0.24
+      '@urql/svelte': 1.1.4_graphql@15.4.0+svelte@3.24.0
       '@vanillawc/wc-markdown': 1.6.3
       classnames: 2.2.6
       cypress: 4.10.0
       gh-pages: 2.2.0
+      graphql: 15.4.0
       npm-run-all: 4.1.5
       polka: 1.0.0-next.11
       rollup: 1.32.1
@@ -79,7 +81,6 @@ importers:
       svelte-preprocess: 4.0.8_3bedc32e25bb87fc62dd57c2762b067a
       tslib: 2.0.0
       typescript: 3.9.7
-      urql: 1.11.5
     specifiers:
       '@babel/core': ^7.10.2
       '@babel/plugin-syntax-dynamic-import': ^7.0.0
@@ -99,11 +100,13 @@ importers:
       '@tsconfig/svelte': ^1.0.2
       '@types/luxon': ^1.24.1
       '@types/node': ^14.0.24
+      '@urql/svelte': ^1.1.4
       '@vanillawc/wc-markdown': ^1.5.7
       classnames: ^2.2.6
       compression: ^1.7.1
       cypress: ^4.8.0
       gh-pages: ^2.2.0
+      graphql: ^15.4.0
       luxon: ^1.24.1
       npm-run-all: ^4.1.5
       polka: ^1.0.0-next.11
@@ -120,7 +123,6 @@ importers:
       svelte-preprocess: ^4.0.8
       tslib: ^2.0.0
       typescript: ^3.9.7
-      urql: ^1.11.5
 lockfileVersion: 5.2
 packages:
   /@babel/code-frame/7.10.4:
@@ -1251,7 +1253,9 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-EFMuKtzRMNbvjab/SvJBaOOpaqJfdSap/Nl6hst7CgrJxwfORR1drdTV6q1Ib/JVzq4xObdTDcT6sqTaXMqfdg==
-  /@graphql-typed-document-node/core/3.1.0:
+  /@graphql-typed-document-node/core/3.1.0_graphql@15.4.0:
+    dependencies:
+      graphql: 15.4.0
     dev: true
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
@@ -2132,15 +2136,28 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2j9WVnNrr/8PLAB5csW44xzQSJwS26aOnICsP3pSGCEdsu6KYtfQ6QJsVUKHWRnm1bL7HziJsfh5fHqth87yKA==
-  /@urql/core/1.16.1:
+  /@urql/core/1.16.1_graphql@15.4.0:
     dependencies:
-      '@graphql-typed-document-node/core': 3.1.0
+      '@graphql-typed-document-node/core': 3.1.0_graphql@15.4.0
+      graphql: 15.4.0
       wonka: 4.0.15
     dev: true
     peerDependencies:
       graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
     resolution:
       integrity: sha512-lcEMCS/rB+ug7jKSRDVZIsqNhZxRooTNa1kHfvSjJT2k4SXDyPmjNSfXBUJF2pDJmvv9EIKl9Tk0AF1CvG3Q/g==
+  /@urql/svelte/1.1.4_graphql@15.4.0+svelte@3.24.0:
+    dependencies:
+      '@urql/core': 1.16.1_graphql@15.4.0
+      graphql: 15.4.0
+      svelte: 3.24.0
+      wonka: 4.0.15
+    dev: true
+    peerDependencies:
+      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+      svelte: ^3.0.0
+    resolution:
+      integrity: sha512-Db6IG5JZmlVLiuq39TFTLbn/ovV0YYVQHbyuM29Ex8QoeAAHLOdGEOhKRhOizR8P4vb3VxD7rWv6dGiHecOkpA==
   /@vanillawc/wc-markdown/1.6.3:
     dev: true
     resolution:
@@ -5286,6 +5303,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
+  /graphql/15.4.0:
+    dev: true
+    engines:
+      node: '>= 10.x'
+    resolution:
+      integrity: sha512-EB3zgGchcabbsU9cFe1j+yxdzKQKAbGUWRb13DsrsMN1yyfmmIq+2+L5MqVWcDCE4V89R5AyUOi7sMOGxdsYtA==
   /gud/1.0.0:
     dev: true
     resolution:
@@ -9950,16 +9973,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-ODjpfPxgUh63PFJajlW/3Z4uKPE=
-  /urql/1.11.5:
-    dependencies:
-      '@urql/core': 1.16.1
-      wonka: 4.0.15
-    dev: true
-    peerDependencies:
-      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
-      react: '>= 16.8.0'
-    resolution:
-      integrity: sha512-2/Gpu6zV9H5U4/QHc1kxnFXtVNcdSp8JftRIkRdXoVkIB6whBCRgKV+dxJyb3t3e+urCPExsSGCfIz0MIvJd1g==
   /use-callback-ref/1.2.4_react@16.13.1:
     dependencies:
       react: 16.13.1
