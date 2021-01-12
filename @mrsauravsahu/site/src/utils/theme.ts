@@ -14,6 +14,7 @@ const resourceDictionary = {
         '--ss-accent': '150, 150, 150',
         '--ss-bg': '43, 45, 62',
         '--ss-bg1': '30, 30, 30',
+        '--ss-text1': '187,187,187',
         '--site-image-filter': 'grayscale()',
     }
 }
