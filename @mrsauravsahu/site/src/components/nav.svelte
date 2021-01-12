@@ -94,7 +94,7 @@
       flex-grow: 1;
       margin: 0 2rem;
     }
-    
+
     .primary > .nav-links > a {
       margin: 0 1rem;
       font-size: 1rem;
@@ -109,7 +109,9 @@
       href={content.primary.path}
       on:click={() => (isNavOpen = false)}>
       {content.primary.label}</a>
-    <button on:click={() => (isNavOpen = !isNavOpen)}>
+    <button
+      aria-label="hamburger navigation"
+      on:click={() => (isNavOpen = !isNavOpen)}>
       {#if !isNavOpen}
         <Icon data={faBars} scale={2.5} />
       {:else}
@@ -135,7 +137,9 @@
           class="logo"
           href={content.primary.path}
           on:click={() => (isNavOpen = false)}>{content.primary.label}</a>
-        <button on:click={() => (isNavOpen = !isNavOpen)}>
+        <button
+          aria-label="hamburger navigation"
+          on:click={() => (isNavOpen = !isNavOpen)}>
           <Icon data={faTimes} scale={2.5} />
         </button>
       </div>
