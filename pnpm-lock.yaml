@@ -60,13 +60,15 @@ importers:
       '@rollup/plugin-replace': 2.3.3_rollup@1.32.1
       '@rollup/plugin-typescript': 5.0.2_b63bca19b5ed55cafdbb31cdec877ccd
       '@tsconfig/svelte': 1.0.2
+      '@types/isomorphic-fetch': 0.0.35
       '@types/node': 14.0.24
-      '@urql/svelte': 1.1.4_graphql@15.4.0+svelte@3.24.0
+      '@urql/core': 1.16.1_graphql@15.4.0
       '@vanillawc/wc-markdown': 1.6.3
       classnames: 2.2.6
       cypress: 4.10.0
       gh-pages: 2.2.0
       graphql: 15.4.0
+      isomorphic-fetch: 3.0.0
       npm-run-all: 4.1.5
       polka: 1.0.0-next.11
       rollup: 1.32.1
@@ -98,15 +100,17 @@ importers:
       '@rollup/plugin-replace': ^2.3.3
       '@rollup/plugin-typescript': ^5.0.2
       '@tsconfig/svelte': ^1.0.2
+      '@types/isomorphic-fetch': ^0.0.35
       '@types/luxon': ^1.24.1
       '@types/node': ^14.0.24
-      '@urql/svelte': ^1.1.4
+      '@urql/core': ^1.16.1
       '@vanillawc/wc-markdown': ^1.5.7
       classnames: ^2.2.6
       compression: ^1.7.1
       cypress: ^4.8.0
       gh-pages: ^2.2.0
       graphql: ^15.4.0
+      isomorphic-fetch: ^3.0.0
       luxon: ^1.24.1
       npm-run-all: ^4.1.5
       polka: ^1.0.0-next.11
@@ -2021,6 +2025,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-iTs9HReBu7evG77Q4EC8hZnqRt57irBDkK9nvmHroiOIVwYMQc4IvYvdRgwKfYepunIY7Oh/dBuuld+Gj9uo6w==
+  /@types/isomorphic-fetch/0.0.35:
+    dev: true
+    resolution:
+      integrity: sha512-DaZNUvLDCAnCTjgwxgiL1eQdxIKEpNLOlTNtAgnZc50bG2copGhRrFN9/PxPBuJe+tZVLCbQ7ls0xveXVRPkvw==
   /@types/json-schema/7.0.5:
     dev: true
     resolution:
@@ -2146,18 +2154,6 @@ packages:
       graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
     resolution:
       integrity: sha512-lcEMCS/rB+ug7jKSRDVZIsqNhZxRooTNa1kHfvSjJT2k4SXDyPmjNSfXBUJF2pDJmvv9EIKl9Tk0AF1CvG3Q/g==
-  /@urql/svelte/1.1.4_graphql@15.4.0+svelte@3.24.0:
-    dependencies:
-      '@urql/core': 1.16.1_graphql@15.4.0
-      graphql: 15.4.0
-      svelte: 3.24.0
-      wonka: 4.0.15
-    dev: true
-    peerDependencies:
-      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
-      svelte: ^3.0.0
-    resolution:
-      integrity: sha512-Db6IG5JZmlVLiuq39TFTLbn/ovV0YYVQHbyuM29Ex8QoeAAHLOdGEOhKRhOizR8P4vb3VxD7rWv6dGiHecOkpA==
   /@vanillawc/wc-markdown/1.6.3:
     dev: true
     resolution:
@@ -6184,6 +6180,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-S/2fF5wH8SJA/kmwr6HYhK/RI/OkhD84k8ntalo0iJjZikgq1XFvR5M8NPT1x5F7fBwCG3qHfnzeP/Vh/ZxCUA==
+  /isomorphic-fetch/3.0.0:
+    dependencies:
+      node-fetch: 2.6.1
+      whatwg-fetch: 3.5.0
+    dev: true
+    resolution:
+      integrity: sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==
   /isstream/0.1.2:
     dev: true
     resolution:
@@ -6989,6 +6992,12 @@ packages:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+  /node-fetch/2.6.1:
+    dev: true
+    engines:
+      node: 4.x || >=6.0.0
+    resolution:
+      integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
   /node-libs-browser/2.2.1:
     dependencies:
       assert: 1.5.0
@@ -10262,6 +10271,10 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==
+  /whatwg-fetch/3.5.0:
+    dev: true
+    resolution:
+      integrity: sha512-jXkLtsR42xhXg7akoDKvKWE40eJeI+2KZqcp2h3NsOrRnDvtWX36KcKl30dy+hxECivdk2BVUHVNrPtoMBUx6A==
   /which/1.3.1:
     dependencies:
       isexe: 2.0.0
