@@ -53,6 +53,7 @@
     "svelte-check": "^0.1.55",
     "svelte-preprocess": "^4.0.8",
     "tslib": "^2.0.0",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "urql": "^1.11.5"
   }
 }

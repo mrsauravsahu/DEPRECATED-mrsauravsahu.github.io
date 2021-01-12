@@ -79,6 +79,7 @@ importers:
       svelte-preprocess: 4.0.8_3bedc32e25bb87fc62dd57c2762b067a
       tslib: 2.0.0
       typescript: 3.9.7
+      urql: 1.11.5
     specifiers:
       '@babel/core': ^7.10.2
       '@babel/plugin-syntax-dynamic-import': ^7.0.0
@@ -119,6 +120,7 @@ importers:
       svelte-preprocess: ^4.0.8
       tslib: ^2.0.0
       typescript: ^3.9.7
+      urql: ^1.11.5
 lockfileVersion: 5.2
 packages:
   /@babel/code-frame/7.10.4:
@@ -1249,6 +1251,12 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-EFMuKtzRMNbvjab/SvJBaOOpaqJfdSap/Nl6hst7CgrJxwfORR1drdTV6q1Ib/JVzq4xObdTDcT6sqTaXMqfdg==
+  /@graphql-typed-document-node/core/3.1.0:
+    dev: true
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+    resolution:
+      integrity: sha512-wYn6r8zVZyQJ6rQaALBEln5B1pzxb9shV5Ef97kTvn6yVGrqyXVnDqnU24MXnFubR+rZjBY9NWuxX3FB2sTsjg==
   /@hapi/address/4.1.0:
     dependencies:
       '@hapi/hoek': 9.0.4
@@ -2124,6 +2132,15 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2j9WVnNrr/8PLAB5csW44xzQSJwS26aOnICsP3pSGCEdsu6KYtfQ6QJsVUKHWRnm1bL7HziJsfh5fHqth87yKA==
+  /@urql/core/1.16.1:
+    dependencies:
+      '@graphql-typed-document-node/core': 3.1.0
+      wonka: 4.0.15
+    dev: true
+    peerDependencies:
+      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+    resolution:
+      integrity: sha512-lcEMCS/rB+ug7jKSRDVZIsqNhZxRooTNa1kHfvSjJT2k4SXDyPmjNSfXBUJF2pDJmvv9EIKl9Tk0AF1CvG3Q/g==
   /@vanillawc/wc-markdown/1.6.3:
     dev: true
     resolution:
@@ -9933,6 +9950,16 @@ packages:
     dev: true
     resolution:
       integrity: sha1-ODjpfPxgUh63PFJajlW/3Z4uKPE=
+  /urql/1.11.5:
+    dependencies:
+      '@urql/core': 1.16.1
+      wonka: 4.0.15
+    dev: true
+    peerDependencies:
+      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+      react: '>= 16.8.0'
+    resolution:
+      integrity: sha512-2/Gpu6zV9H5U4/QHc1kxnFXtVNcdSp8JftRIkRdXoVkIB6whBCRgKV+dxJyb3t3e+urCPExsSGCfIz0MIvJd1g==
   /use-callback-ref/1.2.4_react@16.13.1:
     dependencies:
       react: 16.13.1
@@ -10252,6 +10279,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-NsmoXalsWVDMGupxZ5R08ka9flZjjiLvHVAWYOKtiKM8ujtZWr9cRffak+uSE48+Ob8ObalXpwyeUiyDD6QFgg==
+  /wonka/4.0.15:
+    dev: true
+    resolution:
+      integrity: sha512-U0IUQHKXXn6PFo9nqsHphVCE5m3IntqZNB9Jjn7EB1lrR7YTDY3YWgFvEvwniTzXSvOH/XMzAZaIfJF/LvHYXg==
   /worker-farm/1.7.0:
     dependencies:
       errno: 0.1.7
