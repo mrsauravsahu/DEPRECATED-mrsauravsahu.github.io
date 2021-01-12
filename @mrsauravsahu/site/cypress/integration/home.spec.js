@@ -6,7 +6,7 @@ describe('home page', () => {
 	});
 
 	it('should contain the title', () => {
-		var title = cy.contains('./saurav-sahu');
+		var title = cy.contains('ss');
 
 		title.should('have.length', 1);
 		title.should('have.attr', 'href', '/#');
