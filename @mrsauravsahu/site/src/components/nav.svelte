@@ -62,6 +62,10 @@
     width: unset;
   }
 
+  .primary > .nav-links {
+    display: none;
+  }
+
   .nav-open > .secondary {
     display: flex;
     flex-direction: column;
@@ -78,11 +82,24 @@
     font-size: 2rem;
   }
 
-  /* @media only screen and (min-width: 48rem) {
-    .nav-secondary-container {
-      flex-direction: row;
+  @media only screen and (min-width: 48rem) {
+    .primary > button {
+      display: none;
     }
-  } */
+
+    .primary > .nav-links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-grow: 1;
+      margin: 0 2rem;
+    }
+    
+    .primary > .nav-links > a {
+      margin: 0 1rem;
+      font-size: 1rem;
+    }
+  }
 </style>
 
 <nav>
@@ -99,6 +116,17 @@
         <Icon data={faTimes} scale={2.5} />
       {/if}
     </button>
+    <div class="nav-links">
+      {#each content.secondary as navItem}
+        <a
+          rel={navItem.preFetch ? 'prefetch' : undefined}
+          href={navItem.path}
+          on:click={() => (isNavOpen = false)}>
+          <!-- <PfHeader theme="dark" type="h4">{navItem.label}</PfHeader> -->
+          {navItem.label}
+        </a>
+      {/each}
+    </div>
   </div>
   {#if isNavOpen}
     <div class="nav-open" transition:navTransition={{ duration: 300 }}>
