@@ -7,8 +7,8 @@ namespace blogs.data.context
     {
         public BlogsContext(DbContextOptions<BlogsContext> options) : base(options) { }
 
-        public DbSet<Link> Links { get; set; }
-        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Link> Links { get; set; } = default!;
+        public DbSet<Blog> Blogs { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

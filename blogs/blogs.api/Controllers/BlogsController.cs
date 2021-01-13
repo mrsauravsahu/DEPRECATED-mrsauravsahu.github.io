@@ -39,7 +39,7 @@ namespace blogs.api.Controllers
         public async Task<IActionResult> AddBlogAsync([FromBody] CreateBlogDto dto)
         {
             var blog = await blogsService.AddBlogAsync(dto);
-            return CreatedAtRoute(new { }, new Envelope<BlogDto> { Data = blog });
+            return CreatedAtRoute(new { }, new Envelope<BlogDto>(blog));
         }
 
         [HttpGet("{Id:int}")]
@@ -50,7 +50,7 @@ namespace blogs.api.Controllers
         {
             var blogResult = await blogsService.GetByIdAsync(routeParams.Id);
 
-            return Ok(new Envelope<Blog> { Data = blogResult });
+            return Ok(new Envelope<Blog>(blogResult));
         }
 
         [HttpPut("{Id:int}/file")]

@@ -28,17 +28,12 @@ namespace blogs.api.Controllers
         {
             var aboutConfig = await configService.GetConfigAsync();
 
-            var appInfo = new AppInfo
-            {
-                Name = aboutConfig.AppName,
-                ContactEmail = aboutConfig.ContactEmail,
-                Version = $"v{aboutConfig.Version}"
-            };
+            var appInfo = new AppInfo(
+                aboutConfig.AppName,
+                aboutConfig.ContactEmail,
+                $"v{aboutConfig.Version}");
 
-            return Ok(new Envelope<AppInfo>
-            {
-                Data = appInfo
-            });
+            return Ok(new Envelope<AppInfo>(appInfo));
         }
     }
 }
