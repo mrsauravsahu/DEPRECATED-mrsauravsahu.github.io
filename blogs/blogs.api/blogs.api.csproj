@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="HotChocolate.AspNetCore" Version="11.0.7" />
+    <PackageReference Include="HotChocolate.Data" Version="11.0.8" />
     <PackageReference Include="Propfull.AspNet.Config" Version="0.0.1" />
     <PackageReference Include="Sieve" Version="2.3.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
