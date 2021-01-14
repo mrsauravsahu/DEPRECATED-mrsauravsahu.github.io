@@ -29,7 +29,8 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #000;
+  background-color: rgb(29,29,29);
+  overflow-y: scroll;
 }
 
 #sapper {
@@ -39,7 +40,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(var(--ss-bg));
   box-sizing: border-box;
 }
 

@@ -16,4 +16,8 @@
   import Socials from "../../pages/home/socials.svelte";
 </script>
 
+<svelte:head>
+  <title>Socials</title>
+</svelte:head>
+
 <Socials theme={$theme} {socials} />
