@@ -23,6 +23,7 @@ using FileContextCore.FileManager;
 using Microsoft.OpenApi.Models;
 using Sieve.Services;
 using blogs.api.contracts;
+using HotChocolate.Data;
 
 namespace blogs.api
 {
@@ -75,7 +76,8 @@ namespace blogs.api
             services
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
-                .AddMutationType<Mutation>();
+                .AddMutationType<Mutation>()
+                .AddSorting();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
