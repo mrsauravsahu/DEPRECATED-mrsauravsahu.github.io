@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blogs.api", "blogs.api\blogs.api.csproj", "{3AA10158-85A8-498E-83FC-F7597865E79F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mrsauravsahu.api", "mrsauravsahu.api\mrsauravsahu.api.csproj", "{3AA10158-85A8-498E-83FC-F7597865E79F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blogs.services", "blogs.services\blogs.services.csproj", "{309B8061-C296-43FA-9C9B-60B1A1E45FB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mrsauravsahu.services", "mrsauravsahu.services\mrsauravsahu.services.csproj", "{309B8061-C296-43FA-9C9B-60B1A1E45FB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blogs.services.tests", "blogs.services.tests\blogs.services.tests.csproj", "{560D1459-C53F-449A-B59F-9B3C192987A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mrsauravsahu.services.tests", "mrsauravsahu.services.tests\mrsauravsahu.services.tests.csproj", "{560D1459-C53F-449A-B59F-9B3C192987A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blogs.data", "blogs.data\blogs.data.csproj", "{D760D273-BB60-4556-AE78-F1AFB98DE529}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mrsauravsahu.data", "mrsauravsahu.data\mrsauravsahu.data.csproj", "{D760D273-BB60-4556-AE78-F1AFB98DE529}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

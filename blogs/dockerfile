@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 
-WORKDIR /app/blogs.api
+WORKDIR /app/mrsauravsahu.api
 
 COPY . .
 
@@ -12,8 +12,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:5.0-alpine
 
 WORKDIR /app
 
-COPY --from=build /app/blogs.api/out .
+COPY --from=build /app/mrsauravsahu.api/out .
 
-CMD ./blogs.api
+CMD ./mrsauravsahu.api
 
 EXPOSE 80

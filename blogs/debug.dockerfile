@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0
 
-WORKDIR /app/blogs.api
+WORKDIR /app/mrsauravsahu.api
 
 CMD dotnet watch run
 
