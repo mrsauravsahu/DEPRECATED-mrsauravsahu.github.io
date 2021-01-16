@@ -1,1 +1,1 @@
-{"blog":{"id":35,"title":"First!","description":"My first ever post? This is a new beginning. Just testing... 1. 2. 3...","slug":"first","createdAt":"2020-05-21T16:18:35","file":"content.md","wordCount":42,"approxTimeToRead":"PT0S","images":[],"containerBasePath":"35-first"}}
+{"blog":{"id":35,"title":"First!","approxTimeToRead":"PT0S","createdAt":"2020-05-21T16:18:35.000Z","__typename":"Blog"}}

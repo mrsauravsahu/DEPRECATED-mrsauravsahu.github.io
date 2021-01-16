@@ -1,1 +1,1 @@
-{"blog":{"id":36,"title":"CI for monorepos?","description":"How does one go about doing CI-CD for monorepos. Just checking how I should manage CI in this portfolio project without creating unnecessary complications...","slug":"ci-for-monorepos","createdAt":"2020-07-11T14:50:39","file":"content.md","wordCount":171,"approxTimeToRead":"PT0S","images":[],"containerBasePath":"36-ci-for-monorepos"}}
+{"blog":{"id":36,"title":"CI for monorepos?","approxTimeToRead":"PT0S","createdAt":"2020-07-11T14:50:39.000Z","__typename":"Blog"}}

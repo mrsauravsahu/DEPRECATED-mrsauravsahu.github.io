@@ -1,1 +1,1 @@
-{"blog":{"id":1,"title":"Stuff from the Past","description":"Things that I did in the past but forgot to write about and starting this blog for the same reason...","slug":"stuff-from-the-past","createdAt":"2015-01-26T10:34:00","file":"content.md","wordCount":355,"approxTimeToRead":"PT1M","images":[],"containerBasePath":"1-stuff-from-the-past"}}
+{"blog":{"id":1,"title":"Stuff from the Past","approxTimeToRead":"PT1M","createdAt":"2015-01-26T10:34:00.000Z","__typename":"Blog"}}

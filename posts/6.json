@@ -1,1 +1,1 @@
-{"blog":{"id":6,"title":"A Nice Adventure","description":"Let's see what I've been doing... Oh, and my windows isn't working 😂","slug":"a-nice-adventure","createdAt":"2015-04-03T00:01:00","file":"content.md","wordCount":523,"approxTimeToRead":"PT2M","images":[],"containerBasePath":"6-a-nice-adventure"}}
+{"blog":{"id":6,"title":"A Nice Adventure","approxTimeToRead":"PT2M","createdAt":"2015-04-03T00:01:00.000Z","__typename":"Blog"}}
