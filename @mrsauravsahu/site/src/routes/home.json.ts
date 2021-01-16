@@ -21,9 +21,23 @@ export const get = async (_, res) => {
     // Get latest blog post
     const dataUrl = `${process.env.BLOGS_BASE_URL}/api/Blogs?Sorts=-createdAt&Page=1&PageSize=1`;
     console.log(`Fetching latest blog from: ${dataUrl}`)
-    const allBlogsResponse = await superagent.get(dataUrl)
-    const json = allBlogsResponse.body
-    const { data: [latestBlog] } = json;
+    const latestBlogResponse = await urqlClient.query(`
+    {   
+        blogs(first: 1, order: {
+            createdAt: DESC
+        }) {
+            nodes {
+                id
+                title
+                description
+                createdAt
+                approxTimeToRead
+            }
+        }
+    }
+    `).toPromise()
+
+    const { data: { blogs: { nodes: [latestBlog] } } } = latestBlogResponse
 
     // Return all data
     const jsonString = JSON.stringify({ ...allHighlightsResponse.data, latestBlog });
