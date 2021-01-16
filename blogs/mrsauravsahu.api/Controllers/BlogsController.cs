@@ -23,36 +23,6 @@ namespace mrsauravsahu.api.Controllers
             this.blogsService = blogsService;
         }
 
-        [HttpGet]
-        [SwaggerResponse(200, "Retrieved all blogs", typeof(PaginatedResult<List<Blog>>))]
-        public async Task<IActionResult> GetBlogsAsync(
-            SieveModel sieve
-        )
-        {
-            var allblogsResult = await blogsService.GetAllAsync(sieve);
-
-            return Ok(allblogsResult);
-        }
-
-        [HttpPost]
-        [SwaggerResponse(201, "Added a new blog", typeof(Envelope<BlogDto>))]
-        public async Task<IActionResult> AddBlogAsync([FromBody] CreateBlogDto dto)
-        {
-            var blog = await blogsService.AddBlogAsync(dto);
-            return CreatedAtRoute(new { }, new Envelope<BlogDto>(blog));
-        }
-
-        [HttpGet("{Id:int}")]
-        [SwaggerResponse(200, "Retrieved all blogs", typeof(Envelope<Blog>))]
-        public async Task<IActionResult> GetBlogByIdAsync(
-            [FromRoute] BlogRouteParams routeParams
-        )
-        {
-            var blogResult = await blogsService.GetByIdAsync(routeParams.Id);
-
-            return Ok(new Envelope<Blog>(blogResult));
-        }
-
         [HttpPut("{Id:int}/file")]
         [SwaggerResponse(200, "Update blog file for blog")]
         public async Task<IActionResult> SetBlogFileForBlogAsync(
