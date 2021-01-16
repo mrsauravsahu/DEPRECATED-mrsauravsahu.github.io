@@ -37,7 +37,7 @@
 <style>
   main {
     padding: 1rem;
-    width: 100%;
+    max-width: 80rem;
   }
 </style>
 

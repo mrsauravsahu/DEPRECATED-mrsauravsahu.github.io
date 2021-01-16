@@ -60,11 +60,15 @@ importers:
       '@rollup/plugin-replace': 2.3.3_rollup@1.32.1
       '@rollup/plugin-typescript': 5.0.2_b63bca19b5ed55cafdbb31cdec877ccd
       '@tsconfig/svelte': 1.0.2
+      '@types/isomorphic-fetch': 0.0.35
       '@types/node': 14.0.24
+      '@urql/core': 1.16.1_graphql@15.4.0
       '@vanillawc/wc-markdown': 1.6.3
       classnames: 2.2.6
       cypress: 4.10.0
       gh-pages: 2.2.0
+      graphql: 15.4.0
+      isomorphic-fetch: 3.0.0
       npm-run-all: 4.1.5
       polka: 1.0.0-next.11
       rollup: 1.32.1
@@ -96,13 +100,17 @@ importers:
       '@rollup/plugin-replace': ^2.3.3
       '@rollup/plugin-typescript': ^5.0.2
       '@tsconfig/svelte': ^1.0.2
+      '@types/isomorphic-fetch': ^0.0.35
       '@types/luxon': ^1.24.1
       '@types/node': ^14.0.24
+      '@urql/core': ^1.16.1
       '@vanillawc/wc-markdown': ^1.5.7
       classnames: ^2.2.6
       compression: ^1.7.1
       cypress: ^4.8.0
       gh-pages: ^2.2.0
+      graphql: ^15.4.0
+      isomorphic-fetch: ^3.0.0
       luxon: ^1.24.1
       npm-run-all: ^4.1.5
       polka: ^1.0.0-next.11
@@ -1249,6 +1257,14 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-EFMuKtzRMNbvjab/SvJBaOOpaqJfdSap/Nl6hst7CgrJxwfORR1drdTV6q1Ib/JVzq4xObdTDcT6sqTaXMqfdg==
+  /@graphql-typed-document-node/core/3.1.0_graphql@15.4.0:
+    dependencies:
+      graphql: 15.4.0
+    dev: true
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+    resolution:
+      integrity: sha512-wYn6r8zVZyQJ6rQaALBEln5B1pzxb9shV5Ef97kTvn6yVGrqyXVnDqnU24MXnFubR+rZjBY9NWuxX3FB2sTsjg==
   /@hapi/address/4.1.0:
     dependencies:
       '@hapi/hoek': 9.0.4
@@ -2009,6 +2025,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-iTs9HReBu7evG77Q4EC8hZnqRt57irBDkK9nvmHroiOIVwYMQc4IvYvdRgwKfYepunIY7Oh/dBuuld+Gj9uo6w==
+  /@types/isomorphic-fetch/0.0.35:
+    dev: true
+    resolution:
+      integrity: sha512-DaZNUvLDCAnCTjgwxgiL1eQdxIKEpNLOlTNtAgnZc50bG2copGhRrFN9/PxPBuJe+tZVLCbQ7ls0xveXVRPkvw==
   /@types/json-schema/7.0.5:
     dev: true
     resolution:
@@ -2124,6 +2144,16 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2j9WVnNrr/8PLAB5csW44xzQSJwS26aOnICsP3pSGCEdsu6KYtfQ6QJsVUKHWRnm1bL7HziJsfh5fHqth87yKA==
+  /@urql/core/1.16.1_graphql@15.4.0:
+    dependencies:
+      '@graphql-typed-document-node/core': 3.1.0_graphql@15.4.0
+      graphql: 15.4.0
+      wonka: 4.0.15
+    dev: true
+    peerDependencies:
+      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+    resolution:
+      integrity: sha512-lcEMCS/rB+ug7jKSRDVZIsqNhZxRooTNa1kHfvSjJT2k4SXDyPmjNSfXBUJF2pDJmvv9EIKl9Tk0AF1CvG3Q/g==
   /@vanillawc/wc-markdown/1.6.3:
     dev: true
     resolution:
@@ -5269,6 +5299,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
+  /graphql/15.4.0:
+    dev: true
+    engines:
+      node: '>= 10.x'
+    resolution:
+      integrity: sha512-EB3zgGchcabbsU9cFe1j+yxdzKQKAbGUWRb13DsrsMN1yyfmmIq+2+L5MqVWcDCE4V89R5AyUOi7sMOGxdsYtA==
   /gud/1.0.0:
     dev: true
     resolution:
@@ -6144,6 +6180,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-S/2fF5wH8SJA/kmwr6HYhK/RI/OkhD84k8ntalo0iJjZikgq1XFvR5M8NPT1x5F7fBwCG3qHfnzeP/Vh/ZxCUA==
+  /isomorphic-fetch/3.0.0:
+    dependencies:
+      node-fetch: 2.6.1
+      whatwg-fetch: 3.5.0
+    dev: true
+    resolution:
+      integrity: sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==
   /isstream/0.1.2:
     dev: true
     resolution:
@@ -6949,6 +6992,12 @@ packages:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+  /node-fetch/2.6.1:
+    dev: true
+    engines:
+      node: 4.x || >=6.0.0
+    resolution:
+      integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
   /node-libs-browser/2.2.1:
     dependencies:
       assert: 1.5.0
@@ -10222,6 +10271,10 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==
+  /whatwg-fetch/3.5.0:
+    dev: true
+    resolution:
+      integrity: sha512-jXkLtsR42xhXg7akoDKvKWE40eJeI+2KZqcp2h3NsOrRnDvtWX36KcKl30dy+hxECivdk2BVUHVNrPtoMBUx6A==
   /which/1.3.1:
     dependencies:
       isexe: 2.0.0
@@ -10252,6 +10305,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-NsmoXalsWVDMGupxZ5R08ka9flZjjiLvHVAWYOKtiKM8ujtZWr9cRffak+uSE48+Ob8ObalXpwyeUiyDD6QFgg==
+  /wonka/4.0.15:
+    dev: true
+    resolution:
+      integrity: sha512-U0IUQHKXXn6PFo9nqsHphVCE5m3IntqZNB9Jjn7EB1lrR7YTDY3YWgFvEvwniTzXSvOH/XMzAZaIfJF/LvHYXg==
   /worker-farm/1.7.0:
     dependencies:
       errno: 0.1.7

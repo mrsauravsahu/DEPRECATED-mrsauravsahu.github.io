@@ -12,12 +12,12 @@ describe('socials page', () => {
     beforeEach(() => cy.visit('/socials'));
 
     it('all social links should be displayed', () => {
-        var socialButtons = cy.get('.social-container a');
+        var socialButtons = cy.get('.social-links a');
         socialButtons.should('have.length', socials.length);
     });
     
     it('social links should have correct labels', () => {
-        var socialButtons = cy.get('.social-container a');
+        var socialButtons = cy.get('.social-links a');
         
         socialButtons.each((button, index) => {
             expect(button.get(0).innerText).equal(socials[index].label);
@@ -25,7 +25,7 @@ describe('socials page', () => {
     });
     
     it('social links should have correct links', () => {
-        var socialButtons = cy.get('.social-container a');
+        var socialButtons = cy.get('.social-links a');
         
         socialButtons.each((button, index) => {
             expect(button.attr('href')).equal(socials[index].url);
