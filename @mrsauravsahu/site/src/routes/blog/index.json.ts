@@ -34,7 +34,7 @@ export const get = async (_, res) => {
         }
     `, { after: state.endCursor }).toPromise()
 
-        blogs = [...blogs, ...allBlogsResponse.data.blogs.nodes]
+        blogs = [...blogs, ...(allBlogsResponse.data.blogs.nodes || [])]
         state = {
             hasNextPage: allBlogsResponse.data.blogs.pageInfo.hasNextPage,
             endCursor: allBlogsResponse.data.blogs.pageInfo.endCursor

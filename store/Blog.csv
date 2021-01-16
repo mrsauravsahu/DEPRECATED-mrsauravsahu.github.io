@@ -39,3 +39,4 @@ Id,ApproxTimeToRead,CreatedAt,Description,File,Slug,Title,WordCount,Images
 38,PT5M,07/22/2020 00:25:37,Finally! Let's add TypeScript to an exising Sapper project,content.md,adding-type-script-to-sapper-projects,Adding TypeScript to Sapper Projects,1326,
 39,PT1M,09/30/2020 11:44:56,"Let's allow for some interactions... Enter, comments.",content.md,hello-comments,Hello comments!,391,
 40,PT2M,11/22/2020 10:41:35,Let's create isolated VSCode profiles. Also understanding how to migrate settings and extensions from old profile.,content.md,custom-vscode-profiles,Custom VSCode Profiles + Migrating old ones,546,
+41,PT0S,01/16/2021 14:17:56,"Achievement unlocked. AZ900. Let's discuss what you need to know to get this certification.",content.md,cert-az900,Got my first Cloud Certification,1,
