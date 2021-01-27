@@ -90,7 +90,6 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin: 1rem 4rem;
   }
 
   .social-links {
@@ -120,6 +119,11 @@
     .social-link-anchor {
       width: calc(25% - 1rem);
       height: 8rem;
+      
+    }
+
+    .socials {
+      margin: 1rem 4rem;
     }
   }
 </style>
