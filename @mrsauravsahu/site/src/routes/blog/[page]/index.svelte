@@ -81,7 +81,7 @@
   }
 
   hr {
-    background-color: rgb(62, 64, 80);
+    background-color: #aaa;
     height: calc(1rem / 16);
     border: none;
   }
