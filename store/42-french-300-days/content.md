@@ -6,7 +6,7 @@ Apparently, it takes 21 days to make a habit. Not sure if I'd agree, but I think
 
 ## So what and how did I learn?
 
-I'm sure I'll make a YouTube video about this, but writing things in detail here..
+I have also made a YouTube video about this - [300 Days of French](https://youtu.be/b5rNStIF0TQ), but writing things in detail here..
 
 ### Duolingo
 
@@ -14,19 +14,19 @@ I started with Duolingo. When you start off any language, only lessons - topics 
 
 Now I could say things like
 
-> je apprends le français..
+> - j'apprends le français..
 
-> je parle l'anglais
+> - je parle l'anglais
 
 The lessons started to get a bit more complex and I learnt topics like adverbs, prepositions.
 
-> je suis à la maison
+> - je suis à la maison
 
 ### Language Exchange Apps
 
-Language apps are really cool. You can talk to people who are learning languages. You can talk to people who know the language you're learning. That'll really help with conversations. Because, really, the spoken languages are really nothing like how they appear in literature. Still doing this and this is great.
+Language exchange apps are really cool. You can talk to and help people who are learning languages. You can also talk to people who know the language you're learning. That'll really help with conversations. Because, really, the spoken languages are really nothing like how they appear in literature. Still doing this and this is great.
 
-### YouTube and other Streaming Platforms.
+### YouTube and other Streaming Platforms
 
 I started watching content that focus on French. So the set of what I can watch has increased drastically. 
 
@@ -52,8 +52,8 @@ Learning about accents - aigu, grave, etc,.
 
 ### Future Work
 
-At some point, when I am able to speak to myself in French and hopefully speak in French, I'd want to focus on pronunciation - actors like Omar Sy and Audrey Tautou.
+At some point, when I am able to speak to myself in French and hopefully think in French, I'd want to focus on pronunciation - actors like Omar Sy and Audrey Tautou.
 
 Yeah, so that's pretty much it for the language journey so far. Let me know what you've been upto. You can check out what's up on Instagram - [@mrsauravsahu](https://instagram.com/mrsauravsahu)
 
-Bonne journée et à bientôt
+Bonne journée et à bientôt.
