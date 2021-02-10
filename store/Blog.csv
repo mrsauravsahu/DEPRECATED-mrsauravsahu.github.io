@@ -41,3 +41,4 @@ Id,ApproxTimeToRead,CreatedAt,Description,File,Slug,Title,WordCount,Images
 40,PT2M,11/22/2020 10:41:35,Let's create isolated VSCode profiles. Also understanding how to migrate settings and extensions from old profile.,content.md,custom-vscode-profiles,Custom VSCode Profiles + Migrating old ones,546,
 41,PT0S,01/16/2021 14:17:56,Achievement unlocked. AZ900. Let's discuss what you need to know to get this certification.,content.md,cert-az900,Got my first Cloud Certification,1,
 42,PT2M,01/31/2021 17:28:47,Quick update on my french language journey after 'trois cent jours',content.md,french-300-days,300 Days of French,548,
+43,PT3M,02/10/2021 16:59:05,I hosted my website on a custom domain. So what exactly did I do? And what did I learn?,content.md,host-on-custom-domain,I hosted my website on a custom domain!,775,
