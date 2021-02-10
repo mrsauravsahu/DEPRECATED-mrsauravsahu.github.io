@@ -54,7 +54,7 @@ Now hastily keep checking websites like [https://www.whatsmydns.net/](https://ww
 
 After waiting for an eternity, took me a day, you should see your DNS records propagated throughout the world.
 
-#### 2.3 Tell Github Pages - I need a custom domain!
+#### 2.4 Tell Github Pages - I need a custom domain!
 
 Go to the settings on the repository where the site is on Github. In the section for Github Pages, write the custom domain. 
 
