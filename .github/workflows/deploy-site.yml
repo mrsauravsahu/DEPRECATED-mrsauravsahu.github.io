@@ -64,3 +64,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ env.SITE_EXPORT_DIRECTORY }}
           publish_branch: ${{ env.GITHUB_PAGES_PUBLISH_BRANCH }}
+          cname: mrsauravsahu.tech
