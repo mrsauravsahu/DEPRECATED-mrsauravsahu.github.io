@@ -60,18 +60,25 @@ namespace mrsauravsahu.services
 
         public async Task<BlogDto> AddBlogAsync(CreateBlogDto blog)
         {
+            var approxTimeToRead = TimeSpan.FromMinutes(0);
+            
+
             // TODO: Update this with an AutoMapper or similar mapping library
             var result = blogsContext.Blogs.Add(new Blog
             {
                 Title = blog.Title,
                 Description = blog.Description,
                 Slug = blog.Slug,
+                ApproxTimeToRead = XmlConvert.ToString(approxTimeToRead),
+                File = "content.md",
                 CreatedAt = DateTime.UtcNow,
             });
 
-            await blogsContext.SaveChangesAsync();
 
+            await blogsContext.SaveChangesAsync();
             var addedBlog = result.Entity;
+            await localFileService.CreateBlobAsync(addedBlog.ContainerBasePath, addedBlog.File);
+
             var response = new BlogDto
             {
                 Id = addedBlog.Id,

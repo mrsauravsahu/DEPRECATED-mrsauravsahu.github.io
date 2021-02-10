@@ -20,6 +20,21 @@ namespace mrsauravsahu.services
             this.config = options.Value;
         }
 
+        public async Task CreateBlobAsync(string container, string name)
+        {
+            await Task.Run(() =>
+            {
+                var containerPath = fileSystem.Path.Combine(new[] { config.BasePath, container });
+
+                var directoryExists = fileSystem.Directory.Exists(containerPath);
+                if (!directoryExists) fileSystem.Directory.CreateDirectory(containerPath);
+
+                var filePath = fileSystem.Path.Combine(new[] { containerPath, name });
+                if (!File.Exists(filePath)) File.Create(filePath);
+                return;
+            });
+        }
+
         public async Task<Blob> GetBlobAsync(string container, string name)
         {
             var containerPath = fileSystem.Path.Combine(new[] { config.BasePath, container });
