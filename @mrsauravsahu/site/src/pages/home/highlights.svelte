@@ -42,6 +42,10 @@
       width: calc(50% - 1rem);
     }
   }
+
+  :global(.title  h2) {
+    font-size: 1.5rem;
+  }
 </style>
 
 <div class="projects-container ss-content">
@@ -56,7 +60,7 @@
       <a class="highlight" href={project.url}>
         <PfCard {theme}>
           <div class="title" slot="title">
-            <PfHeader type="h5" theme="dark">{project.title}</PfHeader>
+            <PfHeader type="h2" theme="dark">{project.title}</PfHeader>
           </div>
           <div class="project-content" slot="content">
             {project.description}
