@@ -21,6 +21,11 @@
     border-right: none;
     border-top-width: 0.0625rem;
   }
+
+  .latest-blog-header {
+    font-size: 0.75rem;
+    font-weight: 800;
+  }
 </style>
 
 <div class="ss-content">
@@ -36,12 +41,12 @@
   </p>
 
   <!-- <hr /> -->
-  <h6>
+  <span class="latest-blog-header">
     Latest blog post -
     {DateTime.fromISO(latestBlog.createdAt).toFormat('EEEE, MMMM dd yyyy')}
-  </h6>
+  </span>
   <a href={`posts/${latestBlog.id}`}>
-    <h3>{latestBlog.title}</h3>
+    <h2>{latestBlog.title}</h2>
     <p>{latestBlog.description}</p>
   </a>
 </div>
