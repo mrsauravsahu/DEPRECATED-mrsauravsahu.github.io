@@ -1,0 +1,1 @@
+import{S as s,i as t,s as r}from"./client.f29323c3.js";async function a(){return this.redirect(301,"https://instagram.com/photosbysaurav")}export default class extends s{constructor(s){super(),t(this,s,null,null,r,{})}}export{a as preload};
