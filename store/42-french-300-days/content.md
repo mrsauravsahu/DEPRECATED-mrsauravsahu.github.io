@@ -54,6 +54,6 @@ Learning about accents - aigu, grave, etc,.
 
 At some point, when I am able to speak to myself in French and hopefully think in French, I'd want to focus on pronunciation - actors like Omar Sy and Audrey Tautou.
 
-Yeah, so that's pretty much it for the language journey so far. Let me know what you've been upto. You can check out what's up on Instagram - [@mrsauravsahu](https://instagram.com/mrsauravsahu)
+Yeah, so that's pretty much it for the language journey so far. Let me know what you've been upto. You can check out what's up on Instagram - [@mrsauravsahu](https://instagram.com/photosbysaurav)
 
 Bonne journée et à bientôt.
