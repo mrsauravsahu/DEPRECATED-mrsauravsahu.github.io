@@ -43,3 +43,4 @@ Id,ApproxTimeToRead,CreatedAt,Description,File,Slug,Title,WordCount,Images
 42,PT2M,01/31/2021 17:28:47,Quick update on my french language journey after 'trois cent jours',content.md,french-300-days,300 Days of French,548,
 43,PT3M,02/10/2021 16:59:05,I hosted my website on a custom domain. So what exactly did I do? And what did I learn?,content.md,host-on-custom-domain,I hosted my website on a custom domain!,775,
 44,PT1M,05/14/2021 18:37:04,Created an npm package to generate template files for documentation,content.md,documenting-dotenv-files-for-nodejs-projects,Documenting .env files for nodejs Projects,416,
+45,PT5M,05/23/2021 13:42:40,How do I validate properties on an object where references to other properties is required?,content.md,referential-data-validations-with-yupjs,Referential Data Validations with yupjs,1226,
