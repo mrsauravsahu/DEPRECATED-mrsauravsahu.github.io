@@ -34,14 +34,15 @@
   export let layoutContent;
 </script>
 
-<style>
-  main {
-    padding: 1rem;
-    max-width: 80rem;
-  }
-</style>
-
 <Nav content={layoutContent.nav} />
 <main>
   <slot />
 </main>
+
+<style>
+  main {
+    padding: 1rem;
+    max-width: 80rem;
+    width: 100%;
+  }
+</style>
