@@ -9,6 +9,7 @@ Back in 2018 I built my first machine. It was a great exercise, and took me a wh
 I bought the rest of the components from the famous SP Road in Bangalore, trying to haggle my way through. Went there with a couple of my friends as we were all building PCs. So, here's my hardware breakdown
 
 ## 2018 PC Build
+
 |Part        |Item Bought                                  |
 |------------|---------------------------------------------|
 |CPU         |AMD Ryzen 5 2600X                            |
