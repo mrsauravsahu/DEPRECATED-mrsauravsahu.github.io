@@ -47,3 +47,4 @@ Id,ApproxTimeToRead,CreatedAt,Description,File,Slug,Title,WordCount,Images
 46,PT4M,06/18/2021 04:41:09,Let's see how to create smaller docker images for all your projects,content.md,downsizing-docker-images,Downsizing Docker Images (~20X Improvement),1100,
 47,PT0S,06/23/2021 13:46:45,"I created my first VSCode Extension, and here is what I learned.",content.md,learnings-from-my-first-vscode-extension,Learnings from creating my first VSCode Extension,0,
 48,PT4M,07/18/2021 11:47:03,Let's see how I've configured my PC build with all the bells and whistles I need,content.md,my-personal-computing-setup,My Personal Computing Setup,1117,
+49,PT6M,07/25/2021 11:20:52,"Software Versioning is something we all must do. Let's checkout the basics, and also, GitVersion.",content.md,software-versioning-an-intro-with-gitversion,Software Versioning - An Introduction with GitVersion,1431,
