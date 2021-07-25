@@ -1,5 +1,3 @@
-# Software Versioning — An Introduction with GitVersion
-
 Writing code is great, creating something new is exciting and it getting utilised by others is the best. But the most difficult part is maintaining this code. 
 
 Even though maintenance has many parts to it, in this blog, let’s discuss about versioning. 
