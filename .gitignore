@@ -75,3 +75,5 @@ yarn-error.log
 
 # ignore all .envrc files
 .envrc
+
+@mrsauravsahu/site/static/store

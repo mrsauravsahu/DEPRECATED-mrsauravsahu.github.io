@@ -47,6 +47,9 @@ jobs:
           Github__Token: ${{ secrets.PORTFOLIO_TOKEN }}
         run: |
           docker-compose up -d
+        
+      - name: setup static data
+        run: cp -Rv store @mrsauravsahu/site/static
 
       - name: export site
         run: pnpm run --prefix @mrsauravsahu/site export
