@@ -40,9 +40,9 @@ One of the best ways to automate versioning is with [GitVersion](https://gitvers
 
 For my projects, I use a simplified version of GitFlow — read more about it [here](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow). But the gist of it is this —
 
-- My main work happens on the `develop` branch. This is where I merge all my changes. If I need to distribute my app, I retain stable releases on the `master` branch.
+- My main work happens on the `develop` branch. This is where I merge all my changes. If I need to distribute my app, I retain stable releases on the `main` branch.
 - I branch out all my feature branches from `develop`
-- `hotfixes` are created directly from `master` and fixed and merged back. And pulled into `develop` as well.
+- `hotfixes` are created directly from `main` and fixed and merged back. And pulled into `develop` as well.
 
 ### Let's setup GitVersion
 
