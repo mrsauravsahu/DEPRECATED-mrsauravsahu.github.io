@@ -28,6 +28,16 @@
     color: rgb(var(--ss-text1));
   }
 
+  span.external {
+    position: relative;
+    bottom: -0.25rem;
+    font-size: 0.6rem;
+    padding: 0.1rem;
+    border-radius: 0.125rem;
+    background-color: rgb(var(--ss-text1));
+    color: rgb(var(--ss-bg));
+  }
+
   button {
     border: none;
     background-color: transparent;
@@ -125,6 +135,9 @@
           href={navItem.path}
           on:click={() => (isNavOpen = false)}>
           <!-- <PfHeader theme="dark" type="h4">{navItem.label}</PfHeader> -->
+          {#if navItem.external}
+          <span class="external">{navItem.external}</span>
+          {/if}
           {navItem.label}
         </a>
       {/each}
