@@ -1,1 +1,0 @@
-import{S as t,i as e,s}from"./client.99e0bc7b.js";function o(){this.redirect(302,"https://foregoing-taker-7cd.notion.site/e96d8cd6ff6e452ca4b58d16940793b5")}export default class extends t{constructor(t){super(),e(this,t,null,null,s,{})}}export{o as preload};

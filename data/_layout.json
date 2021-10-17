@@ -17,6 +17,18 @@
                 "preFetch": false
             },
             {
+                "label": "board",
+                "path": "/p/board",
+                "preFetch": false,
+                "external": "notion"
+            },
+            {
+                "label": "work",
+                "path": "/p/poly",
+                "preFetch": false,
+                "external": "poly"
+            },
+            {
                 "label": "links",
                 "path": "/links",
                 "preFetch": false
