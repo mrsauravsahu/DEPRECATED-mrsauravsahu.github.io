@@ -17,6 +17,12 @@
                 "preFetch": false
             },
             {
+                "label": "board",
+                "path": "/board",
+                "preFetch": false,
+                "external": "notion"
+            },
+            {
                 "label": "links",
                 "path": "/links",
                 "preFetch": false
