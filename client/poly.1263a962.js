@@ -1,0 +1,1 @@
+import{S as s,i as t,s as r}from"./client.d847e506.js";function e(){this.redirect(302,"https://poly.work/mrsauravsahu")}export default class extends s{constructor(s){super(),t(this,s,null,null,r,{})}}export{e as preload};
